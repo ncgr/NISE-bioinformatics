@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Introduction to Pangenomics | index.knit</title>
+  <meta name="description" content="" />
+  <meta name="generator" content="bookdown 0.32 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Introduction to Pangenomics | index.knit" />
+  <meta property="og:type" content="book" />
+
+
+
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Introduction to Pangenomics | index.knit" />
+
+
+
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+
+
+
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Pangenomics Workshop NCGR</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path=""><a href="#introduction-to-pangenomics"><i class="fa fa-check"></i><b>1</b> Introduction to Pangenomics</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path=""><a href="#what-is-a-pangenome"><i class="fa fa-check"></i><b>1.1</b> What is a “pangenome”?</a>
+<ul>
+<li class="chapter" data-level="1.1.1" data-path=""><a href="#open-vs.-closed-genomes"><i class="fa fa-check"></i><b>1.1.1</b> Open vs. Closed Genomes</a></li>
+<li class="chapter" data-level="1.1.2" data-path=""><a href="#then-vs.-now"><i class="fa fa-check"></i><b>1.1.2</b> Then vs. Now</a></li>
+<li class="chapter" data-level="1.1.3" data-path=""><a href="#pangenome-today"><i class="fa fa-check"></i><b>1.1.3</b> “Pangenome” Today</a></li>
+<li class="chapter" data-level="1.1.4" data-path=""><a href="#the-benefit-of-pangenomes"><i class="fa fa-check"></i><b>1.1.4</b> The Benefit of Pangenomes</a></li>
+<li class="chapter" data-level="1.1.5" data-path=""><a href="#what-are-pangenomes-good-for"><i class="fa fa-check"></i><b>1.1.5</b> What are pangenomes good for?</a></li>
+<li class="chapter" data-level="1.1.6" data-path=""><a href="#computational-pangenomics"><i class="fa fa-check"></i><b>1.1.6</b> Computational Pangenomics</a></li>
+<li class="chapter" data-level="1.1.7" data-path=""><a href="#pangenome-representations"><i class="fa fa-check"></i><b>1.1.7</b> Pangenome Representations</a></li>
+<li class="chapter" data-level="1.1.8" data-path=""><a href="#genomevariation-graphs"><i class="fa fa-check"></i><b>1.1.8</b> Genome/Variation Graphs</a></li>
+<li class="chapter" data-level="1.1.9" data-path=""><a href="#types-of-variation-graphs"><i class="fa fa-check"></i><b>1.1.9</b> Types of Variation Graphs</a></li>
+<li class="chapter" data-level="1.1.10" data-path=""><a href="#mapping-reads-to-variation-graphs"><i class="fa fa-check"></i><b>1.1.10</b> Mapping Reads to Variation Graphs</a></li>
+<li class="chapter" data-level="1.1.11" data-path=""><a href="#datayeast-genomes"><i class="fa fa-check"></i><b>1.1.11</b> Data/Yeast Genomes:</a></li>
+<li class="chapter" data-level="1.1.12" data-path=""><a href="#yeast-assemblies"><i class="fa fa-check"></i><b>1.1.12</b> Yeast Assemblies</a></li>
+<li class="chapter" data-level="1.1.13" data-path=""><a href="#sk1-illumina-reads"><i class="fa fa-check"></i><b>1.1.13</b> SK1 Illumina Reads</a></li>
+<li class="chapter" data-level="1.1.14" data-path=""><a href="#cup1-gene"><i class="fa fa-check"></i><b>1.1.14</b> CUP1 Gene</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./"></a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<!--bookdown:title:end-->
+<!--bookdown:title:start-->
+<div id="introduction-to-pangenomics" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction to Pangenomics<a href="#introduction-to-pangenomics" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div class="figure">
+<img src="/Users/agomez/Desktop/Bookdown/Pangenomics/Figures/JoannAlan.png" style="width:65.0%" alt="" />
+<p class="caption">Instructors</p>
+</div>
+<div id="what-is-a-pangenome" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> What is a “pangenome”?<a href="#what-is-a-pangenome" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The term “pangenome” was first coined by Sigaux et al. and was used to describe a public database containing an assessment of genome and transcriptome alterations in major types of tumors, tissues, and experimental models.</p>
+<div class="figure">
+<img src="/Users/agomez/Desktop/Bookdown/Pangenomics/Figures/Sigaux.png" style="width:65.0%" alt="" />
+<p class="caption">Sigaux et al.</p>
+</div>
+<p>The term was later revitalized by Tettelin et al. to describe a microbial genome by which genes were in the core (present in all strains) and which genes were dispensable (missing from one or more of the strains).</p>
+<div class="figure">
+<img src="/Users/agomez/Desktop/Bookdown/Pangenomics/Figures/Tettelin.png" style="width:65.0%" alt="" />
+<p class="caption">Tettelin et al.</p>
+</div>
+<div id="open-vs.-closed-genomes" class="section level3 hasAnchor" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Open vs. Closed Genomes<a href="#open-vs.-closed-genomes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><img src="/Users/agomez/Desktop/Bookdown/Pangenomics/Figures/ClosedvOpen.png" style="width:65.0%" alt="Open and Closed Pangenomes" />
+<a href="https://en.wikipedia.org/wiki/Pan-genome" class="uri">https://en.wikipedia.org/wiki/Pan-genome</a></p>
+</div>
+<div id="then-vs.-now" class="section level3 hasAnchor" number="1.1.2">
+<h3><span class="header-section-number">1.1.2</span> Then vs. Now<a href="#then-vs.-now" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure">
+<img src="/Users/agomez/Desktop/Bookdown/Pangenomics/Figures/CostGenome.png" style="width:90.0%" alt="" />
+<p class="caption">Cost per Genome</p>
+</div>
+<p><a href="https://www.genome.gov/about-genomics/fact-sheets/DNA-Sequencing-Costs-Data" class="uri">https://www.genome.gov/about-genomics/fact-sheets/DNA-Sequencing-Costs-Data</a></p>
+<ul>
+<li>Low Cost</li>
+<li>High Quality Long Reads (HiFi)</li>
+<li>Many reference-quality assemblies per species</li>
+</ul>
+<div class="figure">
+<img src="/Users/agomez/Desktop/Bookdown/Pangenomics/Figures/GenomePubs.png" style="width:75.0%" alt="" />
+<p class="caption">Pangenome Publications</p>
+</div>
+<p><a href="https://www.nature.com/articles/s41477-020-0733-0" class="uri">https://www.nature.com/articles/s41477-020-0733-0</a></p>
+</div>
+<div id="pangenome-today" class="section level3 hasAnchor" number="1.1.3">
+<h3><span class="header-section-number">1.1.3</span> “Pangenome” Today<a href="#pangenome-today" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>“Any collection of genomic sequences to be analyzed jointly or to be used as a reference. These sequences can be linked in a graph-like structure, or simply constitute sets of (aligned or unaligned) sequences.” – Computational Pangenomics Consortium</p>
+</div>
+<div id="the-benefit-of-pangenomes" class="section level3 hasAnchor" number="1.1.4">
+<h3><span class="header-section-number">1.1.4</span> The Benefit of Pangenomes<a href="#the-benefit-of-pangenomes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Removes reference bias</li>
+</ol>
+<ul>
+<li>May only represent one organism</li>
+<li>Could be a “mosaic”of individuals, i.e. doesn’t represent a coherent haplotype</li>
+<li>Allele bias</li>
+<li>Doesn’t include common variation</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Allow multiple assemblies to be analyzed simultaneously, i.e. efficiently</li>
+</ol>
+</div>
+<div id="what-are-pangenomes-good-for" class="section level3 hasAnchor" number="1.1.5">
+<h3><span class="header-section-number">1.1.5</span> What are pangenomes good for?<a href="#what-are-pangenomes-good-for" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Core vs dispensable genes:</li>
+</ol>
+<ul>
+<li>How big is the core?</li>
+<li>How big is the dispensable?</li>
+<li>How big is the pangenome?</li>
+<li>What traits are associated with the core/dispensable?</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Unbiased read mapping and variant calling</li>
+<li>More robust variation-trait association</li>
+<li>Visual exploration of genomic structure of population</li>
+</ol>
+</div>
+<div id="computational-pangenomics" class="section level3 hasAnchor" number="1.1.6">
+<h3><span class="header-section-number">1.1.6</span> Computational Pangenomics<a href="#computational-pangenomics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>“Questions about efficient data structures, algorithms and statistical methods to perform bioinformatic analyses of pan-genomes give rise to the discipline of ‘computational pan-genomics’.”</p>
+<div class="figure">
+<img src="/Users/agomez/Desktop/Bookdown/Pangenomics/Figures/Computational.png" style="width:90.0%" alt="" />
+<p class="caption">Computational Pangenomics</p>
+</div>
+<p><a href="https://academic.oup.com/bib/article/19/1/118/2566735" class="uri">https://academic.oup.com/bib/article/19/1/118/2566735</a></p>
+</div>
+<div id="pangenome-representations" class="section level3 hasAnchor" number="1.1.7">
+<h3><span class="header-section-number">1.1.7</span> Pangenome Representations<a href="#pangenome-representations" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Gene sets</li>
+<li>Multiple sequence alignments</li>
+<li>K-mer sets</li>
+<li>Graphs</li>
+</ol>
+<ul>
+<li>De Bruijn graphs</li>
+<li>Haptotype graphs</li>
+<li><strong>Genome/Variation graphs</strong></li>
+</ul>
+</div>
+<div id="genomevariation-graphs" class="section level3 hasAnchor" number="1.1.8">
+<h3><span class="header-section-number">1.1.8</span> Genome/Variation Graphs<a href="#genomevariation-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li><p>Variation forms bubbles Nodes represent sequences</p></li>
+<li><p>Chains of nodes represent contiguous sequence in one or more assemblies</p></li>
+<li><p>The sequences of nodes connected by an edge may overlap</p></li>
+<li><p>Graphs can be acyclic or cyclic</p></li>
+<li><p>Haplotypes are “threaded” through graph as paths</p></li>
+</ol>
+<p><img src="/Users/agomez/Desktop/Bookdown/Pangenomics/Figures/VariationGraphA.png" style="width:96.0%" alt="Pangenome Representations" />
+<img src="/Users/agomez/Desktop/Bookdown/Pangenomics/Figures/VariationGraphB.png" style="width:96.0%" alt="Pangenome Representations" /></p>
+<p><a href="https://academic.oup.com/bib/article/19/1/118/2566735" class="uri">https://academic.oup.com/bib/article/19/1/118/2566735</a></p>
+</div>
+<div id="types-of-variation-graphs" class="section level3 hasAnchor" number="1.1.9">
+<h3><span class="header-section-number">1.1.9</span> Types of Variation Graphs<a href="#types-of-variation-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>Reference Graph (vg)</li>
+</ol>
+<ul>
+<li>A reference with variants</li>
+<li>E.G. Human reference now includes VCF with common variation
+<ul>
+<li><a href="https://www.ncbi.nlm.nih.gov/genome/guide/human/" class="uri">https://www.ncbi.nlm.nih.gov/genome/guide/human/</a></li>
+</ul></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Reference Backbone; “iterative” (minigraph)</li>
+</ol>
+<ul>
+<li>Graph starts as reference and other sequences are layered
+on, i.e. variants can be relative to sequences other than the
+reference</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Reference-Free (cactus)</li>
+</ol>
+<ul>
+<li>Graph is built using non-reference techniques, such as multiple sequence alignment</li>
+</ul>
+<p>These are all methods used by the Human <strong>Pangenome Reference Consortium</strong>
+<a href="https://humanpangenome.org" class="uri">https://humanpangenome.org</a></p>
+</div>
+<div id="mapping-reads-to-variation-graphs" class="section level3 hasAnchor" number="1.1.10">
+<h3><span class="header-section-number">1.1.10</span> Mapping Reads to Variation Graphs<a href="#mapping-reads-to-variation-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure">
+<img src="/Users/agomez/Desktop/Bookdown/Pangenomics/Figures/ReadsToVariation.png" style="width:100.0%" alt="" />
+<p class="caption">Genotyping Variation</p>
+</div>
+</div>
+<div id="datayeast-genomes" class="section level3 hasAnchor" number="1.1.11">
+<h3><span class="header-section-number">1.1.11</span> Data/Yeast Genomes:<a href="#datayeast-genomes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure">
+<img src="/Users/agomez/Desktop/Bookdown/Pangenomics/Figures/Yeast.png" style="width:100.0%" alt="" />
+<p class="caption">Yeast Genomes</p>
+</div>
+<ol style="list-style-type: decimal">
+<li>12 strains from Yeast Population Reference Panel (YPRP)</li>
+</ol>
+<ul>
+<li><a href="https://yjx1217.github.io/Yeast_PacBio_2016/welcome/" class="uri">https://yjx1217.github.io/Yeast_PacBio_2016/welcome/</a></li>
+<li>7 Saccharomyces cerevisiae (brewer’s yeast)
+<ul>
+<li>Includes S288C reference</li>
+</ul></li>
+<li>5 Saccharomyces paradoxus (wild yeast)</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Manuscript</li>
+</ol>
+<ul>
+<li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2659681/" class="uri">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2659681/</a></li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Software (LRSDAY)</li>
+</ol>
+<ul>
+<li>Manuscript
+<ul>
+<li><a href="https://www.nature.com/articles/nprot.2018.025" class="uri">https://www.nature.com/articles/nprot.2018.025</a></li>
+</ul></li>
+<li>GitHub
+<ul>
+<li><a href="https://github.com/yjx1217/LRSDAY" class="uri">https://github.com/yjx1217/LRSDAY</a>
+<a href="https://link.springer.com/article/10.1186/s13059-020-1941-7" class="uri">https://link.springer.com/article/10.1186/s13059-020-1941-7</a></li>
+</ul></li>
+</ul>
+</div>
+<div id="yeast-assemblies" class="section level3 hasAnchor" number="1.1.12">
+<h3><span class="header-section-number">1.1.12</span> Yeast Assemblies<a href="#yeast-assemblies" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ol style="list-style-type: decimal">
+<li>12 Mb</li>
+<li>16 chromosomes</li>
+<li>12 Yeast PacBio Assemblies (Chromosome level)</li>
+</ol>
+<ul>
+<li>~100-200x PacBio sequencing reads</li>
+<li>HGAP + Quiver polishing</li>
+<li>~200-500x Illumina (Pilon correction)</li>
+<li>Manual curation</li>
+<li>Annotation</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li>Yeast Population Reference Panel (YPRP)</li>
+</ol>
+<ul>
+<li><a href="https://yjx1217.github.io/Yeast_PacBio_2016/data/" class="uri">https://yjx1217.github.io/Yeast_PacBio_2016/data/</a></li>
+</ul>
+</div>
+<div id="sk1-illumina-reads" class="section level3 hasAnchor" number="1.1.13">
+<h3><span class="header-section-number">1.1.13</span> SK1 Illumina Reads<a href="#sk1-illumina-reads" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>SK1 is the most distant from S288C</p>
+<div class="figure">
+<img src="/Users/agomez/Desktop/Bookdown/Pangenomics/Figures/YeastB.png" style="width:100.0%" alt="" />
+<p class="caption">Yeast Genomes</p>
+</div>
+</div>
+<div id="cup1-gene" class="section level3 hasAnchor" number="1.1.14">
+<h3><span class="header-section-number">1.1.14</span> CUP1 Gene<a href="#cup1-gene" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="figure">
+<img src="/Users/agomez/Desktop/Bookdown/Pangenomics/Figures/StructuralRearrangements.png" style="width:100.0%" alt="" />
+<p class="caption">Structrual Rearrangements</p>
+</div>
+<ol style="list-style-type: decimal">
+<li>CUP1</li>
+</ol>
+<ul>
+<li>A gene involved in heavy metal (copper) tolerance with copy-number variation (CNV) in population.</li>
+<li><a href="https://www.yeastgenome.org/locus/S000001095" class="uri">https://www.yeastgenome.org/locus/S000001095</a></li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>YHR054C</li>
+</ol>
+<ul>
+<li>Putative protein of unknown function.</li>
+<li><a href="https://www.yeastgenome.org/locus/S000001096" class="uri">https://www.yeastgenome.org/locus/S000001096</a></li>
+</ul>
+<p><a href="https://www.nature.com/articles/ng.3847" class="uri">https://www.nature.com/articles/ng.3847</a></p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/rstudio/bookdown-demo/edit/master/%s",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"search": false,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
