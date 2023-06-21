@@ -1,0 +1,148 @@
+# SARS-CoV-2 Genome Sequences
+
+## Getting Sequences from NCBI
+
+See pdf.
+
+## Exploring Sequence Files
+
+Let's start with the Denmark, Norway, Sweden files. Make sure you are in the NCBIdata directory.
+
+1. Grab just the sequence header lines.
+
+2. How many sequences are there for Denmark?
+
+3. Grab just the country out of the fasta headers
+
+Your headers should have these fields, delimitted by a pipe (make sure you put the pipes in quotes so it doesn't interpret it):
+
+```
+  1) Accession
+  2) Genbank Title
+  3) Collection Date
+  4) Country
+  5) GEO Location
+  6) Length
+  7) Pangolin (variant)
+  8) SRA Accession
+  9) Sequence Type
+  10) Release Date
+```
+
+4. How many sequences are there for each country?
+
+Hint: Use sort then uniq -c (the latter gets counts of all the unique values).
+
+5. How many sequences are there for each Geo Location? Some will just have the country there but others will have more granular information.
+
+6. How many sequences are there for each pangolin variant? What is the dominant one? Look up more information for the dominant lineage at this site: https://cov-lineages.org/lineage_list.html
+
+7. Haw many sequences are there for each pangolin variant in each country?
+
+8. How many sequences are not blank in the collection data field?
+
+```
+Hint: Use "^$" in grep to find lines that have nothing between the start "^" and end "$" of the line.
+```
+
+9. What is the first and last date in your sequence file?
+
+Hint: There are lots of different ways to do this, some of which involve more scrolling than others. Here is one strategy that just gets the earliest and latest dates. Do each step and check it then pipe it into the next step.
+
+```
+  1) Get the header lines
+  2) Grab the collection data column (#3)
+  3) Remove blanks
+  4) Sort numerically: sort -n
+  5) grab the first and last lines--you need the parentheses: (head -1; tail -1)
+```
+
+10. Find the first and last collection date in your sequence file for each country. Try to use a for loop. Since we haven't used these much I'll put an answer here for you.
+
+Note: for some reason, the (head -1; tail -1) trick doesn't seem to work inside a for loop. So, do the earliest date first. Then use the up arrow to get the command back and alter it for the latest date.
+
+<details>
+  <summary>Click for Answer</summary>
+  
+  ```
+    for i in 'Denmark' 'Norway' 'Sweden'; do
+      echo $i
+      grep $i sequences.fasta | cut -f 3 -d '|' | grep -v "^$" | sort -n | head -1
+  done
+  ```
+  
+</details>
+\
+
+<details>
+  <summary>Click for All Answers</summary>
+  
+Note that there are often several ways to do things in linux and not all methods are shown.
+```
+1. grep '>' sequences.fasta
+
+2. grep -c 'Denmark' sequences.fasta
+
+14 sequences for Denmark
+
+3. grep '>' sequences.fasta | cut -f 4 -d '|'
+
+4. grep '>' sequences.fasta | cut -f 4 -d '|' | sort |uniq -c
+
+     14 Denmark
+     
+      5 Norway
+      
+    616 Sweden
+
+5. grep '>' sequences.fasta | cut -f 5 -d '|' | sort |uniq -c
+
+     14 Denmark
+     
+      2 Norway
+      
+      3 Norway: Bergen
+      
+    566 Sweden
+    
+      1 Sweden:Goteborg
+      
+     44 Sweden: Orebro
+     
+      5 Sweden:Stockholm, Sweden
+
+6. grep '>' sequences.fasta | cut -f 7 -d '|' | sort |uniq -c
+
+The dominant pangolin variant is B.1 which occurs 429 times.
+
+7. grep '>' sequences.fasta | cut -f 4,7 -d '|' | sort |uniq -c
+
+8. grep '>' sequences.fasta | cut -f 3 -d '|' |grep -c "^$"
+
+9. grep '>' sequences.fasta | cut -f 3 -d '|' | grep -v "^$" | sort -n | (head -1; tail -1)
+
+10. The first is for the earliest date and the second for the latest date.
+
+for i in 'Denmark' 'Norway' 'Sweden'; do
+  echo $i
+  grep $i sequences.fasta | cut -f 3 -d '|' | grep -v "^$" | sort -n | head -1
+done
+
+for i in 'Denmark' 'Norway' 'Sweden'; do
+  echo $i
+  grep $i sequences.fasta | cut -f 3 -d '|' | grep -v "^$" | sort -n | tail -1
+done
+
+```
+</details> 
+
+## Practice with your 3 countries
+
+Run through these exercises again with your 3 countries and record the answers in your project powerpoint or elsewhere. We'll talk about what you found.
+
+## License and Copyright {-}
+
+Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
+https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+© 2023 National Center for Genome Resources
