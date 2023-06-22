@@ -40,7 +40,7 @@ Note that there are often several ways to do things in linux and not all methods
 
 3. cp /home/jm/linux_practice/pandemics.csv . [Don't forget the space and period at the end; the period says to name it the same thing.]
 
-4. cat table1.diff.txt [you could also use more, less, head, tail, or other commands]
+4. cat pandemics.csv [you could also use more, less, head, tail, or other commands]
 
 5. sort -t, -nk 3 pandemics.csv > sort.pandemics.csv
 
