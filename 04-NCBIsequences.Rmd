@@ -301,7 +301,16 @@ We will put each plot into a png file. Note that we can also put it into a pdf f
 
 ### Histogram of Collection Dates
 
+```
+png("dates_histogram.png")
+
 ggplot(dns, aes(x=Collection_Date)) + geom_histogram()
+
+dev.off()
+```
+
+![](./Figures/dates_histogram.png){width=50%}
+
 
 ### Plot Length x Variants
 
@@ -310,22 +319,29 @@ Let's plot the genome length by the variant to see if there are any patterns. So
 We'll use a scatter plot. First we identify the data frame (dns) that we want to use. Then we assign fields to the x and y axis. After that we'll add the scatter plot layer (geom_point). We'll add another layer to limit the x axis.
 
 ```
-pdf("lengthxvariants.pdf")
+png("lengthxvariants.png")
 
 ggplot(dns, aes(x=Length,y=Pangolin_Variant)) + geom_point() + xlim(29500,30000)
 
 dev.off()
 ```
 
+![](./Figures/lengthxvariants.png){width=50%}
+
+
+
 Now, let's color the points by Country.
 
 ```
-pdf("lengthxvariants.color.pdf")
+png("lengthxvariants.color.png")
 
 ggplot(dns, aes(x=Length,y=Pangolin_Variant,color=Country)) + geom_point() + xlim(29500,30000)
 
 dev.off()
 ```
+
+![](./Figures/lengthxvariants.color.png){width=50%}
+
 
 ### Plot Collection Date x Variants
 
@@ -363,7 +379,7 @@ The sep default is blank ("") and means white space. In other words, read.table 
 
 16.
 
-pdf("datexvariants.color.pdf")
+png("datexvariants.color.png")
 
 ggplot(dns, aes(x=Collection_Date,y=Pangolin_Variant,color=Country)) + geom_point()
 
