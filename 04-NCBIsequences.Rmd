@@ -1,3 +1,7 @@
+<!-- For next year, we should have the students change the name of the sequence file to something that tells which countries it contains. It would be a good reminder about the mv command and help to keep the practice file distinct from their 3 country file. -->
+
+<!-- Add in pictures of the plots. -->
+
 # SARS-CoV-2 Genome Sequences
 
 ## Getting Sequences from NCBI
@@ -26,7 +30,6 @@ Your headers should have these fields, delimitted by a pipe (make sure you put t
   7) Pangolin (variant)
   8) SRA Accession
   9) Sequence Type
-  10) Release Date
 ```
 
 4. How many sequences are there for each country?
@@ -140,9 +143,231 @@ done
 
 Run through these exercises again with your 3 countries and record the answers in your project powerpoint or elsewhere. We'll talk about what you found.
 
-## License and Copyright {-}
+## Plotting
 
-Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
-https://creativecommons.org/licenses/by-nc-nd/4.0/
+We'll plot some of the information about our sequences using R on the command line and the ggplot2 library. Get into a screen if you aren't already in one (screen -dr will reconnect you to a previous screen). Navigate to your NCBIdata directory.
 
-© 2023 National Center for Genome Resources
+## R
+
+The R Project for Statistical Computing
+
+https://www.r-project.org/
+
+R studio (Integrated Development Environment)
+
+https://posit.co/download/rstudio-desktop/
+
+## ggplot2
+
+Handy gglot2 references:
+
+ggplot2 gallery
+
+http://www.r-graph-gallery.com/portfolio/ggplot2-package/
+
+ggplot2 cheatsheets
+
+http://ggplot2.tidyverse.org/reference/
+
+ggplot2 documentation
+
+https://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf
+
+\
+
+11. Make a tab-delimitted text file with the information from your sequence headers.
+
+```
+1) Grab the sequence headers
+2) Remove the greater than sign at the beginning of the header line
+3) Replace the pipes with tabs (Hint: In sed use \t to represent a tab)
+4) Make the date numeric by replacing the dashes. The sed command below will allow you to replace dashes only in the date.
+```
+If you are interested in understanding the sed command: It looks for one or more (+) numbers ([0-9]) then a dash, more numbers, a dash and more numbers. The parentheses capture the sets of numbers so that it can return them as \1 for the first set, \2 for the second set, and \3 for the third set.
+```
+sed -E 's/([0-9]+)-([0-9]+)-([0-9]+)/\1\2\3/'
+5) Put it into a file called Denmark_Norway_Sweden_seq_info.txt
+```
+
+The R environment on logrus needs to be activated (note that on some systems it is installed differently and you don't need to activate).
+
+```
+source activate visualization
+```
+
+Open up R.
+
+```
+R
+```
+
+Now we are in R. The R command line is similar to linux but the commands are a little bit different as you will notice as we walk through it. Note that you can use the up arrow to get back previous commands as in linux. ctrl-c works the same as well.
+
+Load the ggplot2 library.
+
+```
+library(ggplot2)
+```
+
+See what your working directory is (it should be the directory you were in when you entered R). Note that you can change your working directory with the setwd() command, putting the path to the new directory in the parentheses.
+
+```
+getwd()
+```
+
+Let's read in the tab-delimitted file we created. We'll use the read.table command. To find out more, let's look at the help for that command using a question mark before the command (equivalent to the man command in linux).
+
+```
+?read.table
+```
+
+It prints out a lot of documentation including commands that are similar. The first part is below. The help documentation describes the command and gives you all the arguments you can use along with their defaults. Arguments go in the parentheses. Some are required but others are optional.
+
+12. The two arguments that I use the most are "header" and "sep". Look at the usage section of the help below or in your terminal. What are the defaults for these two arguments?
+
+13. Scroll down in the help (the up and down arrows go up or down line by line; the space bar jumps you down a page at a time) to the arguments section. Read about header and sep. What do these arguments do? What do the defaults mean?
+
+Note: To get out of help, hit "q".
+
+Read in our data file and put it into a variable. We'll name our variable dns for Denmark, Norway, Sweden.
+
+```
+dns = read.table("Denmark_Norway_Sweden_seq_info.txt", header=FALSE, sep="\t")
+```
+
+Let's take a look at the variable with our data The head command in R has 6 rows by default and it wraps lines as a group if they are too long for the screen.
+
+```
+head(dns)
+```
+
+14. Take a look at the help for the head command and see if you can figure out how to show 10 lines.
+
+15. How do you think you could look at the end of the dns variable?
+
+When you look at the dns variable, it shows column and row names. Since we didn't have a header line in our tab-delimitted file, it just defaults to V1, V2 (V stands for vector). Since we didn't have row names, it defaults to numbers. Let's fix the column names. The "c" concatenates a list of things together to be fed in as a group.
+
+```
+colnames(dns) = c("Accession", "Genbank_Title", "Collection_Date", "Country", "GEO_Location", "Length", "Pangolin_Variant", "SRA_Accession", "Sequence_Type")
+```
+
+Then check it with the head command.
+
+```
+    Accession
+1 OR079912.1
+2 OQ843561.1
+3 OQ816151.1
+4 OQ816152.1
+5 OQ816154.1
+6 OQ816156.1
+                                                                                                           Genbank Title
+1                  Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/NOR/P9/2020, complete genome
+2             Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/DNK/DK-AHH8/2022, complete genome
+3 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/SWE/01_SE100_21CS503718/2020, complete genome
+4 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/SWE/01_SE100_21CS504474/2020, complete genome
+5 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/SWE/01_SE100_21CS503085/2020, complete genome
+6 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/SWE/01_SE100_21CS502014/2020, complete genome
+  Collection Date Country GEO Location Length Pangolin Variant SRA Accession
+1      2020-10-14  Norway       Norway  29825          B.1.258
+2      2022-12-01 Denmark      Denmark  29752        BQ.1.1.20
+3      2020-03-03  Sweden       Sweden  29736              B.1
+4      2020-03-10  Sweden       Sweden  29736              B.1
+5      2020-03-11  Sweden       Sweden  29736              B.1
+6      2020-03-13  Sweden       Sweden  29736              B.1
+  Sequence Type
+1       GenBank
+2       GenBank
+3       GenBank
+4       GenBank
+5       GenBank
+6       GenBank
+```
+\
+
+
+The Collection Date wasn't recognized as numeric so let's fix that. The $ after the dns refers to a column. We will just overwrite it in the same column.
+
+```
+dns$"Collection_Date" = as.numeric(dns$"Collection_Date")
+```
+
+Time to plot!
+
+The gglot2 library allows you to have a large amount of control over nearly all aspects of the plot. It also allows you to plot in layers, getting a base plot and then adding colors, lines, text, etc on top of it. It is part of the tidyverse universe and uses a Layered Grammar of Graphics (https://towardsdatascience.com/a-comprehensive-guide-to-the-grammar-of-graphics-for-effective-visualization-of-multi-dimensional-1f92b4ed4149 and https://www.jstor.org/stable/pdf/25651297.pdf?casa_token=KAMBWbsPZdwAAAAA:VHQTVEC762l7U6s6GWzRlYJNz5JaqfduQy1S04_LF6f3PUZjAh71Bva7WEIpROPBUx2BF9GL5bM0HOtDH_Zft81ycAcJ0971YeHDfrfHKBrgyw6G6fAG) to concisely describe graphical components that are shared across different graphs. In other words, it gives you tools to add and manipulate specific pieces of graphical output.
+
+
+We will put each plot into a png file. Note that we can also put it into a pdf file by changing the code below to pdf. The pdf has the advantage of being able to put in multiple plots on separate pages. After plotting we need to use dev.off() so that R closes the file it is printing to.
+
+### Histogram of Collection Dates
+
+ggplot(dns, aes(x=Collection_Date)) + geom_histogram()
+
+### Plot Length x Variants
+
+Let's plot the genome length by the variant to see if there are any patterns. Some variants have insertions or deletions compared to others, for instance. On the other hand, not all genome assemblies make it to the ends of the viral RNA genome so this will add some noise. 
+
+We'll use a scatter plot. First we identify the data frame (dns) that we want to use. Then we assign fields to the x and y axis. After that we'll add the scatter plot layer (geom_point). We'll add another layer to limit the x axis.
+
+```
+pdf("lengthxvariants.pdf")
+
+ggplot(dns, aes(x=Length,y=Pangolin_Variant)) + geom_point() + xlim(29500,30000)
+
+dev.off()
+```
+
+Now, let's color the points by Country.
+
+```
+pdf("lengthxvariants.color.pdf")
+
+ggplot(dns, aes(x=Length,y=Pangolin_Variant,color=Country)) + geom_point() + xlim(29500,30000)
+
+dev.off()
+```
+
+### Plot Collection Date x Variants
+
+16. Now try to plot the collection date (x axis) by the variants (y axis), coloring by the country.
+
+### Plot Collection Date x Variants for your 3 countries
+
+Now make a plot of Collection Date x Variants for your 3 countries and add it to your powerpoint.
+
+Go to https://covariants.org/ to scroll down to the table and the phylogenetic tree to put some context around the variants.
+
+At that same site, explore the "per country" and "cases" buttons for your 3 countries. Note that the graphs are interactive so you can hover over specific dates where you might have a lot of NCBI genome sequences. Grab screenshots to put into your powerpoint (be sure to record the date you grabbed the screenshot on the slide). How representative are the NCBI genome sequences?
+
+Note: we'll be getting sequences from another source as well so don't worry if they aren't too representative.
+
+<details>
+  <summary>Click for All Answers</summary>
+  
+```
+11. grep '>' sequences.fasta | sed 's/>//'|sed 's/|/\t/g'|sed -E 's/([0-9]+)-([0-9]+)-([0-9]+)/\1\2\3/' > Denmark_Norway_Sweden_seq_info.txt
+
+12. header = FALSE and sep = ""
+
+13. The header arguement determines whether you have a header line in your file with the names of variables.
+
+While the header default is false, if you don't explicitly put in header=FALSE, it might decide that there is a header line if the first row has one fewer field than the rest. I like to explicitly tell read.table whether there is a header row or not.
+
+The sep variable determines the field separator character.
+
+The sep default is blank ("") and means white space. In other words, read.table will split the file up on one or more spaces, tabs, etc. With tab-delimitted files, you don't normally have to specify the tab variable but since we also have spaces in some of our fields, if we keep sep as whitespace, it will separate on all the spaces as well. So we will need to specify it.
+
+14. head(dns, n=10) or head(dns, n=10L)
+
+15. tail(dns)
+
+16.
+
+pdf("datexvariants.color.pdf")
+
+ggplot(dns, aes(x=Collection_Date,y=Pangolin_Variant,color=Country)) + geom_point()
+
+dev.off()
+
+```
+</details>

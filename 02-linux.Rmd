@@ -2,9 +2,3 @@
 
 Add in linux
 
-## License and Copyright {-}
-
-Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
-https://creativecommons.org/licenses/by-nc-nd/4.0/
-
-© 2023 National Center for Genome Resources

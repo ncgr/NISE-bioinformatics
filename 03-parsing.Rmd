@@ -197,12 +197,3 @@ Hint: awk will also print out the row number for you (which corresponds to the c
 
 		head -1 owid-covid-data.csv | sed 's/,/\n/g' |awk '{print NR "\t" $1}'
 
-
-## License and Copyright {-}
-
-Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
-https://creativecommons.org/licenses/by-nc-nd/4.0/
-
-© 2023 National Center for Genome Resources
-
-
