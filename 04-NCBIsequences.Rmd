@@ -2,7 +2,7 @@
 
 <!-- Add in pictures of the plots. -->
 
-# SARS-CoV-2 Genome Sequences
+# NCBI SARS-CoV-2 Genome Sequences
 
 ## Getting Sequences from NCBI
 
