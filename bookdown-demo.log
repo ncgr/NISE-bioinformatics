@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.13)  22 JUN 2023 13:33
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2023.3.13)  10 OCT 2023 10:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1317,8 +1317,8 @@ Overfull \hbox (369.0pt too wide) in paragraph at lines 1548--1548
  []
 
 
-Overfull \hbox (101.25pt too wide) in paragraph at lines 1548--1548
-[]\TU/lmtt/m/n/10 4. cat table1.diff.txt [you could also use more, less, head, tail, or other commands][] 
+Overfull \hbox (90.75pt too wide) in paragraph at lines 1548--1548
+[]\TU/lmtt/m/n/10 4. cat pandemics.csv [you could also use more, less, head, tail, or other commands][] 
  []
 
 
@@ -1456,151 +1456,157 @@ Underfull \hbox (badness 10000) in paragraph at lines 1949--1950
  []
 
 
-Overfull \hbox (6.75pt too wide) in paragraph at lines 1964--1964
+Overfull \hbox (6.75pt too wide) in paragraph at lines 1969--1969
 []\TU/lmtt/m/n/10 2) Remove the greater than sign at the beginning of the header line[] 
  []
 
 
-Overfull \hbox (27.75pt too wide) in paragraph at lines 1964--1964
+Overfull \hbox (27.75pt too wide) in paragraph at lines 1969--1969
 []\TU/lmtt/m/n/10 3) Replace the pipes with tabs (Hint: In sed use \t to represent a tab)[] 
  []
 
 
-Overfull \hbox (295.5pt too wide) in paragraph at lines 1964--1964
+Overfull \hbox (295.5pt too wide) in paragraph at lines 1969--1969
 []\TU/lmtt/m/n/10 4) Make the date numeric by replacing the dashes. The sed command below will allow you to replace dashes only in the date.[] 
  []
 
+
+Overfull \hbox (1214.25pt too wide) in paragraph at lines 1969--1969
+[]\TU/lmtt/m/n/10 If you are interested in understanding the sed command: It looks for one or more (+) numbers ([0-9]) then a dash, more numbers, a dash and more numbers. The parentheses capture the sets of numbers so that it can return them as \1 for the first set, \2 for the second set, and \3 for the third set.[] 
+ []
+
 [39]
-Overfull \hbox (64.5pt too wide) in paragraph at lines 2022--2022
+Overfull \hbox (64.5pt too wide) in paragraph at lines 2020--2020
 []\TU/lmtt/m/n/10 dns = read.table("Denmark_Norway_Sweden_seq_info.txt", header=FALSE, sep="\t")[] 
  []
 
 
-Overfull \hbox (479.25pt too wide) in paragraph at lines 2043--2043
+Overfull \hbox (479.25pt too wide) in paragraph at lines 2041--2041
 []\TU/lmtt/m/n/10 colnames(dns) = c("Accession", "Genbank_Title", "Collection_Date", "Country", "GEO_Location", "Length", "Pangolin_Variant", "SRA_Accession", "Sequence_Type")[] 
  []
 
 [40]
-Overfull \hbox (285.0pt too wide) in paragraph at lines 2076--2076
+Overfull \hbox (285.0pt too wide) in paragraph at lines 2074--2074
 []                                                                                                           \TU/lmtt/m/n/10 Genbank Title[] 
  []
 
 
-Overfull \hbox (285.0pt too wide) in paragraph at lines 2076--2076
+Overfull \hbox (285.0pt too wide) in paragraph at lines 2074--2074
 []\TU/lmtt/m/n/10 1                  Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/NOR/P9/2020, complete genome[] 
  []
 
 
-Overfull \hbox (285.0pt too wide) in paragraph at lines 2076--2076
+Overfull \hbox (285.0pt too wide) in paragraph at lines 2074--2074
 []\TU/lmtt/m/n/10 2             Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/DNK/DK-AHH8/2022, complete genome[] 
  []
 
 
-Overfull \hbox (285.0pt too wide) in paragraph at lines 2076--2076
+Overfull \hbox (285.0pt too wide) in paragraph at lines 2074--2074
 []\TU/lmtt/m/n/10 3 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/SWE/01_SE100_21CS503718/2020, complete genome[] 
  []
 
 
-Overfull \hbox (285.0pt too wide) in paragraph at lines 2076--2076
+Overfull \hbox (285.0pt too wide) in paragraph at lines 2074--2074
 []\TU/lmtt/m/n/10 4 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/SWE/01_SE100_21CS504474/2020, complete genome[] 
  []
 
 
-Overfull \hbox (285.0pt too wide) in paragraph at lines 2076--2076
+Overfull \hbox (285.0pt too wide) in paragraph at lines 2074--2074
 []\TU/lmtt/m/n/10 5 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/SWE/01_SE100_21CS503085/2020, complete genome[] 
  []
 
 
-Overfull \hbox (285.0pt too wide) in paragraph at lines 2076--2076
+Overfull \hbox (285.0pt too wide) in paragraph at lines 2074--2074
 []\TU/lmtt/m/n/10 6 Severe acute respiratory syndrome coronavirus 2 isolate SARS-CoV-2/human/SWE/01_SE100_21CS502014/2020, complete genome[] 
  []
 
 
-Overfull \hbox (54.0pt too wide) in paragraph at lines 2076--2076
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2074--2074
 []  \TU/lmtt/m/n/10 Collection Date Country GEO Location Length Pangolin Variant SRA Accession[] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2078--2079
+Underfull \hbox (badness 10000) in paragraph at lines 2076--2077
 
  []
 
-[41]
-Underfull \hbox (badness 1189) in paragraph at lines 2088--2089
+
+Underfull \hbox (badness 1189) in paragraph at lines 2086--2087
 []\TU/lmr/m/n/10 The gglot2 library allows you to have a large amount of control over
  []
 
 
-Underfull \hbox (badness 1478) in paragraph at lines 2088--2089
+Underfull \hbox (badness 1478) in paragraph at lines 2086--2087
 \TU/lmr/m/n/10 nearly all aspects of the plot. It also allows you to plot in layers,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2088--2089
+Underfull \hbox (badness 10000) in paragraph at lines 2086--2087
 \TU/lmr/m/n/10 of Graphics ([]$[][][][][] [] [] [] [][][][][][][][][][][][][][][][][][] [] [][][] [] [] [][] [][][][][][][][][][][][][] [][] [][][][][] [][] [][] [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2088--2089
+Underfull \hbox (badness 10000) in paragraph at lines 2086--2087
 [][][] [][] [][][][][][][] [][] [][] [][] [][][][][][][][] [][] [][][] [][] [][][][][][][][][] [][] [][][][][][][][][][][][][] [][] [][] [][] [][][][][] [][] [][][][][][][][][][][] [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2088--2089
+Underfull \hbox (badness 10000) in paragraph at lines 2086--2087
 [][][][][][][][][][][][]$[] \TU/lmr/m/n/10 and []$[][][][][] [] [] [] [][][] [] [][][][][] [] [][][] [] [][][][][][] [] [][][] [] [][][][][][][][] [] [][][] [] [][][][] []
  []
 
 
-Overfull \hbox (32.99998pt too wide) in paragraph at lines 2088--2089
+Overfull \hbox (32.99998pt too wide) in paragraph at lines 2086--2087
 [][][][][] [] [][][][][][][][][][][][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] []
  []
 
 
-Overfull \hbox (112.96999pt too wide) in paragraph at lines 2088--2089
+Overfull \hbox (112.96999pt too wide) in paragraph at lines 2086--2087
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] [] [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]$[]\TU/lmr/m/n/10 )
  []
 
+[41]
 File: ./Figures/dates_histogram.png Graphic file (type bmp)
 <./Figures/dates_histogram.png>
 [42]
-Overfull \hbox (75.0pt too wide) in paragraph at lines 2118--2118
+Overfull \hbox (75.0pt too wide) in paragraph at lines 2116--2116
 []\TU/lmtt/m/n/10 ggplot(dns, aes(x=Length,y=Pangolin_Variant)) + geom_point() + xlim(29500,30000)[] 
  []
 
 File: ./Figures/lengthxvariants.png Graphic file (type bmp)
 <./Figures/lengthxvariants.png>
 
-Overfull \hbox (148.5pt too wide) in paragraph at lines 2130--2130
+Overfull \hbox (148.5pt too wide) in paragraph at lines 2128--2128
 []\TU/lmtt/m/n/10 ggplot(dns, aes(x=Length,y=Pangolin_Variant,color=Country)) + geom_point() + xlim(29500,30000)[] 
  []
 
 File: ./Figures/lengthxvariants.color.png Graphic file (type bmp)
 <./Figures/lengthxvariants.color.png>
 
-Underfull \vbox (badness 4391) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [43]
-Overfull \hbox (390.0pt too wide) in paragraph at lines 2182--2182
+Overfull \hbox (390.0pt too wide) in paragraph at lines 2180--2180
 []\TU/lmtt/m/n/10 11. grep '>' sequences.fasta | sed 's/>//'|sed 's/|/\t/g'|sed -E 's/([0-9]+)-([0-9]+)-([0-9]+)/\1\2\3/' > Denmark_Norway_Sweden_seq_info.txt[] 
  []
 
 
-Overfull \hbox (222.0pt too wide) in paragraph at lines 2182--2182
+Overfull \hbox (222.0pt too wide) in paragraph at lines 2180--2180
 []\TU/lmtt/m/n/10 13. The header arguement determines whether you have a header line in your file with the names of variables.[] 
  []
 
 
-Overfull \hbox (967.5pt too wide) in paragraph at lines 2182--2182
+Overfull \hbox (967.5pt too wide) in paragraph at lines 2180--2180
 []\TU/lmtt/m/n/10 While the header default is false, if you don't explicitly put in header=FALSE, it might decide that there is a header line if the first row has one fewer field than the rest. I like to explicitly tell read.table whether there is a header row or not.[] 
  []
 
 [44]
-Overfull \hbox (1613.25pt too wide) in paragraph at lines 2182--2182
+Overfull \hbox (1613.25pt too wide) in paragraph at lines 2180--2180
 []\TU/lmtt/m/n/10 The sep default is blank ("") and means white space. In other words, read.table will split the file up on one or more spaces, tabs, etc. With tab-delimitted files, you don't normally have to specify the tab variable but since we also have spaces in some of our fields, if we keep sep as whitespace, it will separate on all the spaces as well. So we will need to specify it.[] 
  []
 
 
-Overfull \hbox (90.75pt too wide) in paragraph at lines 2182--2182
+Overfull \hbox (90.75pt too wide) in paragraph at lines 2180--2180
 []\TU/lmtt/m/n/10 ggplot(dns, aes(x=Collection_Date,y=Pangolin_Variant,color=Country)) + geom_point()[] 
  []
 
@@ -1608,21 +1614,652 @@ Overfull \hbox (90.75pt too wide) in paragraph at lines 2182--2182
 
 ]
 Chapter 4.
+File: ./Figures/gisaid.png Graphic file (type bmp)
+<./Figures/gisaid.png>
+File: ./Figures/Phylodynamics.png Graphic file (type bmp)
+<./Figures/Phylodynamics.png>
+[47]
+File: ./Figures/DenmarkTransmission.png Graphic file (type bmp)
+<./Figures/DenmarkTransmission.png>
 
-LaTeX Warning: File `./Figures/INBRE_Logo_Grad_transparent-2019.png' not found on input line 2189.
+Overfull \hbox (206.25pt too wide) in paragraph at lines 2221--2221
+[]  \TU/lmtt/m/n/10 Many of the earliest transmissions came from a region at the borders of Austria, Hungary, and Slovakia.[] 
+ []
+
+
+Overfull \hbox (395.25pt too wide) in paragraph at lines 2221--2221
+[]  \TU/lmtt/m/n/10 Later on, there is a lot of transmission within the country and some also a lot of transmission routes between Denmark and the Netherlands.[] 
+ []
+
+
+Overfull \hbox (180.0pt too wide) in paragraph at lines 2221--2221
+[]  \TU/lmtt/m/n/10 Note that the transmission data might be affected by which countries have the most data available.[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2223--2224
+
+ []
+
+File: ./Figures/DenmarkRectangularTime.png Graphic file (type bmp)
+<./Figures/DenmarkRectangularTime.png>
+File: ./Figures/DenmarkRectangularDivergence.png Graphic file (type bmp)
+<./Figures/DenmarkRectangularDivergence.png>
+[48] [49]
+Underfull \hbox (badness 10000) in paragraph at lines 2245--2246
+
+ []
+
+File: ./Figures/DenmarkLinear.png Graphic file (type bmp)
+<./Figures/DenmarkLinear.png>
+
+Overfull \hbox (306.0pt too wide) in paragraph at lines 2259--2259
+[]  \TU/lmtt/m/n/10 Omicron seems to diverge more rapidly as it is mainly above the average line while the other variants are mostly below it.[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2261--2262
+
+ []
+
+File: ./Figures/DenmarkRadialTime.png Graphic file (type bmp)
+<./Figures/DenmarkRadialTime.png>
+File: ./Figures/DenmarkRadialTimePango.png Graphic file (type bmp)
+<./Figures/DenmarkRadialTimePango.png>
+
+Underfull \vbox (badness 5756) has occurred while \output is active []
+
+[50]
+Underfull \hbox (badness 10000) in paragraph at lines 2286--2290
+
+ []
+
+File: ./Figures/search.png Graphic file (type bmp)
+<./Figures/search.png>
+[51]
+File: ./Figures/DenmarkSearch.png Graphic file (type bmp)
+<./Figures/DenmarkSearch.png>
+File: ./Figures/gisaidSearch.png Graphic file (type bmp)
+<./Figures/gisaidSearch.png>
+
+Underfull \vbox (badness 1924) has occurred while \output is active []
+
+[52]
+File: ./Figures/episet.png Graphic file (type bmp)
+<./Figures/episet.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[53]
+File: ./Figures/SuppTable.png Graphic file (type bmp)
+<./Figures/SuppTable.png>
+File: ./Figures/AckDen.png Graphic file (type bmp)
+<./Figures/AckDen.png>
+File: ./Figures/AckWuhan.png Graphic file (type bmp)
+<./Figures/AckWuhan.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[54]
+File: ./Figures/download.png Graphic file (type bmp)
+<./Figures/download.png>
+[55]
+Overfull \hbox (232.5pt too wide) in paragraph at lines 2378--2378
+[]  \TU/lmtt/m/n/10 Adjust the commands below to reflect the filenames for your 3 countries and replace "jm" with your username.[] 
+ []
+
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 2378--2378
+[]\TU/lmtt/m/n/10 1. scp -P 44111 *arcturus*fasta "jm@gateway.training.ncgr.org:/home/jm/"[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2380--2381
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2397--2398
+
+ []
+
+[56]
+Chapter 5.
+
+Underfull \hbox (badness 10000) in paragraph at lines 2424--2425
+
+ []
+
+[57
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 2441--2442
+
+ []
+
+File: ./Figures/open.png Graphic file (type bmp)
+<./Figures/open.png>
+
+Underfull \hbox (badness 4518) in paragraph at lines 2456--2458
+[][] \TU/lmr/m/n/10 It is expecting an
+ []
+
+File: ./Figures/color.png Graphic file (type bmp)
+<./Figures/color.png>
+
+Underfull \vbox (badness 2573) has occurred while \output is active []
+
+[58]
+File: ./Figures/unaligned.png Graphic file (type bmp)
+<./Figures/unaligned.png>
+File: ./Figures/mafft_jalview.png Graphic file (type bmp)
+<./Figures/mafft_jalview.png>
+File: ./Figures/aligned.png Graphic file (type bmp)
+<./Figures/aligned.png>
+[59]
+File: ./Figures/consensus.png Graphic file (type bmp)
+<./Figures/consensus.png>
+File: ./Figures/chrend.png Graphic file (type bmp)
+<./Figures/chrend.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 2493--2494
+
+ []
+
+File: ./Figures/overview.png Graphic file (type bmp)
+<./Figures/overview.png>
+File: ./Figures/overview_window.png Graphic file (type bmp)
+<./Figures/overview_window.png>
+[60]
+Underfull \hbox (badness 10000) in paragraph at lines 2546--2547
+
+ []
+
+
+Underfull \hbox (badness 8151) in paragraph at lines 2550--2577
+\TU/lmr/m/n/10 10054”, “NSP5”,“10055-10972”, “NSP6”,“10973-11842”, “NSP7”,“11843-
+ []
+
+
+Underfull \hbox (badness 4416) in paragraph at lines 2550--2577
+\TU/lmr/m/n/10 12091”, “NSP8”,“12092-12685”, “NSP9”,“12686-13024”, “NSP10”,“13025-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2550--2577
+\TU/lmr/m/n/10 13441”, “NSP11”,“13442-13480”, “NSP12”,“13442-13468|13468-16236”,
+ []
+
+
+Underfull \hbox (badness 5077) in paragraph at lines 2550--2577
+\TU/lmr/m/n/10 “NSP13”,“16237-18039”, “NSP14”,“18040-19620”, “NSP15”,“19621-20658”,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2550--2577
+\TU/lmr/m/n/10 “NSP16”,“20659-21552”, “Spike”,“21563-25384”, “NS3”,“25393-26220”,
+ []
+
+
+Underfull \hbox (badness 3291) in paragraph at lines 2550--2577
+\TU/lmr/m/n/10 27759”, “NS7b”,“27756-27887”, “NS8”,“27894-28259”, “N”,“28274-29533”,
+ []
+
+[61]
+Underfull \hbox (badness 10000) in paragraph at lines 2592--2593
+
+ []
+
+[62]
+Underfull \hbox (badness 10000) in paragraph at lines 2623--2624
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2633--2634
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2643--2644
+
+ []
+
+
+Overfull \hbox (206.25pt too wide) in paragraph at lines 2662--2662
+[]  \TU/lmtt/m/n/10 zgrep -A 1 -E "Denmark|Norway|Sweden" spikeprot0702.fasta.gz | grep -v '\-\-' > dns.spikeprot0702.fasta[] 
+ []
+
+
+Overfull \hbox (264.0pt too wide) in paragraph at lines 2662--2662
+[]    \TU/lmtt/m/n/10 zgrep -A 1 -E "Denmark|Norway|Sweden" spikeprot0702.fasta.gz | grep -v '\-\-' |gzip > dns.spikeprot0702.fasta.gz[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2664--2665
+
+ []
+
+[63]
+Overfull \hbox (1.5pt too wide) in paragraph at lines 2674--2674
+[]  \TU/lmtt/m/n/10 zgrep '>' spikeprot0702.fasta.gz | cut -f 4 -d '|' > dns.epi.txt[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2676--2677
+
+ []
+
+
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2686--2686
+[]  \TU/lmtt/m/n/10 mafft --thread 10 dns.spikeprot0702.fasta  > mafft.dns.spikeprot0702.fasta[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2688--2689
+
+ []
+
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 2706--2706
+[]  \TU/lmtt/m/n/10 mafft --thread 10 dns.arcturus.fasta  > mafft.dns.arcturus.fasta[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2708--2709
+
+ []
+
+[64]
+File: ./Figures/recomb.jpeg Graphic file (type bmp)
+<./Figures/recomb.jpeg>
+
+Underfull \hbox (badness 10000) in paragraph at lines 2735--2736
+
+ []
+
+[65] [66]
+Chapter 6.
+File: ./Figures/SimplePhylogeny.png Graphic file (type bmp)
+<./Figures/SimplePhylogeny.png>
+File: ./Figures/real.png Graphic file (type bmp)
+<./Figures/real.png>
+
+Underfull \vbox (badness 2717) has occurred while \output is active []
+
+[67
+
+]
+Overfull \hbox (85.5pt too wide) in paragraph at lines 2765--2765
+[]\TU/lmtt/m/n/10 The branch lengths are really small indicating that everything is closely related.[] 
+ []
+
+
+Overfull \hbox (75.0pt too wide) in paragraph at lines 2765--2765
+[]\TU/lmtt/m/n/10 Alpha and Omicron are the most closely related, at least according to this tree.[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2767--2768
+
+ []
+
+
+Overfull \hbox (426.75pt too wide) in paragraph at lines 2783--2783
+[]\TU/lmtt/m/n/10 raxml-ng --force model_lh_impr --outgroup Wuhan-Hu-1_China --all --msa mafft.sars-cov-2-variants.fasta --model GTR+G --tree pars{10} --bs-trees 100[] 
+ []
+
+
+Overfull \hbox (196.91998pt too wide) in paragraph at lines 2799--2800
+[]\TU/lmr/m/n/10 ((Delta_AY.4_UK:0.001021,(Omicron_B.1.1.529_USA:0.000703,Alpha_B.1.1.7_UK:0.000784):0.000100):0.000021,Wuhan-
+ []
+
+[68]
+Overfull \hbox (6.75pt too wide) in paragraph at lines 2814--2814
+[]\TU/lmtt/m/n/10 zgrep -A1 'EPI_ISL_759860|' spikeprot0702.fasta.gz > wuhanhu1.fasta[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2816--2817
+
+ []
+
+
+Overfull \hbox (27.75pt too wide) in paragraph at lines 2824--2824
+[]  \TU/lmtt/m/n/10 cat wuhanhu1.fasta dns.spikeprot0702.fasta > dnsw.spikeprot0702.fasta[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2826--2827
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2838--2839
+
+ []
+
+[69]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 2846--2846
+[]\TU/lmtt/m/n/10 sed -i.bak -e 's/^>.*\(Wuhan-Hu-1\).*/>\1/' dnsw.spikeprot0702.fasta[] 
+ []
+
+
+Underfull \hbox (badness 1038) in paragraph at lines 2848--2849
+\TU/lmr/m/n/10 will take a will so if you need to, link to my file at /home/jm/sars-
+ []
+
+
+Overfull \hbox (54.0pt too wide) in paragraph at lines 2868--2868
+[]\TU/lmtt/m/n/10 mafft --thread 100 dnsw.spikeprot0702.fasta > mafft.dnsw.spikeprot0702.fasta[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2870--2871
+
+ []
+
+
+Overfull \hbox (458.25pt too wide) in paragraph at lines 2878--2878
+[]\TU/lmtt/m/n/10 raxml-ng  --threads 8 --force model_lh_impr --outgroup Wuhan-Hu-1 --all --msa mafft.dnsw.spikeprot0702.fasta --model GTR+G --tree pars{10} --bs-trees 100[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2880--2881
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 2895--2896
+
+ []
+
+[70]
+Underfull \hbox (badness 10000) in paragraph at lines 2908--2909
+
+ []
+
+[71]
+File: ./Figures/basic.tree.png Graphic file (type bmp)
+<./Figures/basic.tree.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 2960--2961
+
+ []
+
+[72]
+Overfull \hbox (22.5pt too wide) in paragraph at lines 2972--2972
+[]\TU/lmtt/m/n/10 mytree = ggtree(tr) + geom_tiplab() + geom_treescale() + theme_tree2()[] 
+ []
+
+File: ./Figures/labeled.tree.png Graphic file (type bmp)
+<./Figures/labeled.tree.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 2988--2989
+
+ []
+
+
+Overfull \hbox (48.75pt too wide) in paragraph at lines 2998--2998
+[]\TU/lmtt/m/n/10 mytree2 = mytree + ggplot2::xlim(0, 0.002) + ggtitle("SARS-CoV-2 Variants")[] 
+ []
+
+[73]
+File: ./Figures/scaled.tree.png Graphic file (type bmp)
+<./Figures/scaled.tree.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 3014--3015
+
+ []
+
+
+Overfull \hbox (636.75pt too wide) in paragraph at lines 3024--3024
+[]\TU/lmtt/m/n/10 mytree3 = ggtree(tr) + geom_treescale() + theme_tree2() + ggplot2::xlim(0, 0.002) + ggtitle("SARS-CoV-2 Variants") + geom_tiplab(size=7, hjust = -0.1) + geom_tippoint(color="blue",size=8)[] 
+ []
+
+File: ./Figures/tip.tree.png Graphic file (type bmp)
+<./Figures/tip.tree.png>
+[74]
+Overfull \hbox (657.75pt too wide) in paragraph at lines 3034--3034
+[]\TU/lmtt/m/n/10 ggtree(tr) + geom_treescale() + theme_tree2() + ggplot2::xlim(0, 0.002) + ggtitle("SARS-CoV-2 Variants") + geom_tiplab(size=7, hjust = -0.1, color="blue") + geom_tippoint(color="blue",size=8)[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3036--3037
+
+ []
+
+
+Overfull \hbox (342.75pt too wide) in paragraph at lines 3046--3046
+[]\TU/lmtt/m/n/10 grep '>' sars-cov-2-variants.fasta | sed 's/>//' | awk '{print $1 "\t" $1}' | sed 's/\t.*_/\t/' > sars-cov-2-variants.countries.txt[] 
+ []
+
+[75]
+Underfull \hbox (badness 10000) in paragraph at lines 3070--3071
+
+ []
+
+
+Overfull \hbox (38.25pt too wide) in paragraph at lines 3082--3082
+[]\TU/lmtt/m/n/10 countrydf = read.table("sars-cov-2-variants.countries.txt", header=FALSE)[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3092--3093
+
+ []
+
+
+Overfull \hbox (253.5pt too wide) in paragraph at lines 3103--3103
+[]\TU/lmtt/m/n/10 mytree4 = mytree3 %<+% countrydf + geom_tippoint(aes(color=Country), size=8) + theme(legend.position=c(0.85,0.15))[] 
+ []
+
+File: ./Figures/country.tree.png Graphic file (type bmp)
+<./Figures/country.tree.png>
+[76]
+Overfull \hbox (33.0pt too wide) in paragraph at lines 3111--3111
+[]\TU/lmtt/m/n/10 msafa = treeio::read.fasta("mafft.sars-cov-2-variants.fasta", type="NT")[] 
+ []
+
+File: ./Figures/msa.tree.png Graphic file (type bmp)
+<./Figures/msa.tree.png>
+[77]
+Overfull \hbox (1114.5pt too wide) in paragraph at lines 3145--3145
+[]\TU/lmtt/m/n/10 mytree5 = ggtree(tr)  %<+% countrydf + geom_treescale() + ggplot2::xlim(0, 0.02) + ggtitle("SARS-CoV-2 Variants") + geom_tiplab(size=7, hjust = -0.1) + geom_tippoint(aes(color=Country), size=8) + theme(legend.position=c(0.02,0.6)) + ggplot2::xlim(0, 0.02) + ggplot2::ylim(-2, 5)[] 
+ []
+
+File: ./Figures/msa.big.tree.png Graphic file (type bmp)
+<./Figures/msa.big.tree.png>
+
+Overfull \hbox (59.25pt too wide) in paragraph at lines 3161--3161
+[]\TU/lmtt/m/n/10 msaplot(mytree5, fasta=msafa, width=15, offset=0.0008, window=c(21563,25384))[] 
+ []
+
+File: ./Figures/msa.spike.msa.tree.png Graphic file (type bmp)
+<./Figures/msa.spike.msa.tree.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 3167--3168
+[][]$[][][][][] [] [] [] [][][] [] [][][][][][][][][][][][] [] [][][] [] [][] [] [][] [] [][][][][][][][][] [][] [][][][][][][][][] [] [][][][][][][][][] [][]
+ []
+
+[78]
+Underfull \hbox (badness 10000) in paragraph at lines 3176--3177
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3189--3190
+
+ []
+
+
+Overfull \hbox (74.48201pt too wide) in paragraph at lines 3193--3194
+[]\TU/lmr/m/n/10 If you don’t have a tree made, link to mine (/home/jm/gisaid_genomes/mafft.dns.arcturus.fasta). 
+ []
+
+[79]
+Overfull \hbox (258.75pt too wide) in paragraph at lines 3264--3264
+[]\TU/lmtt/m/n/10 3. raxml-ng --force model_lh_impr --all --msa mafft.dns.arcturus.fasta --model GTR+G --tree pars{10} --bs-trees 100[] 
+ []
+
+
+Overfull \hbox (1.5pt too wide) in paragraph at lines 3264--3264
+[]\TU/lmtt/m/n/10 5. dnsarctr = read.tree("mafft.dns.arcturus.fasta.raxml.bestTree")[] 
+ []
+
+
+Overfull \hbox (726.0pt too wide) in paragraph at lines 3264--3264
+[]\TU/lmtt/m/n/10 dnsarc = ggtree(dnsarctr)  %<+% dnscountrydf + geom_treescale() + ggtitle("Denmark, Norway, and Sweden Arcturus Sequences") + geom_tippoint(aes(color=Country), size=1) + theme(legend.position=c(0.04,0.9))[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3266--3267
+
+ []
+
+File: ./Figures/dns.arc.png Graphic file (type bmp)
+<./Figures/dns.arc.png>
+
+Underfull \vbox (badness 2460) has occurred while \output is active []
+
+[80] [81] [82
+
+]
+Chapter 7.
+
+Underfull \hbox (badness 10000) in paragraph at lines 3308--3309
+
+ []
+
+[83]
+Overfull \hbox (22.5pt too wide) in paragraph at lines 3319--3319
+[]\TU/lmtt/m/n/10 minimap2 -x asm20 -o SARS-CoV-2xSARS-CoV.paf SARS-CoV.fa SARS-CoV-2.fa[] 
+ []
+
+
+Overfull \hbox (316.5pt too wide) in paragraph at lines 3335--3335
+[]\TU/lmtt/m/n/10 It's easy to open the file and count the 1 alignment but if we had a lot of alignments, we would want a better way to do that:[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3337--3338
+
+ []
+
+
+Overfull \hbox (69.75pt too wide) in paragraph at lines 3343--3343
+[]\TU/lmtt/m/n/10 minimap2 -c -x asm20 -o SARS-CoV-2xSARS-CoV.cigar.paf SARS-CoV.fa SARS-CoV-2.fa[] 
+ []
+
+
+Overfull \hbox (64.5pt too wide) in paragraph at lines 3358--3358
+[]\TU/lmtt/m/n/10 ctrl-a+c to create a new screen or ctrl-a+space to navigate to the next screen[] 
+ []
+
+[84]
+Overfull \hbox (306.0pt too wide) in paragraph at lines 3376--3376
+[]\TU/lmtt/m/n/10 /home/jm/sw/dotPlotly-master/pafCoordsDotPlotly.R -i SARS-CoV-2xSARS-CoV.paf -o SARS-CoV-2xSARS-CoV -m 1000 -q 2000 -l -p 12[] 
+ []
+
+File: ./Figures/SARS-CoV-2xSARS-CoV.png Graphic file (type bmp)
+<./Figures/SARS-CoV-2xSARS-CoV.png>
+[85]
+Overfull \hbox (369.0pt too wide) in paragraph at lines 3390--3390
+[]\TU/lmtt/m/n/10 /home/jm/sw/dotPlotly-master/pafCoordsDotPlotly.R -i SARS-CoV-2xSARS-CoV.cigar.paf -o SARS-CoV-2xSARS-CoV.cigar -m 1000 -q 2000 -l -p 12[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3392--3393
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3398--3399
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3412--3413
+
+ []
+
+
+Overfull \hbox (363.75pt too wide) in paragraph at lines 3420--3420
+[]\TU/lmtt/m/n/10 /home/jm/sw/dotPlotly-master/pafCoordsDotPlotly.R -i SARS-CoV-2xSARS-CoV.cigar.paf -o SARS-CoV-2xSARS-CoV.cigar -m 800 -q 2000 -l -p 12[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3422--3423
+
+ []
+
+File: ./Figures/SARS-CoV-2xSARS-CoV.cigar.png Graphic file (type bmp)
+<./Figures/SARS-CoV-2xSARS-CoV.cigar.png>
+[86]
+Underfull \hbox (badness 10000) in paragraph at lines 3443--3444
+
+ []
+
+
+Overfull \hbox (17.25pt too wide) in paragraph at lines 3465--3465
+[]\TU/lmtt/m/n/10 minimap2 -c -x asm20 -o YexYp.cigar.paf Ypestis.fa Yenterocolitica.fa[] 
+ []
+
+[87]
+Overfull \hbox (190.5pt too wide) in paragraph at lines 3471--3471
+[]\TU/lmtt/m/n/10 /home/jm/sw/dotPlotly-master/pafCoordsDotPlotly.R -i YexYp.cigar.paf -o YexYp -m 1000 -q 2000 -l -p 12[] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3477--3478
+
+ []
+
+File: ./Figures/YexYp.png Graphic file (type bmp)
+<./Figures/YexYp.png>
+[88]
+Chapter 8.
+[89
+
+] [90]
+Overfull \hbox (80.25pt too wide) in paragraph at lines 3561--3561
+[]\TU/lmtt/m/n/10 zcat /home/jm/nise-data/ERR11262438.fastq.gz |head -4000 > ERR11262438.1000.fastq[] 
+ []
+
+
+Overfull \hbox (85.5pt too wide) in paragraph at lines 3567--3567
+[]\TU/lmtt/m/n/10 minimap2 -x sr -o ERR112624261000xbacteria.paf bacteria.mmi ERR11262426.1000.fastq[] 
+ []
+
+
+Overfull \hbox (33.0pt too wide) in paragraph at lines 3575--3575
+[]\TU/lmtt/m/n/10 cut -f 2-3 -d '_' ERR112624261000xbacteria.paf | sort |uniq -c | sort -n[] 
+ []
+
+
+Overfull \hbox (605.25pt too wide) in paragraph at lines 3595--3595
+[]\TU/lmtt/m/n/10 Swali, P., Schulting, R., Gilardet, A. et al. Yersinia pestis genomes reveal plague in Britain 4000 years ago. Nat Commun 14, 2930 (2023). https://doi.org/10.1038/s41467-023-38393-w[] 
+ []
+
+[91] [92
+
+]
+Chapter 9.
+
+LaTeX Warning: File `./Figures/INBRE_Logo_Grad_transparent-2019.png' not found on input line 3602.
 
 ! Unable to load picture or PDF file './Figures/INBRE_Logo_Grad_transparent-2019.png'.
 <to be read again> 
                    }
-l.2189 ...es/INBRE_Logo_Grad_transparent-2019.png}
+l.3602 ...es/INBRE_Logo_Grad_transparent-2019.png}
                                                    
 Here is how much of TeX's memory you used:
- 17062 strings out of 478683
- 315926 string characters out of 5848124
+ 17380 strings out of 478683
+ 325054 string characters out of 5848124
  1862018 words of memory out of 5000000
- 36928 multiletter control sequences out of 15000+600000
+ 37209 multiletter control sequences out of 15000+600000
  518746 words of font info for 86 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 86i,6n,121p,889b,476s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 86i,6n,121p,864b,560s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on bookdown-demo.pdf (46 pages).
+Output written on bookdown-demo.pdf (92 pages).

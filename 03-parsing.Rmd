@@ -1,6 +1,8 @@
-# Parsing Data
+<!-- use as.Date(myTable$Collection_Date, format="%Y-%m-%d") instead of as.numeric. ALso add 2 y axes. Sequences <29000 skewed the tree.-->
 
-## Practice
+# Our World in Data
+
+## Practice parsing
 
 Let's practice with a small file. Make sure you are in a **screen**.
 

@@ -182,9 +182,9 @@ https://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf
 2) Remove the greater than sign at the beginning of the header line
 3) Replace the pipes with tabs (Hint: In sed use \t to represent a tab)
 4) Make the date numeric by replacing the dashes. The sed command below will allow you to replace dashes only in the date.
-```
+
 If you are interested in understanding the sed command: It looks for one or more (+) numbers ([0-9]) then a dash, more numbers, a dash and more numbers. The parentheses capture the sets of numbers so that it can return them as \1 for the first set, \2 for the second set, and \3 for the third set.
-```
+
 sed -E 's/([0-9]+)-([0-9]+)-([0-9]+)/\1\2\3/'
 5) Put it into a file called Denmark_Norway_Sweden_seq_info.txt
 ```
@@ -192,7 +192,7 @@ sed -E 's/([0-9]+)-([0-9]+)-([0-9]+)/\1\2\3/'
 The R environment on logrus needs to be activated (note that on some systems it is installed differently and you don't need to activate).
 
 ```
-source activate visualization
+conda activate visualization
 ```
 
 Open up R.
