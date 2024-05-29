@@ -1,6 +1,6 @@
-<!-- use as.Date(myTable$Collection_Date, format="%Y-%m-%d") instead of as.numeric. ALso add 2 y axes. Sequences <29000 skewed the tree.-->
+<!-- Teach them how to add 2 y axes. Sequences <29000 skewed the tree.-->
 
-# Our World in Data
+# Our World in Data (parsing)
 
 ## Practice parsing
 
@@ -187,15 +187,26 @@ Now practice on your own. Choose another variable and see if there are any inter
 	
 Hint: You can look at the variables by heading the first line of the file.
 
-		head -1 owid-covid-data.csv
-
+```
+head -1 owid-covid-data.csv
+```
 
 Hint: If you prefer to have them each on their own line you can use sed to replace the commas with hard returns. Make sure to use the global "g" at the end so that every comma is replaced and not just the first one on each line.
 
-		head -1 owid-covid-data.csv | sed 's/,/\n/g'
-	
+```
+head -1 owid-covid-data.csv | sed 's/,/\n/g'
+```	
 
 Hint: awk will also print out the row number for you (which corresponds to the column number for that variable in the original file). The NR variable is a special awk variable that will print the row.
 
-		head -1 owid-covid-data.csv | sed 's/,/\n/g' |awk '{print NR "\t" $1}'
+```
+head -1 owid-covid-data.csv | sed 's/,/\n/g' |awk '{print NR "\t" $1}'
+```		
 
+Make one file each for Denmark, Norway, and Sweden that we'll use in future chapters. An example is below.
+
+```
+grep "^Norway" owid-covid-data.csv > Norwaydata.csv
+```
+
+Make one file each for each of your countries.
