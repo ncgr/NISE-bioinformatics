@@ -38,10 +38,10 @@ In a Finder window, you would see this:
 
 Enter the following command to log on to logrus:
 
-+ substitute **your** personal username in for "username"
++ substitute **your** personal username in for "user"
 
 ```
-ssh -p 44111 username@gateway.training.ncgr.org
+ssh -p2406 user@inbre.ncgr.org
 ```
 
 Notes:
@@ -302,7 +302,7 @@ touch scp_test.txt
 + the last period means that the destination is your working directory
 
 ```
-scp -P 44111 <user>@gateway.training.ncgr.org:~/linuxc/scp_test.txt .
+scp -P 2406 <user>@inbre.ncgr.org:~/linuxc/scp_test.txt .
 ```
 
 Note: When you designate a port with secure copy (scp), you use a capital P.
@@ -315,7 +315,7 @@ You will be prompted for your logrus password if not using MobaXterm.
 + Again, run the scp command from your **local** terminal window:
 
 ```
-scp -P 44111 scp_test.txt <user>@gateway.training.ncgr.org:~/linuxc
+scp -P 2406 scp_test.txt <user>@inbre.ncgr.org:~/linuxc
 ```
 
 6) Check to see if the file you copied from your computer is on **logrus**!
@@ -964,7 +964,7 @@ There is also cheat sheet on the weebly site under Supplemental Documents.
 
 
 ```
-External ssh: ssh -p2406 user@inbre.ncgr.org
+ssh -p2406 user@inbre.ncgr.org
 ```
 
 + Don't forget to substitute **your** personal username in
