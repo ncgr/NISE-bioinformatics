@@ -1,5 +1,12 @@
 # Linux
 
+<!--
+Name: nise-2406.training.ncgr.org
+IP: 172.19.59.20
+External ssh: ssh -p2406 user@inbre.ncgr.org
+-->
+
+
 **Linux operating system (OS) and Bourne-Again SHell (bash) command-language basics**
 
 ## A little shell... aka the $ prompt is the command line interface
@@ -953,10 +960,11 @@ There is also cheat sheet on the weebly site under Supplemental Documents.
 
 1) Log on to logrus server
 
-2) Enter the following command to log on to logrus: 
+2) Enter the following command to log on to the server: 
+
 
 ```
-ssh -p 44111 username@gateway.training.ncgr.org
+External ssh: ssh -p2406 user@inbre.ncgr.org
 ```
 
 + Don't forget to substitute **your** personal username in
