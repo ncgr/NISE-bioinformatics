@@ -62,9 +62,20 @@ Note that there are often several ways to do things in linux and not all methods
 
 Now let's use the data from "Our World In Data". For things that are new, we have added some in-line answers but before you reveal the answer, try it yourself first using the hints provided.
 
-10. Copy the file "owid-covid-data.csv" from this directory: "/home/jm/linux_practice/" to your "parse" directory.
+10. Make sure you are still in the parse directory.
 
-11. Make sure you are in the "parse" directory.
+<details>
+  <summary>Click for Answer</summary>
+		ln -s /home/data/nise/owid-covid-data.csv .
+</details>
+
+
+11. Link to the file "owid-covid-data.csv". It is in this directory: "/home/data/nise/".
+
+<details>
+  <summary>Click for Answer</summary>
+		ln -s /home/data/nise/owid-covid-data.csv .
+</details>
 
 12. How many rows are in the file? Use wc -l (wc = word count, -l = lines)
 
@@ -92,8 +103,7 @@ Note: this will print the number of fields in each row. You can hit ctrl-c if yo
 </details>
 \
 
-
-15. There are lots of dates for each country. Let's limit it to early in the pandemic (2020-01-03), which is the first available date. Put it into a file called "beds.2020-01-03.csv" so we don't have to keep generating it.
+15. There are lots of dates for each country. Let's do the same search but limit it to early in the pandemic (2020-03-11), which is the day that the World Health Organization declared COVID-19 to be pandemic. Put it into a file called "beds.2020-03-11.csv" so we don't have to keep generating it.
 
 16. What country had the least beds per thousand on 2020-01-03 and which has the most? Hint: Sort by the number of beds and pipe it into less.
 
@@ -105,7 +115,7 @@ Hint: There is a "United States" and a "United States Virgin Islands". To avoid 
 
 <details>
   <summary>Click for Answer</summary>
-		grep "^United States," beds.2020-01-03.csv
+		grep "^United States," beds.2020-03-11.csv
 </details>
 \
 
@@ -117,13 +127,13 @@ Hint: we'll use the extended version of grep which will allow us to search all 3
 
 <details>
   <summary>Click for Answer</summary>
-		grep -E "^Sweden,|^Norway,|^Denmark," beds.2020-01-03.csv
+		grep -E "^Sweden,|^Norway,|^Denmark," beds.2020-03-11.csv
 </details>
 \
 
 19. Create a file that has only the United States data for beds with the same three columns we have been using. Call it usbeds.csv. We'll use this file for the questions below.
 
-20. Get the number of beds in the United States for each day in 2020.
+20. Get the number of beds in the United States for each day in 2020. Note: Since these numbers don't change, this is kind of silly but it will give you the skills to grab other variables across a date range.
 
 21. Get the number of beds in the United States for the first COVID wave (March through September 2020).
 
@@ -147,9 +157,9 @@ Hint: Use sed to remove the dashes then awk with $2>=20200301&&$2<=20200930.
 <details>
   <summary>Click for All Answers</summary>
 ```
-10. cp /home/jm/linux_practice/owid-covid-data.csv . 
-
 11. pwd [If you aren't in that directory you can: "cd ~/parse"]
+
+10. ln -s /home/data/nise/owid-covid-data.csv . 
 
 12. wc -l owid-covid-data.csv
 
@@ -157,17 +167,23 @@ Hint: Use sed to remove the dashes then awk with $2>=20200301&&$2<=20200930.
 
 14. cut -d, -f 3,4,60 owid-covid-data.csv | less
 
-15. cut -d, -f 3,4,60 owid-covid-data.csv | grep 2020-01-03 > beds.2020-01-03.csv
+15. cut -d, -f 3,4,60 owid-covid-data.csv | grep 2020-03-11 > beds.2020-03-11.csv
 
-16. sort -t, -n -k3 beds.2020-01-03.csv | less
+16. sort -t, -n -k3 beds.2020-03-11.csv | less
 
-	Least: Mali,2020-01-03,0.1
+	Least: Mali,2020-03-11,0.1
 	
-	Most: Monaco,2020-01-03,13.8
+	Most: Monaco,2020-03-11,13.8
 
-17. grep "^United States," beds.2020-01-03.csv
+17. grep "^United States," beds.2020-03-11.csv
 
-18. grep -E "^Sweden,|^Norway,|^Denmark," beds.2020-01-03.csv
+  United States,2020-03-11,2.77
+
+18. grep -E "^Sweden,|^Norway,|^Denmark," beds.2020-03-11.csv
+
+  Denmark,2020-03-11,2.5
+  Norway,2020-03-11,3.6
+  Sweden,2020-03-11,2.22
 
 19. cut -d, -f 3,4,60 owid-covid-data.csv | grep "^United States," > usbeds.csv
 
@@ -185,7 +201,9 @@ Hint: Use sed to remove the dashes then awk with $2>=20200301&&$2<=20200930.
 
 Now practice on your own. Choose another variable and see if there are any interesting differences between your 3 countries. Explore at least 3 other variables.
 	
-Hint: You can look at the variables by heading the first line of the file.
+Hint: You can look at the variables by heading the first line of the file. Here is some code that will give you column numbers. The sed command replaces commas with hard returns so each column name is on its own row. The "NR" variable in awk will give you the row number.
+
+head -1 owid-covid-data.csv | sed 's/,/\n/g' | awk '{print NR "\t" $1}'
 
 ```
 head -1 owid-covid-data.csv
@@ -203,6 +221,8 @@ Hint: awk will also print out the row number for you (which corresponds to the c
 head -1 owid-covid-data.csv | sed 's/,/\n/g' |awk '{print NR "\t" $1}'
 ```		
 
+## Country files
+
 Make one file each for Denmark, Norway, and Sweden that we'll use in future chapters. We'll get the following columns:
 location (column 3)
 date (column 4)
@@ -217,9 +237,8 @@ people_fully_vaccinated_per_hundred (column 43)
 
 An example is below.
 
-
 ```
-grep "^Norway" owid-covid-data.csv | cut -f 3,4,5,8,11,14,18,19,37,43 > Norwaydata.csv
+grep "Norway" /home/data/nise/owid-covid-data.csv | cut -d, -f 3,4,5,8,11,14,18,19,37,43 > Norwaydata.csv
 ```
 
-Make a similar file for each of your countries.
+Make a similar file for each of your three countries.
