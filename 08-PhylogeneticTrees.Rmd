@@ -4,6 +4,7 @@
 <!-- Add in arcturs sequences tree: -->
 <!-- raxml-ng --force model_lh_impr --all --msa mafft.dns.arcturus.fasta --model GTR+G --tree pars{10} --bs-trees 100 -->
 <!-- Is there a way to bioinformatically pick random genomes or spike proteins for trees? -->
+<!-- Sequences <29000 skewed the tree.-->
 
 # Phylogenetic Trees
 
