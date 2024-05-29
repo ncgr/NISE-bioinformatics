@@ -203,10 +203,23 @@ Hint: awk will also print out the row number for you (which corresponds to the c
 head -1 owid-covid-data.csv | sed 's/,/\n/g' |awk '{print NR "\t" $1}'
 ```		
 
-Make one file each for Denmark, Norway, and Sweden that we'll use in future chapters. An example is below.
+Make one file each for Denmark, Norway, and Sweden that we'll use in future chapters. We'll get the following columns:
+location (column 3)
+date (column 4)
+total_cases (column 5)
+total_deaths (column 8)
+total_cases_per_million (column 11)
+total_deaths_per_million (column 14)
+icu_patients (column 18)
+icu_patients_per_million (column 19)
+people_fully_vaccinated (column 37)
+people_fully_vaccinated_per_hundred (column 43)
+
+An example is below.
+
 
 ```
-grep "^Norway" owid-covid-data.csv > Norwaydata.csv
+grep "^Norway" owid-covid-data.csv | cut -f 3,4,5,8,11,14,18,19,37,43 > Norwaydata.csv
 ```
 
-Make one file each for each of your countries.
+Make a similar file for each of your countries.
