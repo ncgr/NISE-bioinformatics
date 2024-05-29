@@ -235,7 +235,7 @@ Read in our data file and put it into a variable. We'll name our variable dns fo
 dns = read.table("Denmark_Norway_Sweden_seq_info.txt", header=FALSE, sep="\t")
 ```
 
-Let's take a look at the variable with our data The head command in R has 6 rows by default and it wraps lines as a group if they are too long for the screen.
+Let's take a look at the variable with our data. The head command in R has 6 rows by default and it wraps lines as a group if they are too long for the screen.
 
 ```
 head(dns)
@@ -286,10 +286,10 @@ Then check it with the head command.
 \
 
 
-The Collection Date wasn't recognized as numeric so let's fix that. The $ after the dns refers to a column. We will just overwrite it in the same column.
+The Collection Date wasn't recognized as a date so let's fix that. The $ after the dns refers to a column. We will just overwrite it in the same column.
 
 ```
-dns$"Collection_Date" = as.numeric(dns$"Collection_Date")
+dns$Collection_Date = as.Date(myTable$Collection_Date, format="%Y-%m-%d")
 ```
 
 Time to plot!
@@ -387,3 +387,94 @@ dev.off()
 
 ```
 </details>
+
+
+### Our World in Data
+
+Now let's use the data from "Our World in Data" that you created yesterday. We'll start with the Norway file.
+
+Move into the parse directory.
+
+<details>
+  <summary>Click for All Answers</summary>
+  
+```
+cd ~/parse
+```
+</details>
+
+
+Open up R.
+
+<details>
+  <summary>Click for Answer</summary>
+  
+```
+R
+```
+</details>
+
+
+Read in "Norwaydata.csv", which you made in the last chapter. It has no header and it is comma separated.
+
+<details>
+  <summary>Click for Answer</summary>
+```
+nor=read.table("Norwaydata.csv", header=FALSE, sep=",")
+```
+</details>
+
+Add column names: Location, Date, Total_Cases, Total_Deaths, ICU_Patients, Fully_Vaccinated
+
+<details>
+  <summary>Click for Answer</summary>
+```
+colnames(nor) = c("Location", "Date", "Total_Cases", "Total_Deaths",
+"ICU_Patients", "Fully_Vaccinated")
+```
+</details>
+
+
+ggplot(nor, aes(x=Date, y="Total_Cases")) + geom_histogram() +
+geom_line(y="Total_Deaths")
+nor$Date=as.Date(nor$Date, format="%Y-%m-%d")
+ggplot(nor, aes(x=Date, y=Total_Cases)) + geom_col()
+# This gets both of them on but the axes though total deaths is pretty small
+compared to cases
+ggplot(nor, aes(x=Date, y=Total_Cases)) +
+geom_col() +
+geom_line(aes(y=Total_Deaths)) +
+scale_y_continuous(
+# Features of the first axis
+name = "Total Cases",
+
+# Add a second axis and specify its features
+sec.axis = sec_axis(trans=~., name="Total Deaths")
+)
+# This gives a white background if you prefer, either way
+ggplot(nor, aes(x=Date, y=Total_Cases)) +
+geom_col() +
+geom_line(aes(y=Total_Deaths)) +
+scale_y_continuous(
+# Features of the first axis
+name = "Total Cases",
+
+# Add a second axis and specify its features
+sec.axis = sec_axis(trans=~., name="Total Deaths")
+) +
+theme_bw()
+# Adjusting the total deaths axis by 50-fold (note if you adjust this there are 2
+places where "50" occurs)
+ggplot(nor, aes(x=Date, y=Total_Cases)) +
+geom_col() +
+geom_line(aes(y=Total_Deaths*50)) +
+scale_y_continuous(
+# Features of the first axis
+name = "Total Cases",
+
+# Add a second axis and specify its features
+sec.axis = sec_axis(trans=~./50, name="Total Deaths")
+) +
+theme_bw()
+
+Now let's put 2 different y variables on the same plot. If you want to show how two variables change in relation to each other across time, for example, this is a good way to do it.
