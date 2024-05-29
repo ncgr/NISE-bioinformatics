@@ -50,19 +50,18 @@ Hint: Use "^$" in grep to find lines that have nothing between the start "^" and
 
 9. What is the first and last date in your sequence file?
 
-Hint: There are lots of different ways to do this, some of which involve more scrolling than others. Here is one strategy that just gets the earliest and latest dates. Do each step and check it then pipe it into the next step.
+Hint: There are lots of different ways to do this, some of which involve more scrolling than others. Here is one strategy that just gets the earliest dates. Do each step and check it then pipe it into the next step. Repeat and get the latest date.
 
 ```
-  1) Get the header lines
-  2) Grab the collection data column (#3)
-  3) Remove blanks
-  4) Sort numerically: sort -n
-  5) grab the first and last lines--you need the parentheses: (head -1; tail -1)
+  a) Get the header lines
+  b) Grab the collection data column (#3)
+  c) Remove blanks
+  d) Sort numerically: sort -n
+  e) grab the last line
 ```
 
 10. Find the first and last collection date in your sequence file for each country. Try to use a for loop. Since we haven't used these much I'll put an answer here for you.
 
-Note: for some reason, the (head -1; tail -1) trick doesn't seem to work inside a for loop. So, do the earliest date first. Then use the up arrow to get the command back and alter it for the latest date.
 
 <details>
   <summary>Click for Answer</summary>
@@ -81,6 +80,8 @@ Note: for some reason, the (head -1; tail -1) trick doesn't seem to work inside 
   <summary>Click for All Answers</summary>
   
 Note that there are often several ways to do things in linux and not all methods are shown.
+
+Since the number of sequences in NCBI changes, the numbers given below might have changed.
 ```
 1. grep '>' sequences.fasta
 
@@ -147,6 +148,8 @@ Run through these exercises again with your 3 countries and record the answers i
 
 We'll plot some of the information about our sequences using R on the command line and the ggplot2 library. Get into a screen if you aren't already in one (screen -dr will reconnect you to a previous screen). Navigate to your NCBIdata directory.
 
+Note that your plots might be slightly different than those shown below because more sequences may have been added to the database.
+
 ## R
 
 The R Project for Statistical Computing
@@ -173,7 +176,7 @@ ggplot2 documentation
 
 https://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf
 
-\
+
 
 11. Make a tab-delimitted text file with the information from your sequence headers.
 
@@ -181,18 +184,7 @@ https://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf
 1) Grab the sequence headers
 2) Remove the greater than sign at the beginning of the header line
 3) Replace the pipes with tabs (Hint: In sed use \t to represent a tab)
-4) Make the date numeric by replacing the dashes. The sed command below will allow you to replace dashes only in the date.
-
-If you are interested in understanding the sed command: It looks for one or more (+) numbers ([0-9]) then a dash, more numbers, a dash and more numbers. The parentheses capture the sets of numbers so that it can return them as \1 for the first set, \2 for the second set, and \3 for the third set.
-
-sed -E 's/([0-9]+)-([0-9]+)-([0-9]+)/\1\2\3/'
-5) Put it into a file called Denmark_Norway_Sweden_seq_info.txt
-```
-
-The R environment on logrus needs to be activated (note that on some systems it is installed differently and you don't need to activate).
-
-```
-conda activate visualization
+4) Put it into a file called Denmark_Norway_Sweden_seq_info.txt
 ```
 
 Open up R.
@@ -361,7 +353,7 @@ Note: we'll be getting sequences from another source as well so don't worry if t
   <summary>Click for All Answers</summary>
   
 ```
-11. grep '>' sequences.fasta | sed 's/>//'|sed 's/|/\t/g'|sed -E 's/([0-9]+)-([0-9]+)-([0-9]+)/\1\2\3/' > Denmark_Norway_Sweden_seq_info.txt
+11. grep '>' sequences.fasta | sed 's/>//'|sed 's/|/\t/g' > Denmark_Norway_Sweden_seq_info.txt
 
 12. header = FALSE and sep = ""
 
