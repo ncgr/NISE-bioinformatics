@@ -1,4 +1,4 @@
-### Our World in Data (plots)
+# Our World in Data (plots)
 
 Now let's use the data from "Our World in Data" that you created yesterday. We'll start with the Norway file.
 
@@ -23,6 +23,11 @@ R
 ```
 </details>
 
+Load ggplot2.
+
+```
+library ggplot2
+```
 
 Read in "Norwaydata.csv", which you made in the last chapter. It has no header and it is comma separated.
 
@@ -33,57 +38,117 @@ nor=read.table("Norwaydata.csv", header=FALSE, sep=",")
 ```
 </details>
 
-Add column names: Location, Date, Total_Cases, Total_Deaths, ICU_Patients, Fully_Vaccinated
+Add column names: Location, Date, Total_Cases, Total_Deaths, Total_Cases_Per_Million, Total_Deaths_Per_Million,
+ICU_Patients, ICU_Patients_Per_Million, Fully_Vaccinated, Fully_Vaccinated_Per_Hundred
 
 <details>
   <summary>Click for Answer</summary>
 ```
 colnames(nor) = c("Location", "Date", "Total_Cases", "Total_Deaths",
-"ICU_Patients", "Fully_Vaccinated")
+"Total_Cases_Per_Million", "Total_Deaths_Per_Million",
+"ICU_Patients", "ICU_Patients_Per_Million",
+"Fully_Vaccinated", "Fully_Vaccinated_Per_Hundred")
 ```
 </details>
 
 
-ggplot(nor, aes(x=Date, y="Total_Cases")) + geom_histogram() +
-geom_line(y="Total_Deaths")
+Fix the date field
+
+<details>
+  <summary>Click for Answer</summary>
+```
 nor$Date=as.Date(nor$Date, format="%Y-%m-%d")
+```
+</details>
+
+
+## Bar chart
+
+Plot a bar chart of Date x Total_Cases. The "geom_col" layer will make a bar chart.
+
+```
+png("datexcases.png")
+
 ggplot(nor, aes(x=Date, y=Total_Cases)) + geom_col()
-# This gets both of them on but the axes though total deaths is pretty small
-compared to cases
+
+dev.off()
+```
+XXX
+![](./Figures/datexcases.png){width=50%}
+
+Let's add a title.
+
+```
+png("datexcases_title.png")
+
+ggplot(nor, aes(x=Date, y=Total_Cases)) +
+  geom_col() +
+  ggtitle("Norway COVID-19 Cases")
+
+dev.off()
+```
+
+![](./Figures/datexcases_title.png){width=50%}
+
+# Line chart
+
+Now let's make a line chart of total deaths.
+
+```
+png("datexdeaths.png")
+
+ggplot(nor, aes(x=Date, y=Total_Deaths)) +
+  geom_line() +
+  ggtitle("Norway COVID-19 Deaths")
+
+dev.off()
+```
+
+![](./Figures/datexdeaths.png){width=50%}
+
+
+Let's put them both on the same chart.
+
+```
+png("datexcases+deaths.png")
+
 ggplot(nor, aes(x=Date, y=Total_Cases)) +
 geom_col() +
 geom_line(aes(y=Total_Deaths)) +
 scale_y_continuous(
 # Features of the first axis
 name = "Total Cases",
-
 # Add a second axis and specify its features
 sec.axis = sec_axis(trans=~., name="Total Deaths")
 )
-# This gives a white background if you prefer, either way
-ggplot(nor, aes(x=Date, y=Total_Cases)) +
-geom_col() +
-geom_line(aes(y=Total_Deaths)) +
-scale_y_continuous(
-# Features of the first axis
-name = "Total Cases",
 
-# Add a second axis and specify its features
-sec.axis = sec_axis(trans=~., name="Total Deaths")
-) +
-theme_bw()
-# Adjusting the total deaths axis by 50-fold (note if you adjust this there are 2
-places where "50" occurs)
+dev.off()
+```
+
+![](./Figures/datexcases+deaths.png){width=50%}
+
+The number of deaths is really low compared to the number of cases so let's adjust the axis.
+
+We'll also give it a white background
+
+```
+png("datexcases+deaths_adjust.png")
+
 ggplot(nor, aes(x=Date, y=Total_Cases)) +
 geom_col() +
 geom_line(aes(y=Total_Deaths*50)) +
 scale_y_continuous(
 # Features of the first axis
 name = "Total Cases",
-
 # Add a second axis and specify its features
 sec.axis = sec_axis(trans=~./50, name="Total Deaths")
 ) +
 theme_bw()
 
-Now let's put 2 different y variables on the same plot. If you want to show how two variables change in relation to each other across time, for example, this is a good way to do it.
+dev.off()
+```
+
+![](./Figures/datexcases+deaths_adjust.png){width=50%}
+
+
+Try some on your own using some of the other variables.
