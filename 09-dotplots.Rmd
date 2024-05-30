@@ -1,4 +1,4 @@
-<!-- No alignments between SARS-CoV-2 and MERS-CoV as asm20. -->
+<!-- No alignments between SARS-CoV-2 and MERS-CoV at asm20. -->
 <!-- Get an explanation of what various SVs look like in dotplots. -->
 <!-- Move data from sarsdata to nise-data. -->
 
