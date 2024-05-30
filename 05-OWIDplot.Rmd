@@ -5,13 +5,14 @@ Now let's use the data from "Our World in Data" that you created yesterday. We'l
 Move into the parse directory.
 
 <details>
-  <summary>Click for All Answers</summary>
+  <summary>Click for Answer</summary>
   
 ```
 cd ~/parse
 ```
 </details>
 
+&nbsp;
 
 Open up R.
 
@@ -22,6 +23,8 @@ Open up R.
 R
 ```
 </details>
+
+&nbsp;
 
 Load ggplot2.
 
@@ -38,6 +41,8 @@ nor=read.table("Norwaydata.csv", header=FALSE, sep=",")
 ```
 </details>
 
+&nbsp;
+
 Add column names: Location, Date, Total_Cases, Total_Deaths, Total_Cases_Per_Million, Total_Deaths_Per_Million,
 ICU_Patients, ICU_Patients_Per_Million, Fully_Vaccinated, Fully_Vaccinated_Per_Hundred
 
@@ -51,6 +56,7 @@ colnames(nor) = c("Location", "Date", "Total_Cases", "Total_Deaths",
 ```
 </details>
 
+&nbsp;
 
 Fix the date field
 
@@ -66,14 +72,16 @@ nor$Date=as.Date(nor$Date, format="%Y-%m-%d")
 
 Plot a bar chart of Date x Total_Cases. The "geom_col" layer will make a bar chart.
 
+We'll use the width parameter to make the width 100% (no space between bars).
+
 ```
 png("datexcases.png")
 
-ggplot(nor, aes(x=Date, y=Total_Cases)) + geom_col()
+ggplot(nor, aes(x=Date, y=Total_Cases)) + geom_col(width=1)
 
 dev.off()
 ```
-XXX
+
 ![](./Figures/datexcases.png){width=50%}
 
 Let's add a title.
@@ -82,7 +90,7 @@ Let's add a title.
 png("datexcases_title.png")
 
 ggplot(nor, aes(x=Date, y=Total_Cases)) +
-  geom_col() +
+  geom_col(width=1) +
   ggtitle("Norway COVID-19 Cases")
 
 dev.off()
@@ -90,7 +98,7 @@ dev.off()
 
 ![](./Figures/datexcases_title.png){width=50%}
 
-# Line chart
+## Line chart
 
 Now let's make a line chart of total deaths.
 
@@ -107,14 +115,14 @@ dev.off()
 ![](./Figures/datexdeaths.png){width=50%}
 
 
-Let's put them both on the same chart.
+Let's put them both on the same chart. We'll make the bar chart (cases) gray and the line (deaths) blue so it shows up better.
 
 ```
 png("datexcases+deaths.png")
 
 ggplot(nor, aes(x=Date, y=Total_Cases)) +
-geom_col() +
-geom_line(aes(y=Total_Deaths)) +
+geom_col(width=1,color="darkgray") +
+geom_line(aes(y=Total_Deaths),color="blue") +
 scale_y_continuous(
 # Features of the first axis
 name = "Total Cases",
@@ -125,25 +133,27 @@ sec.axis = sec_axis(trans=~., name="Total Deaths")
 dev.off()
 ```
 
-![](./Figures/datexcases+deaths.png){width=50%}
+![](./Figures/datexcases+deaths_adjust.png){width=50%}
 
-The number of deaths is really low compared to the number of cases so let's adjust the axis.
+The number of deaths is really low compared to the number of cases (phew!) so the blue line is right at the bottom. Let's adjust the axis (multiple by 100).
 
-We'll also give it a white background
+We'll also give it a white background by changing to the black and white theme, color the right axis label blue, and add a title.
 
 ```
 png("datexcases+deaths_adjust.png")
 
 ggplot(nor, aes(x=Date, y=Total_Cases)) +
-geom_col() +
-geom_line(aes(y=Total_Deaths*50)) +
+geom_col(width=1,color="darkgray") +
+geom_line(aes(y=Total_Deaths*100),color="blue") +
 scale_y_continuous(
 # Features of the first axis
 name = "Total Cases",
 # Add a second axis and specify its features
-sec.axis = sec_axis(trans=~./50, name="Total Deaths")
+sec.axis = sec_axis(trans=~./100, name="Total Deaths")
 ) +
-theme_bw()
+theme_bw() +
+ggtitle("Norway COVID-19 Cases and Deaths") +
+theme(axis.title.y.right = element_text(color = "blue"))
 
 dev.off()
 ```
@@ -151,4 +161,4 @@ dev.off()
 ![](./Figures/datexcases+deaths_adjust.png){width=50%}
 
 
-Try some on your own using some of the other variables.
+Try some on your own using some of the other variables, scales, and/or plot types.
