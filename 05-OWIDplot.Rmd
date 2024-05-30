@@ -118,7 +118,7 @@ dev.off()
 Let's put them both on the same chart. We'll make the bar chart (cases) gray and the line (deaths) blue so it shows up better.
 
 ```
-png("datexcases+deaths.png")
+png("datexcases_deaths.png")
 
 ggplot(nor, aes(x=Date, y=Total_Cases)) +
 geom_col(width=1,color="darkgray") +
@@ -133,14 +133,14 @@ sec.axis = sec_axis(trans=~., name="Total Deaths")
 dev.off()
 ```
 
-![](./Figures/datexcases+deaths_adjust.png){width=50%}
+![](./Figures/datexcases_deaths.png){width=50%}
 
-The number of deaths is really low compared to the number of cases (phew!) so the blue line is right at the bottom. Let's adjust the axis (multiple by 100).
+The number of deaths is really low compared to the number of cases (thankfully!) so the blue line is right at the bottom. Let's adjust the axis (multiple by 100).
 
 We'll also give it a white background by changing to the black and white theme, color the right axis label blue, and add a title.
 
 ```
-png("datexcases+deaths_adjust.png")
+png("datexcases_deaths_adjust.png")
 
 ggplot(nor, aes(x=Date, y=Total_Cases)) +
 geom_col(width=1,color="darkgray") +
@@ -158,7 +158,7 @@ theme(axis.title.y.right = element_text(color = "blue"))
 dev.off()
 ```
 
-![](./Figures/datexcases+deaths_adjust.png){width=50%}
+![](./Figures/datexcases_deaths_adjust.png){width=50%}
 
 
 Try some on your own using some of the other variables, scales, and/or plot types.
