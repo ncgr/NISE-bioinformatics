@@ -49,13 +49,28 @@ We can look at a tree (scroll down) of the different named variants either by ti
 
 ![Time](./Figures/DenmarkRectangularTime.png){width=70%}
 
+\
+
 ![Divergence](./Figures/DenmarkRectangularDivergence.png){width=70%}
 
+\
+What insights can you draw from each of the Denmark graphs and by comparing them together?
 
-What insights can you draw from each of the Denmark graphs?
+<details>
+  <summary>Click for Possible Answer</summary>
+  ```
+  
+  You can see a clear progresion from alpha to delta to omicron in the time graph.
 
-What insights can you gain from comparing the two graphs?
+  Omicron continues to change over time.
+  
+  There is some level of overlap between the strains in terms of their divergence from the original strain. There is not as clean of a difference between the strains in the divergence graph as there is in the time graph.
+  
+  Omicron is diverse in both graphs. In the divergence graph it looks like there are three different subvariants for omicron each with a jump in its divergence level.
+  ```
+</details>
 
+\
 What insights can you add from your country's or countries' graphs?
 
 \
@@ -66,8 +81,6 @@ Now change the tree to linear instead of rectangular and color code by variant. 
 
 What can you tell about the difference in divergence rates of omicron vs the other variants from the Denmark graph?
 
-Do your country's/countries' graphs tell the same story?
-
 
 <details>
   <summary>Click for Possible Answer</summary>
@@ -75,7 +88,10 @@ Do your country's/countries' graphs tell the same story?
   Omicron seems to diverge more rapidly as it is mainly above the average line while the other variants are mostly below it.
   ```
 </details>
-\
+
+
+Do your country's/countries' graphs tell the same story?
+
 
 Now, explore other parameters with your country/countries.
 
