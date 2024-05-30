@@ -1,7 +1,5 @@
 <!-- The lineage frequencies have already been done through covariants.org so we won't do them here. -->
 
-<!-- Add in some possible answers for the Denmark trees. -->
-
 <!-- Split apart the epi_set photos -->
 
 <!-- Add epi_set acknowledgement for dns -->
@@ -12,7 +10,7 @@
 
 ![GISAID](./Figures/gisaid.png){width=50%}
 
-If you haven't already, please sign up for a GISAID account. The account is required to access sequences, though first we will explore one of their web tools in detail.
+If you haven't already, please sign up for a GISAID account. The account is required to access sequences, though first we will explore one of their web tools in detail. Note that the numbers shown here are from 2023 and may have increased.
 
 ## Phylodynamics
 Click on hCoV-19 in the Phylodynamics section.
