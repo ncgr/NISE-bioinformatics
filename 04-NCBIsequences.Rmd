@@ -1,5 +1,3 @@
-<!-- For next year, we should have the students change the name of the sequence file to something that tells which countries it contains. It would be a good reminder about the mv command and help to keep the practice file distinct from their 3 country file. -->
-
 <!-- Add in pictures of the plots. -->
 
 # NCBI SARS-CoV-2 Genome Sequences
@@ -7,6 +5,15 @@
 ## Getting Sequences from NCBI
 
 See pdf.
+
+Change the name of the sequence file with Denmark, Norway, and Sweden to DNS.sequences.fasta
+
+<details>
+  <summary>Click for Answer</summary>
+  mv sequences.fasta DNS.sequences.fasta
+</details>
+
+Change the name of your three countries file to something that identifies the countries.
 
 ## Exploring Sequence Files
 
