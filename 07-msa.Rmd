@@ -1,5 +1,5 @@
 <!-- Could add in beta variant -->
-<!-- jalview can also be installed on the command line -->
+<!-- jalview can also be installed on the command line but it is probably more complicated to get it running for everyone. -->
 
 # Multiple Sequence Alignment
 
