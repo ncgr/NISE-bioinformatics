@@ -1,10 +1,7 @@
-<!-- For next year: Add Wuhan-Hu-1 spike into the file during the previous chapter before you run mafft. -->
 <!-- The text quality in a PNG is poor so using PDF. So far I still have pngs as the actual figures. I think that I have to do something different to have bookdown show pdfs. Actually, it just doesn't preview it. It puts it in a frame that you have to scroll through so for now I will just generate pngs on the sides to put in the bookdown doc.-->
-<!-- I should put trees in a click menu. -->
-<!-- Add in arcturs sequences tree: -->
-<!-- raxml-ng --force model_lh_impr --all --msa mafft.dns.arcturus.fasta --model GTR+G --tree pars{10} --bs-trees 100 -->
-<!-- Is there a way to bioinformatically pick random genomes or spike proteins for trees? -->
-<!-- Sequences <29000 skewed the tree.-->
+<!-- Sequences <29000 skewed the tree. [This should be >?]-->
+
+<!-- Is there a way to bioinformatically pick random genomes or spike proteins for trees? seqtk -->
 
 # Phylogenetic Trees
 
@@ -25,7 +22,13 @@ Upload the file and then click "Submit".
 
 The tree should pop up. The cladogram just shows the groupings. If you choose real, it will change the branch lengths to the actual branch lengths.
 
+<details>
+  <summary>Click for Answer</summary>
+
 ![](./Figures/real.png){width=70%}
+
+</details>
+\
 
 What do you notice about the tree?
 
@@ -41,7 +44,7 @@ Alpha and Omicron are the most closely related, at least according to this tree.
 
 
 
-The mafft.dns.spikeprot0702.fasta file is too large for this website so we need to learn how to do this on the command line. But we'll start off with the 4 variant sequences first.
+The mafft.dns.spikeprot230702.fasta file is too large for this website so we need to learn how to do this on the command line. But we'll start off with the 4 variant sequences first.
 
 Log into logrus and get into a screen. Navigate to your sars-variants folder. Do an ls to see what files are there.
 
@@ -67,62 +70,20 @@ Which is the most distant?
 
 <details>
   <summary>Click for Answers</summary>
+((Delta_AY.4_UK:0.001021,(Omicron_B.1.1.529_USA:0.000703,Alpha_B.1.1.7_UK:0.000784):0.000100):0.000021,Wuhan-Hu-1_China:0.000021)
+
 The Omicron and Alpha are most closely related.
 
 The Wuhan-Hu-1 is the most distantly related.
-
-((Delta_AY.4_UK:0.001021,(Omicron_B.1.1.529_USA:0.000703,Alpha_B.1.1.7_UK:0.000784):0.000100):0.000021,Wuhan-Hu-1_China:0.000021)
 
 </details>
 
 ## Spike Protein
 
-The mafft.dns.spikeprot0702.fasta file has spike protein sequences for Denmark, Norway, and Sweden that are already aligned.
-
-First, we need to add in Wuhan-Hu-1 as our outgroup. We'll use an early isolate from the US that matched the Wuhan-Hu-1 that is present in the spike sequence file. Get isolate EPI_ISL_759860's header and sequence from spikeprot0702.fasta.gz and put it into a file called wuhanhu1.fasta.
-
-Note: There are several accessions that start with EPI_ISL_759860 but we want **EPI_ISL_759860** not **EPI_ISL_759860**7, for instance, so search for 'EPI_ISL_759860|'
-
-<details>
-  <summary>Click for Possible Answers</summary>
-  ```
-zgrep -A1 'EPI_ISL_759860|' spikeprot0702.fasta.gz > wuhanhu1.fasta
-  ```
-</details>
-\
-
-Now combine the dns.spikeprot0702.fasta (Denmark, Norway, Sweden spike sequences) and the wuhanhu1.fasta file you just made using the "cat" command. Put it in a file called dnsw.spikeprot0702.fasta
-
-<details>
-  <summary>Click for Possible Answers</summary>
-  ```
-  cat wuhanhu1.fasta dns.spikeprot0702.fasta > dnsw.spikeprot0702.fasta
-  ```
-</details>
-\
-
-The Wuhan-Hu-1 header is really long and has a lot of special characters. Since we will be feeding that in on the command line, let's make it shorter.
-
-Find the Wuhan-Hu-1 header.
-
-<details>
-  <summary>Click for Possible Answers</summary>
-  ```
-  grep '>' Wuhan dnsw.spikeprot0702.fasta
-  ```
-</details>
-\
+The mafft.dns.spikeprot230702.fasta file has spike protein sequences for Denmark, Norway, and Sweden that are already aligned.
 
 
-Let's replace it so it just says Wuhan-Hu-1. Here is one way to do it.
-
-NOTE: -i.bak tells sed to edit the file in place and make a backup of the original file, ading the .bak suffix.
-
-```
-sed -i.bak -e 's/^>.*\(Wuhan-Hu-1\).*/>\1/' dnsw.spikeprot0702.fasta
-```
-
-Run a mulitple sequence alignment on the dnsw.spikeprot0702.fasta. This will take a will so if you need to, link to my file at /home/jm/sars-variants/mafft.dnsw.spikeprot0702.fasta (but make sure you name your file something different!). Use 8 threads.
+Run a mulitple sequence alignment on the dnsw.spikeprot230702.fasta. This will take a will so if you need to, link to my file at /home/jm/sars-variants/mafft.dnsw.spikeprot230702.fasta (but make sure you name your file something different!). Use 8 threads.
 
 NOTE: The number of threads is
 ```
@@ -137,7 +98,7 @@ in raxml-ng.
 <details>
   <summary>Click for Answer</summary>
   ```
-mafft --thread 100 dnsw.spikeprot0702.fasta > mafft.dnsw.spikeprot0702.fasta
+mafft --thread 100 dnsw.spikeprot230702.fasta > mafft.dnsw.spikeprot230702.fasta
   ```
 </details>
 \
@@ -148,7 +109,7 @@ Now, create the tree. Use 8 threads.
 <details>
   <summary>Click for Answer</summary>
   ```
-raxml-ng  --threads 8 --force model_lh_impr --outgroup Wuhan-Hu-1 --all --msa mafft.dnsw.spikeprot0702.fasta --model GTR+G --tree pars{10} --bs-trees 100
+raxml-ng  --threads 8 --force model_lh_impr --outgroup Wuhan-Hu-1 --all --msa mafft.dnsw.spikeprot230702.fasta --model GTR+G --tree pars{10} --bs-trees 100
   ```
 </details>
 \
@@ -212,7 +173,7 @@ pdf("basic.tree.pdf")
 ```
 
 
-Now make the tree and release the PNG.
+Now make the tree and release the PDf.
 
 ```
 ggtree(tr)
@@ -224,9 +185,13 @@ Use another terminal to download your PDF and look at it.
 
 HINT: We'll be making several PDFs. I find it easier to set up my scp command to download all the PDFs (*pdf) in the sars-variants directory so I don't have to rewrite my command. They are small so redownloading previous PDFs isn't problematic.
 
+<details>
+  <summary>Click for Answer</summary>
 
 ![](./Figures/basic.tree.png){width=70%}
 
+</details>
+\
 
 Not much to look at and we definitely need some tip labels and a scale. So let's make some customizations.
 
@@ -255,7 +220,14 @@ dev.off()
 
 ```
 
+
+<details>
+  <summary>Click for Answer</summary>
+
 ![](./Figures/labeled.tree.png){width=50%}
+
+</details>
+\
 
 NOTE: The scale/branch lengths are a nucleotide distance. In other words, 1e-04 means one nucleotide change in every 10,000 nucleotides.
 
@@ -271,7 +243,7 @@ pdf("scaled.tree.pdf")
 </details>
 \
 
-Create the tree then close the PNG. We can start with the mytree variable that we made above. We'll add on a layer from ggplot2 called xlim, giving it a range from 0 to 0.002. We'll also add a title layer.
+Create the tree then close the PDF. We can start with the mytree variable that we made above. We'll add on a layer from ggplot2 called xlim, giving it a range from 0 to 0.002. We'll also add a title layer.
 
 ```
 mytree2 = mytree + ggplot2::xlim(0, 0.002) + ggtitle("SARS-CoV-2 Variants")
@@ -282,7 +254,13 @@ dev.off()
 
 ```
 
+<details>
+  <summary>Click for Answer</summary>
+
 ![](./Figures/scaled.tree.png){width=50%}
+
+</details>
+\
 
 That's better. Notice that the farthest tips still end around 0.001.
 
@@ -295,7 +273,7 @@ Open up a PDF called "tip.tree.pdf".
 <details>
   <summary>Click for Answer</summary>
 ```
-png("tip.tree.png")
+pdf("tip.tree.pdf")
 ```
 </details>
 \
@@ -312,8 +290,13 @@ dev.off()
 
 ```
 
+<details>
+  <summary>Click for Answer</summary>
+
 ![](./Figures/tip.tree.png){width=35%}
 
+</details>
+\
 
 If you wanted to also color the tip label text blue, how do you think you would you do it?
 
@@ -398,7 +381,13 @@ dev.off()
 
 ```
 
+<details>
+  <summary>Click for Answer</summary>
+
 ![](./Figures/country.tree.png){width=35%}
+
+</details>
+\
 
 We can also add in the multiple sequence alignment next to the tree. Read in the mafft multiple sequence alignment file.
 
@@ -416,7 +405,14 @@ msaplot(mytree4, fasta=msafa, width=2)
 dev.off()
 ```
 
+
+<details>
+  <summary>Click for Answer</summary>
+
 ![](./Figures/msa.tree.png){width=35%}
+
+</details>
+\
 
 OK, cool! We have just squeezed the nearly 30,000 nucleotide genome onto the plot. Obviously, there are a few problems. We have overwritten our labels and the sequence in the MSA is so squeezed that it is hard to see it in general or to pick out any differences. We now have a second legend that tells the colors of the nucleotides and neither legend is in a good place.
 
@@ -441,7 +437,13 @@ msaplot(mytree5, fasta=msafa, width=15, offset=0.0008)
 dev.off()
 ```
 
+<details>
+  <summary>Click for Answer</summary>
+
 ![](./Figures/msa.big.tree.png){width=100%}
+
+</details>
+\
 
 Looks great! Might need to zoom in too look at it more closely.
 
@@ -457,7 +459,14 @@ msaplot(mytree5, fasta=msafa, width=15, offset=0.0008, window=c(21563,25384))
 dev.off()
 ```
 
+
+<details>
+  <summary>Click for Answer</summary>
+
 ![](./Figures/msa.spike.msa.tree.png){width=100%}
+
+</details>
+\
 
 As we have already learned there are no insertions in these variants relative to Wuhan (thought there are in other variants). If there were, the coordinates in the MSA for spike would shift slightly. Let's double-check that there is a start codon at the beginning and a stop codon at the end. Zoom in to see the first and last 3 nucleotides. The link below takes you to a codon wheel so you can see what the codons you find code for.
 
@@ -488,13 +497,15 @@ Omicron   2
 \
 
 
-Let's make a tree for the Denmark, Norway, Sweden Arcturus sequences color coded by country. We'll rely on the color for country and not worry about the tip labels. We'll just focus on the tree and not worry about the MSA. Try it yourself before looking at the answer.
+## Arcturus Genome Sequences
 
-If you don't have a tree made, link to mine (/home/jm/gisaid_genomes/mafft.dns.arcturus.fasta).
+Let's make a tree for the Denmark, Norway, Sweden Arcturus sequences color coded by country. We'll rely on the color for country and not worry about the tip labels. Try it yourself before looking at the answer.
 
-These are the steps you'll need to take:
+Use your MSA file from the previous chapter: mafft.dns.arcturus.fasta
 
-1. Switch to the gisaid_genome directory in R.
+These are the steps you'll need to take, starting in linux:
+
+1. Switch to the gisaid_genome directory.
 2. Create a file that links each sequence to the country it came from in linux.
 
 HINT: You can use sed as we did for the SARS-CoV-2 variants, but here is an easier way. The "paste" command pastes columns from different files together.
@@ -509,7 +520,7 @@ paste temp1.txt temp2.txt > dns.arc.country.txt
 rm temp*
 ```
 
-3. Create a tree in linux.
+3. Create a tree.
 
 The rest of the steps are in R.
 
@@ -523,7 +534,7 @@ The rest of the steps are in R.
 <details>
   <summary>Click for Answers</summary>
 ```
-1. setwd("/home/jm/gisaid_genomes/")
+1. cd ~/gisaid_genomes/
 
 2. grep '>' mafft.dns.arcturus.fasta | sed 's/>//' > temp1.txt
 cut -f 2 -d '/' temp1.txt > temp2.txt
@@ -531,6 +542,8 @@ paste temp1.txt temp2.txt > dns.arc.country.txt
 rm temp*
 
 3. raxml-ng --force model_lh_impr --all --msa mafft.dns.arcturus.fasta --model GTR+G --tree pars{10} --bs-trees 100
+
+Open up R.
 
 4. dnscountrydf = read.table("dns.arc.country.txt", header=FALSE)
 
@@ -550,7 +563,15 @@ dev.off()
 </details>
 \
 
+
+<details>
+  <summary>Click for Answer</summary>
+
 ![](./Figures/dns.arc.png){width=50%}
+
+</details>
+\
+
 
 Now try to create a phylogenetic tree with your arcturus 3 country data. Think about these questions before we share the plots with each other.
 
@@ -563,4 +584,22 @@ Are any clades specific to one country or absent from one country?
 Keep in mind that it is hard to compare numbers directly across countries because each country sequenced a different number/percentage of cases. But do you see any interesting patterns such as a high percentage of a country's sequences being in the beginning or later in the pandemic, and do these patterns match what you know about the course of the pandemic in these countries?
 
 
+BONUS: If you want to randomly subset your sequences to get fewer sequences you can use the linux command "shuf" and the Seqtk toolkit as follows.
 
+Get a list of geneIDs from your fasta file. If there is a space in the header, only get up to the space. Remove the '>'.
+
+```
+grep '>' mysequences.fasta | cut -f 1 -d ' ' | sed 's/>//g' > seqIDs.txt
+```
+
+Get a random subset of the IDs; the example below gets 100 sequences
+
+```
+shuf -n 100 seqIDs.txt > subset_seqIDs.txt
+```
+
+Get the fasta for your subset
+
+```
+seqtk subseq genes.fasta  subset_seqIDs.txt   > subset_sequences.fasta
+```
