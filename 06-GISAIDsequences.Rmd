@@ -1,8 +1,5 @@
 <!-- The lineage frequencies have already been done through covariants.org so we won't do them here. -->
 
-<!-- Split apart the epi_set photos -->
-
-<!-- Add epi_set acknowledgement for dns -->
 
 # GISAID SARS-CoV-2 Genome Sequences
 
@@ -124,7 +121,7 @@ Check the complete box to limit your search to complete genomes. Type your count
 
 ![](./Figures/DenmarkSearch.png){width=70%}
 
-How many did complete genome sequences did you find (see bottom left)?
+How many complete genome sequences did you find (see bottom left)?
 
 Repeat for your 3 countries. Make sure you record this in your slides, including the date. This is a huge increase for Denmark from 14 in NCBI to 635,933 in GISAID!
 
@@ -137,6 +134,7 @@ GISAID limits us to downloading sequences 10,000 at a time. Let's zoom in on a s
 In the same search, in the "Variant" field, choose XBB.1.16. This is the Arcturus subvariant.
 
 ![](./Figures/gisaidSearch.png){width=70%}
+\
 I got 46 for Denmark. Before we download these, we need to generate an EPI_SET. GISAID requires you to cite all the people who contributed to any of the sequences that you are using in an analysis. So, any oral or poster presentation, or any manscript needs to acknowledge everyone who contributed genome sequences. This used to be a huge pain to gather all the information into a gigantic list. Now, they have made it easy EPI_SETs, which gather the info for you and publish it to a DOI (a permanent Digital Object Identifier) that you can put on your publication to fulfill the acknowledgement requirements.
 
 Select all sequences by clicking the checkbox near "Virus Name". Then, simply click on the "EPI_SET" button on the bottom right. Then click "Generate".
@@ -162,7 +160,7 @@ Now click on "Download" to download the sequences.
 
 Change the name of the file to something that identifies the country the sequences came from and the fact that we limitted it to the Arcturus subvariant.
 
-Repeat for your other 2 countries.
+Repeat for your other countries.
 
 
 ## Upload sequences
