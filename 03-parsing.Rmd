@@ -68,6 +68,7 @@ Now let's use the data from "Our World In Data". For things that are new, we hav
   <summary>Click for Answer</summary>
 		ln -s /home/data/nise/owid-covid-data.csv .
 </details>
+\
 
 12. How many rows are in the file? Use wc -l (wc = word count, -l = lines)
 
