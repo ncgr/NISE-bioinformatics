@@ -8,7 +8,7 @@ Let's practice with a small file. Make sure you are in a **screen**.
 
 2. Go into that directory.
 
-3. Copy the file "pandemics.csv" from this directory: "/home/jm/linux_practice/" to the directory you just made.
+3. Copy the file "pandemics.csv" from this directory: "/home/data/nise" to the directory you just made.
 
 4. Take a look at the file.
 
@@ -38,7 +38,7 @@ Note that there are often several ways to do things in linux and not all methods
 
 2. cd ~/parse
 
-3. cp /home/jm/linux_practice/pandemics.csv . [Don't forget the space and period at the end; the period says to name it the same thing.]
+3. cp /home/data/nise/pandemics.csv . [Don't forget the space and period at the end; the period says to name it the same thing.]
 
 4. cat pandemics.csv [you could also use more, less, head, tail, or other commands]
 
@@ -61,12 +61,6 @@ Note that there are often several ways to do things in linux and not all methods
 Now let's use the data from "Our World In Data". For things that are new, we have added some in-line answers but before you reveal the answer, try it yourself first using the hints provided.
 
 10. Make sure you are still in the parse directory.
-
-<details>
-  <summary>Click for Answer</summary>
-		ln -s /home/data/nise/owid-covid-data.csv .
-</details>
-
 
 11. Link to the file "owid-covid-data.csv". It is in this directory: "/home/data/nise/".
 
