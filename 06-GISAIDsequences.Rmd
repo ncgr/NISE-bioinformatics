@@ -180,8 +180,8 @@ Upload the sequences to the server.
   ```
   Adjust the commands below to reflect the filenames for your 3 countries and replace "jm" with your username.
   
-1. scp -P 44111 *arcturus*fasta "jm@gateway.training.ncgr.org:/home/jm/"
-2. ssh -p 44111 jm@gateway.training.ncgr.org
+1. scp -P 2406 *arcturus*fasta "jm@inbre.ncgr.org:/home/jm/"
+2. ssh -p 2406 jm@inbre.ncgr.org
 3. screen -S gisaid_genomes
 4. mkdir ~/gisaid_genomes
 5. mv *arcturus*fasta gisaid_genomes
