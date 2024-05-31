@@ -12,6 +12,7 @@ Change the name of the sequence file with Denmark, Norway, and Sweden to DNS.seq
   <summary>Click for Answer</summary>
   mv sequences.fasta DNS.sequences.fasta
 </details>
+\
 
 Change the name of your three countries file to something that identifies the countries.
 
