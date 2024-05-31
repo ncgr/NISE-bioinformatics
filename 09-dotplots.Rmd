@@ -12,7 +12,7 @@ We'll start with SARS-CoV-2.
 
 Make a directory called "dotplots" and navigate into it.
 
-Soft-link to the data (/home/jm/sarsdata/dotplotgenomes/*.fa).
+Soft-link to the data (/home/data/nise/dotplotgenomes/*.fa).
 
 Activate the mm2 environment. This will allow us to run minimap2, an aligner (like BLAST) that will very quickly give us approximate genome-wide alignments.
 
@@ -23,7 +23,7 @@ mkdir ~/dotplots
 
 cd dotplots
 
-ln -s /home/jm/sarsdata/dotplotgenomes/*.fa .
+ln -s /home/data/nise/dotplotgenomes/*.fa .
 
 conda activate mm2
 ```

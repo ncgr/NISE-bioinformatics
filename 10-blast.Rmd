@@ -20,17 +20,19 @@ mkdir ~/ancientpathogen
 cd ~/ancientpathogen
 ```
 </details>
+\
 
-Link to the data. You can find it in /home/jm/nise-data/*q.gz. This is single end Illumina data. What does that mean?
+Link to the data. You can find it in /home/data/nise/ancientpathogen/*q.gz. This is single end Illumina data. What does that mean?
 
 <!-- The paper says they should be paired end but the data they uploaded to the archive is single end. -->
 
 <details>
   <summary>Click for Answer</summary>
 ```
-ln -s /home/jm/nise-data/*q.gz .
+ln -s /home/data/nise/ancientpathogen/*q.gz .
 ```
 </details>
+\
 
 Take a look at the filenames. Look at the file with ERR11262426 in the filename. This is a sample called C10098 from southern England. Note what the headers start with. Go back to the linux section if you need a refresher on fastq format.
 
@@ -42,6 +44,7 @@ ls -l
 zcat ERR11262426.fastq.gz | head
 ```
 </details>
+\
 
 How many reads are there? 
 
@@ -49,9 +52,10 @@ How many reads are there?
 <details>
   <summary>Click for Answer</summary>
 ```
-zgrep -c "^@ERR" /home/jm/nise-data/ERR11262426.fastq.gz
+zgrep -c "^@ERR" ERR11262426.fastq.gz
 ```
 </details>
+\
 
 
 Let's run FastQC, a tool that runs quality control metrics on fastq files. We can leave the fastq files zipped.
@@ -70,6 +74,7 @@ Make a directory called "fastqc" in your current directory. This will be our out
 mkdir fastqc
 ```
 </details>
+\
 
 
 Now run FastQC.
@@ -81,15 +86,15 @@ fastqc -o fastqc ERR11262426.fastq.gz
 Copy the html and zip files over to your desktop, then unzip the .zip file and open up the html file. Go through it as a group.
 
 
-Let's look to see if there are any sequences from bacterial species included among the human sequences. I grabbed all of the complete bacterial genomes from Genbank as of July 21, 2023. We'll align our sequences to them using minimap2 (you could also use blast). Soft link to the fasta file with the bacterial genomes in it. It is in /home/jm/microbe/GbBac.fasta
+Let's look to see if there are any sequences from bacterial species included among the human sequences. I grabbed all of the complete bacterial genomes from Genbank as of July 21, 2023. We'll align our sequences to them using minimap2 (you could also use blast). Soft link to the fasta file with the bacterial genomes in it. It is in /home/data/nise/GbBac.fasta
 
 <details>
   <summary>Click for Answer</summary>
 ```
-ln -s /home/jm/microbe/GbBac.fasta .
+ln -s /home/data/nise/GbBac.fasta .
 ```
 </details>
-
+\
 
 Create a database of that file (note that minimap2 can create a database on the fly but it is faster to do it beforehand, especially if you will use it for more than one alignment). We will name the reference database bacteria.mmi. We'll use the short read preset (-x sr) since our fastq reads are short illumina reads.
 
@@ -102,10 +107,10 @@ We don't need to align all of the reads to the bacterial genomes, just a subset 
 <details>
   <summary>Click for Answer</summary>
 ```
-zcat /home/jm/nise-data/ERR11262438.fastq.gz |head -4000 > ERR11262438.1000.fastq
+zcat ERR11262438.fastq.gz |head -4000 > ERR11262438.1000.fastq
 ```
 </details>
-
+\
 
 Run the alignment.
 
@@ -124,7 +129,7 @@ Hint: You can get the genus and species using the cut command and grabbing the 2
 cut -f 2-3 -d '_' ERR112624261000xbacteria.paf | sort |uniq -c | sort -n
 ```
 </details>
-
+\
 
 What pathogen likely killed this person and what disease does it cause?
 
@@ -134,6 +139,7 @@ What pathogen likely killed this person and what disease does it cause?
 Yersinia pestis, which causes the plague.
 ```
 </details>
+\
 
 Now see if you can do the same analysis for sample ERR11262438. This is sample C10928, the one from Northern England.
 
@@ -144,7 +150,8 @@ What pathogen likely killed this person and what disease does it cause?
 ```
 Yersinia pestis, which causes the plague.
 ```
-
+</details>
+\
 
 
 Citation (There is a spoiler here so don't open it until you have done the exercise.)

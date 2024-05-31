@@ -1,3 +1,5 @@
+<!-- Could add in plotly -->
+
 # Our World in Data (plots)
 
 Now let's use the data from "Our World in Data" that you created yesterday. We'll start with the Norway file.

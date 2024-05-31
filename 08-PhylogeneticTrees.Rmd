@@ -9,7 +9,7 @@
 
 Now let's make a phylogenetic tree. We'll start with a web-based tool that can create phylogenetic trees.
 
-Download mafft.sars-cov-2-variants.fasta file that you already made. It has the genome sequence of the four different SARS-Cov-2 variants in it. If it isn't completed yet, you can download mine at /home/jm/sars-variants/mafft.sars-cov-2-variants.fasta
+Download mafft.sars-cov-2-variants.fasta file that you already made. It has the genome sequence of the four different SARS-Cov-2 variants in it.
 
 <!-- Go to http://www.trex.uqam.ca/ -->
 <!-- This went down the day we planned to do this so switching to EBI-->
@@ -44,7 +44,7 @@ Alpha and Omicron are the most closely related, at least according to this tree.
 
 
 
-The mafft.dns.spikeprot230702.fasta file is too large for this website so we need to learn how to do this on the command line. But we'll start off with the 4 variant sequences first.
+The mafft.dnsw.spikeprot230702.fasta file is too large for this website so we need to learn how to do this on the command line. But we'll start off with the 4 variant sequences first.
 
 Log into logrus and get into a screen. Navigate to your sars-variants folder. Do an ls to see what files are there.
 
@@ -78,46 +78,9 @@ The Wuhan-Hu-1 is the most distantly related.
 
 </details>
 
-## Spike Protein
-
-The mafft.dns.spikeprot230702.fasta file has spike protein sequences for Denmark, Norway, and Sweden that are already aligned.
-
-
-Run a mulitple sequence alignment on the dnsw.spikeprot230702.fasta. This will take a will so if you need to, link to my file at /home/jm/sars-variants/mafft.dnsw.spikeprot230702.fasta (but make sure you name your file something different!). Use 8 threads.
-
-NOTE: The number of threads is
-```
---thread
-```
-in MAFFT and 
-```
---threads
-```
-in raxml-ng.
-
-<details>
-  <summary>Click for Answer</summary>
-  ```
-mafft --thread 100 dnsw.spikeprot230702.fasta > mafft.dnsw.spikeprot230702.fasta
-  ```
-</details>
-\
-
-  
-Now, create the tree. Use 8 threads.
-
-<details>
-  <summary>Click for Answer</summary>
-  ```
-raxml-ng  --threads 8 --force model_lh_impr --outgroup Wuhan-Hu-1 --all --msa mafft.dnsw.spikeprot230702.fasta --model GTR+G --tree pars{10} --bs-trees 100
-  ```
-</details>
-\
-
-Now, create a tree for your 3 countries from the MSA you made earlier.
-
-
 ## Visualizing the tree
+
+We'll start with the small tree that we worked with online.
 
 Make sure you are in the sars-variants directory.
 <details>
@@ -468,7 +431,7 @@ dev.off()
 </details>
 \
 
-As we have already learned there are no insertions in these variants relative to Wuhan (thought there are in other variants). If there were, the coordinates in the MSA for spike would shift slightly. Let's double-check that there is a start codon at the beginning and a stop codon at the end. Zoom in to see the first and last 3 nucleotides. The link below takes you to a codon wheel so you can see what the codons you find code for.
+As we have already learned there are no insertions in these variants relative to Wuhan (though there are in other variants). If there were, the coordinates in the MSA for spike would shift slightly. Let's double-check that there is a start codon at the beginning and a stop codon at the end. Zoom in to see the first and last 3 nucleotides. The link below takes you to a codon wheel so you can see what the codons you find code for.
 
 https://www.sigmaaldrich.com/US/en/technical-documents/technical-article/genomics/sequencing/amino-acid-codon-wheel
 
@@ -584,6 +547,39 @@ Are any clades specific to one country or absent from one country?
 Keep in mind that it is hard to compare numbers directly across countries because each country sequenced a different number/percentage of cases. But do you see any interesting patterns such as a high percentage of a country's sequences being in the beginning or later in the pandemic, and do these patterns match what you know about the course of the pandemic in these countries?
 
 
+## Spike Protein
+
+The mafft.dnsw.spikeprot230702.fasta file from the previous chapter has spike protein sequences for Denmark, Norway, Sweden and one Wuhan sequence that you already aligned.
+
+
+  
+Let's create the tree using raxml-ng. Use 8 threads.
+
+
+NOTE: The number of threads is
+```
+--thread
+```
+in MAFFT and 
+```
+--threads
+```
+in raxml-ng.
+
+
+<details>
+  <summary>Click for Answer</summary>
+  ```
+raxml-ng  --threads 8 --force model_lh_impr --outgroup Wuhan-Hu-1 --all --msa mafft.dnsw.spikeprot230702.fasta --model GTR+G --tree pars{10} --bs-trees 100
+  ```
+</details>
+\
+
+Now, create a tree for your 3 countries from the MSA you made earlier.
+
+Visualize the trees in R.
+
+
 BONUS: If you want to randomly subset your sequences to get fewer sequences you can use the linux command "shuf" and the Seqtk toolkit as follows.
 
 Get a list of geneIDs from your fasta file. If there is a space in the header, only get up to the space. Remove the '>'.
@@ -603,3 +599,34 @@ Get the fasta for your subset
 ```
 seqtk subseq genes.fasta  subset_seqIDs.txt   > subset_sequences.fasta
 ```
+
+
+## Spike Protein
+
+The mafft.dnsw.spikeprot230702.fasta file from the previous chapter has spike protein sequences for Denmark, Norway, Sweden and one Wuhan sequence that you already aligned.
+
+Create a tree using raxml-ng. Use 8 threads.
+
+
+NOTE: The number of threads is
+```
+--thread
+```
+in MAFFT and 
+```
+--threads
+```
+in raxml-ng.
+
+
+<details>
+  <summary>Click for Answer</summary>
+  ```
+raxml-ng  --threads 8 --force model_lh_impr --outgroup Wuhan-Hu-1 --all --msa mafft.dnsw.spikeprot230702.fasta --model GTR+G --tree pars{10} --bs-trees 100
+  ```
+</details>
+\
+
+Now, create a tree for your 3 countries from the MSA you made earlier.
+
+Visualize the trees in R.
