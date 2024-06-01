@@ -164,3 +164,49 @@ dev.off()
 
 
 Try some on your own using some of the other variables, scales, and/or plot types.
+
+
+BONUS: Interactive plots
+
+Turning ggplot2 plots into interactive html plots is straightforward with the plotly library. Let's do the last one we did.
+
+You should still be in R.
+
+Make sure the following libraries are loaded.
+
+```
+library(ggplot2)
+library(plotly)
+library(htmlwidgets)
+```
+
+Put the plot into a variable. We'll call it myplot.
+
+```
+myplot = ggplot(nor, aes(x=Date, y=Total_Cases)) +
+geom_col(width=1,color="darkgray") +
+geom_line(aes(y=Total_Deaths*100),color="blue") +
+scale_y_continuous(
+# Features of the first axis
+name = "Total Cases",
+# Add a second axis and specify its features
+sec.axis = sec_axis(transform=~./100, name="Total Deaths")
+) +
+theme_bw() +
+ggtitle("Norway COVID-19 Cases and Deaths") +
+theme(axis.title.y.right = element_text(color = "blue"))
+```
+
+Make an interactive version of myplot.
+```
+myplotint = ggplotly(myplot)
+```
+
+Save it as an HTML file with an accompanying library folder (“lib”)
+```
+saveWidget(myplotint, "datexcases_deaths_adjust.html", selfcontained = F, libdir = "lib")
+```
+
+Use scp to copy both the html file and the library file to your computer (use -r for recursive to get the lib folder plus everything in it). The lib folder has to be in the same folder as the html file.
+
+Open up the html file.
