@@ -1,4 +1,4 @@
-<!-- Could add in plotly -->
+<!-- Could add in plotly; already installed as is htmlwidgets -->
 
 # Our World in Data (plots)
 
