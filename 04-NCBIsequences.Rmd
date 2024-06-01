@@ -201,6 +201,9 @@ Open up R.
 R
 ```
 
+<!-- using the default R: /usr/bin/R -->
+<!-- not for Joann: you have an R in /usr/local/bin/ that is default-->
+
 Now we are in R. The R command line is similar to linux but the commands are a little bit different as you will notice as we walk through it. Note that you can use the up arrow to get back previous commands as in linux. ctrl-c works the same as well.
 
 Load the ggplot2 library.

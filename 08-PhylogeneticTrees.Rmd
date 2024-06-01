@@ -51,7 +51,7 @@ Log into logrus and get into a screen. Navigate to your sars-variants folder. Do
 Activate the environment. We'll use RAxML-ng to build the tree using the MAFFT files we already created. We'll use Wuhan-Hu-1 as the outgroup.
 
 ```
-conda activate raxml-ng
+conda activate msa-tree
 ```
 
 Create the tree.
@@ -92,16 +92,13 @@ cd ~/sars-variants
 \
 
 
-Activate the tree environment.
+Activate the tree environment if you haven't already.
 
 
 <details>
   <summary>Click for Answer</summary>
 ```
-conda activate tree
-
-If it doesn't recognize the environment, try:
-conda activate /home/condasw/miniconda3/envs/tree
+conda activate msa-tree
 ```
 </details>
 \

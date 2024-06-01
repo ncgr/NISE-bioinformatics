@@ -212,7 +212,7 @@ Go into your ~/sars-variants directory
 Activate the environment.
 
 ```
-conda activate mafft_msa
+conda activate msa-tree
 ```
 
 mafft sars-cov-2-variants.fasta  > mafft.sars-cov-2-variants.fasta

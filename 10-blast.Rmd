@@ -60,10 +60,10 @@ zgrep -c "^@ERR" ERR11262426.fastq.gz
 
 Let's run FastQC, a tool that runs quality control metrics on fastq files. We can leave the fastq files zipped.
 
-activate the fastQC environment. If conda can't find it, use:
+activate the fastqc-env environment.
 
 ```
-conda activate /home/condasw/miniconda3/envs/fastQC
+conda activate fastqc-env
 ```
 
 Make a directory called "fastqc" in your current directory. This will be our output directory.
