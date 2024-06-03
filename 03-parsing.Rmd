@@ -235,3 +235,8 @@ grep "Norway" /home/data/nise/owid-covid-data.csv | cut -d, -f 3,4,5,8,11,14,18,
 ```
 
 Make a similar file for each of your three countries.
+
+
+## Jeopardy
+
+https://jeopardylabs.com/play/linux-practicum
