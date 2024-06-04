@@ -255,3 +255,16 @@ Make a similar file for each of your three countries.
 ## Jeopardy
 
 https://jeopardylabs.com/play/linux-practicum
+
+
+<!--I suggest that you don’t make this timed–we want them to think through this rather than hurrying through it. All answers have at least 2 ways to do things so you could have the team whose turn it is make a guess then the other team could try to propose a different way. If you want to give them access to the files, you could send them into quick breakout rooms to discuss and test. Or you could have them put something in the chat (might still want breakout rooms so they can discuss?) and you can test it. Either way, they need to know some things about the files (see below).
+
+This uses the pandemics.csv in /home/jm/linux_practice (and also copied to their home directories in an earlier exercise), though there are screenshots in the jeopardy that are sufficient.
+
+It also uses 2 new files that are in /home/jm/jeopardy/ (influenzaA_sequences.fa  some_pandemic_movies.txt)
+
+Genetic distance of omicron (variants)
+For the some_pandemic_movies.txt they need to know that it is a tab--delimited file containing the movie name, year of release, and type of pathogen. At a minimum show them a head so that they realize that there are spaces in the movie title, which affects awk because it splits on whitespace.
+
+For influenzaA_sequences.fa, they need to know that the header is pipe-delimited: Accession, Genbank title, Organism Name, Length, Country, Collection Date, Host. So, give them the file to work with or show them a head of the headers. Influenza A affects humans, birds, and other animals, while influenza B is generally just humans.
+-->
