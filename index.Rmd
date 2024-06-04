@@ -13,17 +13,78 @@ github-repo: ncgr/NISE-Bioinformatics
 
 ---
 
-# National Center for Genome Resources {-}
-
-This publication was supported by an Institutional Development Award (IDeA) from the National Institute of General Medical Sciences of the National Institutes of Health under grant number P20GM103451. 
-
-
-## License and Copyright {-}
+# License and Copyright{-}
 
 Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
 https://creativecommons.org/licenses/by-nc-nd/4.0/
 
-© 2023 National Center for Genome Resources
+© 2023-2024 National Center for Genome Resources
+
+![](./Figures/ncgr.png){width=30%} 
+
+
+<br>
+
+This publication was supported by an Institutional Development Award (IDeA) from the National Institute of General Medical Sciences of the National Institutes of Health under grant number P20GM103451. 
+
+
+![](./Figures/INBRE_Logo_Grad_transparent-2019.png){width=20%} 
+
+<br>
+
+
+# Instructors
+
+![](./Figures/Adam.png){width=42%}
+
+![](./Figures/Joann.png){width=80%}
+
+This document is available at https://inbre.ncgr.org/nise-bioinformatics
+
+
+# Getting Started
+
+Welcome to the Virtual Bioinformatics New Mexico INBRE Summer Experience (NISE)! We look forward to working with you this summer to dig into recent and ancient pandemics. We'll explore pandemics at different levels, looking at pathogens (genetics, evolution, transmission), disease (testing, outcomes, interventions, vaccination and immunity, risk factors), and societal factors (equity, policies, economy, mental health). You will each complete a 3 country research project and present it during the final week. We will help and support you along the way.
+
+## Computer requirements
+
+You will need to meet or exceed the following computer requirements: Windows 7, Mac (High Sierra or later), or Linux CPU 1 Ghz; 8G RAM or More; Mic and Camera. You should also have access to stable internet. Please make sure you have Zoom, Discord (you will need a free account), a browser, and access to microsoft word and powerpoint or google docs and slides. You will also need a terminal app to connect to our server (which one you will use will depend on what platform you are working on; we can help you with this once the internship is underway). If you have any concerns, please reach out to us.
+
+You will need to install the following software on your local computer.
+
+1. [Zoom](https://zoom.us/download)
+
+Install the correct version for your OS. Don't plan to use the web version, as this does not have enough features. 
+
+2. [MobaXterm](https://mobaxterm.mobatek.net/download.html) (Windows Users Only. Mac or Linux users will use their native terminal)
+
+* Download the "Home" "Installer" edition.  Be careful not to install the portable or professional editions.  
+
+* Before installing, extract the installer zip folder to any location on your computer.  
+
+* Now run the installer and follow the prompts.
+
+4. [Filezilla](https://filezilla-project.org/)
+
+5. [Jalview](https://www.jalview.org/)
+
+
+## Connecting to the linux server
+
+1. Open your terminal.
+
+2. Type the following on your command line, substituting in your username for <username>.
+
+```
+ssh -p2406 <username>@inbre.ncgr.org
+```
+
+3. Enter your password.
+
+If you have trouble connecting, please contact Ethan Price at inbre@ncgr.org.
+
+
+
 
 
 
@@ -33,3 +94,4 @@ knitr::write_bib(c(
   .packages(), 'bookdown', 'knitr', 'rmarkdown'
 ), 'packages.bib')
 ```
+
