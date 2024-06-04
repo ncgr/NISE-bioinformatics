@@ -13,6 +13,8 @@ github-repo: ncgr/NISE-Bioinformatics
 
 ---
 
+<!--I have left the PDF and EPUB download options on but some of the code runs off the page-->
+
 # License and Copyright{-}
 
 License:
