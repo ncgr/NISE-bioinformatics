@@ -210,9 +210,8 @@ sed 's/-//g' usbeds.csv | sed 's/-//g' |awk -F, '$2>=20200301&&$2<=20200930{SUM+
 
 Now practice on your own. Choose another variable and see if there are any interesting differences between your 3 countries. Explore at least 3 other variables.
 	
-Hint: You can look at the variables by heading the first line of the file. Here is some code that will give you column numbers. The sed command replaces commas with hard returns so each column name is on its own row. The "NR" variable in awk will give you the row number.
+Hint: You can look at the variables by heading the first line of the file.
 
-head -1 owid-covid-data.csv | sed 's/,/\n/g' | awk '{print NR "\t" $1}'
 
 ```
 head -1 owid-covid-data.csv

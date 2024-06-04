@@ -1651,7 +1651,7 @@ Now let's use the data from ``Our World In Data''. For things that are new, we h
 Click for Answer
 
 \begin{verbatim}
-  ln -s /home/data/nise/owid-covid-data.csv .
+        ln -s /home/data/nise/owid-covid-data.csv .
 \end{verbatim}
 
 \hfill\break
@@ -1667,7 +1667,7 @@ Click for Answer
 Click for Answer
 
 \begin{verbatim}
-  wc -l owid-covid-data.csv
+wc -l owid-covid-data.csv
 \end{verbatim}
 
 \hfill\break
@@ -1685,7 +1685,7 @@ Note: this will print the number of fields in each row. You can hit ctrl-c if yo
 Click for Answer
 
 \begin{verbatim}
-  awk -F, '{print NF}' owid-covid-data.csv
+awk -F, '{print NF}' owid-covid-data.csv
 \end{verbatim}
 
 \hfill\break
@@ -1701,7 +1701,7 @@ Click for Answer
 Click for Answer
 
 \begin{verbatim}
-  cut -d, -f 3,4,60 owid-covid-data.csv | less
+cut -d, -f 3,4,60 owid-covid-data.csv | less
 \end{verbatim}
 
 \hfill\break
@@ -1730,7 +1730,7 @@ Hint: There is a ``United States'' and a ``United States Virgin Islands''. To av
 Click for Answer
 
 \begin{verbatim}
-  grep "^United States," beds.2020-03-11.csv
+grep "^United States," beds.2020-03-11.csv
 \end{verbatim}
 
 \hfill\break
@@ -1750,7 +1750,7 @@ Hint: we'll use the extended version of grep which will allow us to search all 3
 Click for Answer
 
 \begin{verbatim}
-  grep -E "^Sweden,|^Norway,|^Denmark," beds.2020-03-11.csv
+grep -E "^Sweden,|^Norway,|^Denmark," beds.2020-03-11.csv
 \end{verbatim}
 
 \hfill\break
@@ -1770,7 +1770,9 @@ Hint: Use sed to remove the dashes then awk with \$2\textgreater=20200301\&\&\$2
 
 Click for Answer
 
-sed `s/-//g' usbeds.csv \textbar{} awk `\$2\textgreater=20200301\&\&\$2\textless=20200930\{print\}'
+\begin{verbatim}
+sed 's/-//g' usbeds.csv | awk '$2>=20200301&&$2<=20200930{print}'
+\end{verbatim}
 
 \hfill\break
 
@@ -1784,7 +1786,9 @@ sed `s/-//g' usbeds.csv \textbar{} awk `\$2\textgreater=20200301\&\&\$2\textless
 
 Click for Answer
 
-sed `s/-//g' usbeds.csv \textbar{} sed `s/-//g' \textbar awk -F, `\$2\textgreater=20200301\&\&\$2\textless=20200930\{SUM+=\$3;CNT+=1\}END\{print SUM/CNT\}'
+\begin{verbatim}
+sed 's/-//g' usbeds.csv | sed 's/-//g' |awk -F, '$2>=20200301&&$2<=20200930{SUM+=$3;CNT+=1}END{print SUM/CNT}'
+\end{verbatim}
 
 \hfill\break
 

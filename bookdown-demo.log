@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2024.2.16)  3 JUN 2024 18:28
+This is XeTeX, Version 3.141592653-2.6-0.999994 (TeX Live 2022) (preloaded format=xelatex 2024.2.16)  3 JUN 2024 18:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1368,42 +1368,42 @@ Overfull \hbox (18.56503pt too wide) in paragraph at lines 1769--1770
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1775--1776
+Underfull \hbox (badness 10000) in paragraph at lines 1777--1778
 
  []
 
 
-Overfull \hbox (148.35002pt too wide) in paragraph at lines 1787--1788
-[]\TU/lmr/m/n/10 sed ‘s/-//g’ usbeds.csv | sed ‘s/-//g’ |awk -F, ‘$2>=20200301&&$2<=20200930{SUM+=$3;CNT+=1}END{print
+Overfull \hbox (232.5pt too wide) in paragraph at lines 1791--1791
+[]\TU/lmtt/m/n/10 sed 's/-//g' usbeds.csv | sed 's/-//g' |awk -F, '$2>=20200301&&$2<=20200930{SUM+=$3;CNT+=1}END{print SUM/CNT}'[] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1789--1790
+Underfull \hbox (badness 10000) in paragraph at lines 1793--1794
 
  []
 
 
-Overfull \hbox (80.25pt too wide) in paragraph at lines 1830--1830
+Overfull \hbox (80.25pt too wide) in paragraph at lines 1834--1834
 []\TU/lmtt/m/n/10 15. cut -d, -f 3,4,60 owid-covid-data.csv | grep 2020-03-11 > beds.2020-03-11.csv[] 
  []
 
 [37]
-Overfull \hbox (69.75pt too wide) in paragraph at lines 1830--1830
+Overfull \hbox (69.75pt too wide) in paragraph at lines 1834--1834
 []\TU/lmtt/m/n/10 19. cut -d, -f 3,4,60 owid-covid-data.csv | grep "^United States," > usbeds.csv[] 
  []
 
 
-Overfull \hbox (111.75pt too wide) in paragraph at lines 1830--1830
+Overfull \hbox (111.75pt too wide) in paragraph at lines 1834--1834
 []\TU/lmtt/m/n/10 21. sed 's/-//g' usbeds.csv | sed 's/-//g' |awk -F, '$2>=20200301&&$2<=20200930{print}'[] 
  []
 
 
-Overfull \hbox (253.5pt too wide) in paragraph at lines 1830--1830
+Overfull \hbox (253.5pt too wide) in paragraph at lines 1834--1834
 []\TU/lmtt/m/n/10 22. sed 's/-//g' usbeds.csv | sed 's/-//g' |awk -F, '$2>=20200301&&$2<=20200930{SUM+=$3;CNT+=1}END{print SUM/CNT}'[] 
  []
 
 ! Undefined control sequence.
-l.1839 ...id-covid-data.csv \textbar{} sed `s/,/\n
+l.1843 ...id-covid-data.csv \textbar{} sed `s/,/\n
                                                   /g' \textbar{} awk `\{prin... 
 Here is how much of TeX's memory you used:
  17000 strings out of 478683
