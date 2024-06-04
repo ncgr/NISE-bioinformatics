@@ -66,7 +66,9 @@ Now let's use the data from "Our World In Data". For things that are new, we hav
 
 <details>
   <summary>Click for Answer</summary>
+```
 		ln -s /home/data/nise/owid-covid-data.csv .
+```
 </details>
 \
 
@@ -74,7 +76,9 @@ Now let's use the data from "Our World In Data". For things that are new, we hav
 
 <details>
   <summary>Click for Answer</summary>
-		wc -l owid-covid-data.csv
+```
+wc -l owid-covid-data.csv
+```
 </details>
 \
 
@@ -84,7 +88,9 @@ Note: this will print the number of fields in each row. You can hit ctrl-c if yo
 
 <details>
   <summary>Click for Answer</summary>
-		awk -F, '{print NF}' owid-covid-data.csv
+```
+awk -F, '{print NF}' owid-covid-data.csv
+```
 </details>
 \
 
@@ -92,7 +98,9 @@ Note: this will print the number of fields in each row. You can hit ctrl-c if yo
 
 <details>
   <summary>Click for Answer</summary>
-		cut -d, -f 3,4,60 owid-covid-data.csv | less
+```
+cut -d, -f 3,4,60 owid-covid-data.csv | less
+```
 </details>
 \
 
@@ -108,7 +116,9 @@ Hint: There is a "United States" and a "United States Virgin Islands". To avoid 
 
 <details>
   <summary>Click for Answer</summary>
-		grep "^United States," beds.2020-03-11.csv
+```
+grep "^United States," beds.2020-03-11.csv
+```
 </details>
 \
 
@@ -120,7 +130,9 @@ Hint: we'll use the extended version of grep which will allow us to search all 3
 
 <details>
   <summary>Click for Answer</summary>
-		grep -E "^Sweden,|^Norway,|^Denmark," beds.2020-03-11.csv
+```
+grep -E "^Sweden,|^Norway,|^Denmark," beds.2020-03-11.csv
+```
 </details>
 \
 
@@ -134,7 +146,9 @@ Hint: Use sed to remove the dashes then awk with $2>=20200301&&$2<=20200930.
 
 <details>
   <summary>Click for Answer</summary>
-    sed 's/-//g' usbeds.csv | awk '$2>=20200301&&$2<=20200930{print}'
+```
+sed 's/-//g' usbeds.csv | awk '$2>=20200301&&$2<=20200930{print}'
+```
 </details>
 \
 
@@ -143,7 +157,9 @@ Hint: Use sed to remove the dashes then awk with $2>=20200301&&$2<=20200930.
 
 <details>
   <summary>Click for Answer</summary>
-    sed 's/-//g' usbeds.csv | sed 's/-//g' |awk -F, '$2>=20200301&&$2<=20200930{SUM+=$3;CNT+=1}END{print SUM/CNT}'
+```
+sed 's/-//g' usbeds.csv | sed 's/-//g' |awk -F, '$2>=20200301&&$2<=20200930{SUM+=$3;CNT+=1}END{print SUM/CNT}'
+```
 </details>
 \
 		

@@ -95,20 +95,102 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
-\hypertarget{national-center-for-genome-resources}{%
-\chapter*{National Center for Genome Resources}\label{national-center-for-genome-resources}}
-\addcontentsline{toc}{chapter}{National Center for Genome Resources}
-
-This publication was supported by an Institutional Development Award (IDeA) from the National Institute of General Medical Sciences of the National Institutes of Health under grant number P20GM103451.
-
 \hypertarget{license-and-copyright}{%
-\section*{License and Copyright}\label{license-and-copyright}}
-\addcontentsline{toc}{section}{License and Copyright}
+\chapter*{License and Copyright}\label{license-and-copyright}}
+\addcontentsline{toc}{chapter}{License and Copyright}
 
+License:
 Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
 \url{https://creativecommons.org/licenses/by-nc-nd/4.0/}
 
-© 2023 National Center for Genome Resources
+© 2023-2024 National Center for Genome Resources
+
+\includegraphics[width=0.3\textwidth,height=\textheight]{./Figures/ncgr.png}
+
+This publication was supported by an Institutional Development Award (IDeA) from the National Institute of General Medical Sciences of the National Institutes of Health under grant number P20GM103451.
+
+\includegraphics[width=0.2\textwidth,height=\textheight]{./Figures/INBRE_Logo_Grad_transparent-2019.png}
+
+\hypertarget{instructors}{%
+\chapter{Instructors}\label{instructors}}
+
+\includegraphics[width=0.42\textwidth,height=\textheight]{./Figures/Adam.png}
+
+\includegraphics[width=0.8\textwidth,height=\textheight]{./Figures/Joann.png}
+
+This document is available at \url{https://inbre.ncgr.org/nise-bioinformatics}
+
+\hypertarget{getting-started}{%
+\chapter{Getting Started}\label{getting-started}}
+
+Welcome to the Virtual Bioinformatics New Mexico INBRE Summer Experience (NISE)! We look forward to working with you this summer to dig into recent and ancient pandemics. We'll explore pandemics at different levels, looking at pathogens (genetics, evolution, transmission), disease (testing, outcomes, interventions, vaccination and immunity, risk factors), and societal factors (equity, policies, economy, mental health). You will each complete a 3 country research project and present it during the final week. We will help and support you along the way.
+
+\hypertarget{computer-requirements}{%
+\section{Computer requirements}\label{computer-requirements}}
+
+You will need to meet or exceed the following computer requirements: Windows 7, Mac (High Sierra or later), or Linux CPU 1 Ghz; 8G RAM or More; Mic and Camera. You should also have access to stable internet. Please make sure you have Zoom, Discord (you will need a free account), a browser, and access to microsoft word and powerpoint or google docs and slides. You will also need a terminal app to connect to our server (which one you will use will depend on what platform you are working on; we can help you with this once the internship is underway). If you have any concerns, please reach out to us.
+
+You will need to install the following software on your local computer.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \href{https://zoom.us/download}{Zoom}
+\end{enumerate}
+
+Install the correct version for your OS. Don't plan to use the web version, as this does not have enough features.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  \href{https://mobaxterm.mobatek.net/download.html}{MobaXterm} (Windows Users Only. Mac or Linux users will use their native terminal)
+\end{enumerate}
+
+\begin{itemize}
+\item
+  Download the ``Home'' ``Installer'' edition. Be careful not to install the portable or professional editions.
+\item
+  Before installing, extract the installer zip folder to any location on your computer.
+\item
+  Now run the installer and follow the prompts.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{3}
+\item
+  \href{https://filezilla-project.org/}{Filezilla}
+\item
+  \href{https://www.jalview.org/}{Jalview}
+\end{enumerate}
+
+\hypertarget{connecting-to-the-linux-server}{%
+\section{Connecting to the linux server}\label{connecting-to-the-linux-server}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Open your terminal.
+\item
+  Type the following on your command line, substituting in your username for .
+\end{enumerate}
+
+\begin{verbatim}
+ssh -p2406 <username>@inbre.ncgr.org
+\end{verbatim}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Enter your password.
+\end{enumerate}
+
+If you have trouble connecting, please contact Ethan Price at \href{mailto:inbre@ncgr.org}{\nolinkurl{inbre@ncgr.org}}.
 
 \hypertarget{linux}{%
 \chapter{Linux}\label{linux}}
@@ -177,11 +259,11 @@ Enter the following command to log on to logrus:
 \begin{itemize}
 \tightlist
 \item
-  substitute \textbf{your} personal username in for ``username''
+  substitute \textbf{your} personal username in for ``user''
 \end{itemize}
 
 \begin{verbatim}
-ssh -p 44111 username@gateway.training.ncgr.org
+ssh -p2406 user@inbre.ncgr.org
 \end{verbatim}
 
 Notes:
@@ -580,7 +662,7 @@ touch scp_test.txt
 \end{itemize}
 
 \begin{verbatim}
-scp -P 44111 <user>@gateway.training.ncgr.org:~/linuxc/scp_test.txt .
+scp -P 2406 <user>@inbre.ncgr.org:~/linuxc/scp_test.txt .
 \end{verbatim}
 
 Note: When you designate a port with secure copy (scp), you use a capital P.
@@ -603,7 +685,7 @@ You will be prompted for your logrus password if not using MobaXterm.
 \end{itemize}
 
 \begin{verbatim}
-scp -P 44111 scp_test.txt <user>@gateway.training.ncgr.org:~/linuxc
+scp -P 2406 scp_test.txt <user>@inbre.ncgr.org:~/linuxc
 \end{verbatim}
 
 \begin{enumerate}
@@ -1372,11 +1454,11 @@ There is also cheat sheet on the weebly site under Supplemental Documents.
 \item
   Log on to logrus server
 \item
-  Enter the following command to log on to logrus:
+  Enter the following command to log on to the server:
 \end{enumerate}
 
 \begin{verbatim}
-ssh -p 44111 username@gateway.training.ncgr.org
+ssh -p2406 user@inbre.ncgr.org
 \end{verbatim}
 
 \begin{itemize}
@@ -1485,8 +1567,13 @@ cat SP1.fq | wc -l
   Create a file with only the accession numbers of the sequences contained in the covid.fasta file (with no additional spaces or symbols).
 \end{enumerate}
 
-\hypertarget{our-world-in-data}{%
-\chapter{Our World in Data}\label{our-world-in-data}}
+\hypertarget{jeopardy}{%
+\section{Jeopardy}\label{jeopardy}}
+
+\url{https://jeopardylabs.com/play/linux-commands-how-to}
+
+\hypertarget{our-world-in-data-parsing}{%
+\chapter{Our World in Data (parsing)}\label{our-world-in-data-parsing}}
 
 \hypertarget{practice-parsing}{%
 \section{Practice parsing}\label{practice-parsing}}
@@ -1500,7 +1587,7 @@ Let's practice with a small file. Make sure you are in a \textbf{screen}.
 \item
   Go into that directory.
 \item
-  Copy the file ``pandemics.csv'' from this directory: ``/home/jm/linux\_practice/'' to the directory you just made.
+  Copy the file ``pandemics.csv'' from this directory: ``/home/data/nise'' to the directory you just made.
 \item
   Take a look at the file.
 \item
@@ -1531,7 +1618,7 @@ Note that there are often several ways to do things in linux and not all methods
 
 2. cd ~/parse
 
-3. cp /home/jm/linux_practice/pandemics.csv . [Don't forget the space and period at the end; the period says to name it the same thing.]
+3. cp /home/data/nise/pandemics.csv . [Don't forget the space and period at the end; the period says to name it the same thing.]
 
 4. cat pandemics.csv [you could also use more, less, head, tail, or other commands]
 
@@ -1547,8 +1634,8 @@ Note that there are often several ways to do things in linux and not all methods
 9. grep -i plague sort.pandemics.csv | awk -F, '{print $2}' | sort | uniq -c
 \end{verbatim}
 
-\hypertarget{our-world-in-data-1}{%
-\section{Our World in Data}\label{our-world-in-data-1}}
+\hypertarget{our-world-in-data}{%
+\section{Our World in Data}\label{our-world-in-data}}
 
 Now let's use the data from ``Our World In Data''. For things that are new, we have added some in-line answers but before you reveal the answer, try it yourself first using the hints provided.
 
@@ -1556,9 +1643,23 @@ Now let's use the data from ``Our World In Data''. For things that are new, we h
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{9}
 \item
-  Copy the file ``owid-covid-data.csv'' from this directory: ``/home/jm/linux\_practice/'' to your ``parse'' directory.
+  Make sure you are still in the parse directory.
 \item
-  Make sure you are in the ``parse'' directory.
+  Link to the file ``owid-covid-data.csv''. It is in this directory: ``/home/data/nise/''.
+\end{enumerate}
+
+Click for Answer
+
+\begin{verbatim}
+  ln -s /home/data/nise/owid-covid-data.csv .
+\end{verbatim}
+
+\hfill\break
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\setcounter{enumi}{11}
+\tightlist
 \item
   How many rows are in the file? Use wc -l (wc = word count, -l = lines)
 \end{enumerate}
@@ -1609,7 +1710,7 @@ Click for Answer
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{14}
 \item
-  There are lots of dates for each country. Let's limit it to early in the pandemic (2020-01-03), which is the first available date. Put it into a file called ``beds.2020-01-03.csv'' so we don't have to keep generating it.
+  There are lots of dates for each country. Let's do the same search but limit it to early in the pandemic (2020-03-11), which is the day that the World Health Organization declared COVID-19 to be pandemic. Put it into a file called ``beds.2020-03-11.csv'' so we don't have to keep generating it.
 \item
   What country had the least beds per thousand on 2020-01-03 and which has the most? Hint: Sort by the number of beds and pipe it into less.
 \end{enumerate}
@@ -1629,7 +1730,7 @@ Hint: There is a ``United States'' and a ``United States Virgin Islands''. To av
 Click for Answer
 
 \begin{verbatim}
-  grep "^United States," beds.2020-01-03.csv
+  grep "^United States," beds.2020-03-11.csv
 \end{verbatim}
 
 \hfill\break
@@ -1649,7 +1750,7 @@ Hint: we'll use the extended version of grep which will allow us to search all 3
 Click for Answer
 
 \begin{verbatim}
-  grep -E "^Sweden,|^Norway,|^Denmark," beds.2020-01-03.csv
+  grep -E "^Sweden,|^Norway,|^Denmark," beds.2020-03-11.csv
 \end{verbatim}
 
 \hfill\break
@@ -1660,7 +1761,7 @@ Click for Answer
 \item
   Create a file that has only the United States data for beds with the same three columns we have been using. Call it usbeds.csv. We'll use this file for the questions below.
 \item
-  Get the number of beds in the United States for each day in 2020.
+  Get the number of beds in the United States for each day in 2020. Note: Since these numbers don't change, this is kind of silly but it will give you the skills to grab other variables across a date range.
 \item
   Get the number of beds in the United States for the first COVID wave (March through September 2020).
 \end{enumerate}
@@ -1690,9 +1791,9 @@ sed `s/-//g' usbeds.csv \textbar{} sed `s/-//g' \textbar awk -F, `\$2\textgreate
 Click for All Answers
 
 \begin{verbatim}
-10. cp /home/jm/linux_practice/owid-covid-data.csv . 
-
 11. pwd [If you aren't in that directory you can: "cd ~/parse"]
+
+10. ln -s /home/data/nise/owid-covid-data.csv . 
 
 12. wc -l owid-covid-data.csv
 
@@ -1700,17 +1801,23 @@ Click for All Answers
 
 14. cut -d, -f 3,4,60 owid-covid-data.csv | less
 
-15. cut -d, -f 3,4,60 owid-covid-data.csv | grep 2020-01-03 > beds.2020-01-03.csv
+15. cut -d, -f 3,4,60 owid-covid-data.csv | grep 2020-03-11 > beds.2020-03-11.csv
 
-16. sort -t, -n -k3 beds.2020-01-03.csv | less
+16. sort -t, -n -k3 beds.2020-03-11.csv | less
 
-    Least: Mali,2020-01-03,0.1
+    Least: Mali,2020-03-11,0.1
     
-    Most: Monaco,2020-01-03,13.8
+    Most: Monaco,2020-03-11,13.8
 
-17. grep "^United States," beds.2020-01-03.csv
+17. grep "^United States," beds.2020-03-11.csv
 
-18. grep -E "^Sweden,|^Norway,|^Denmark," beds.2020-01-03.csv
+  United States,2020-03-11,2.77
+
+18. grep -E "^Sweden,|^Norway,|^Denmark," beds.2020-03-11.csv
+
+  Denmark,2020-03-11,2.5
+  Norway,2020-03-11,3.6
+  Sweden,2020-03-11,2.22
 
 19. cut -d, -f 3,4,60 owid-covid-data.csv | grep "^United States," > usbeds.csv
 
@@ -1727,23 +1834,53 @@ Click for All Answers
 
 Now practice on your own. Choose another variable and see if there are any interesting differences between your 3 countries. Explore at least 3 other variables.
 
-Hint: You can look at the variables by heading the first line of the file.
+Hint: You can look at the variables by heading the first line of the file. Here is some code that will give you column numbers. The sed command replaces commas with hard returns so each column name is on its own row. The ``NR'' variable in awk will give you the row number.
+
+head -1 owid-covid-data.csv \textbar{} sed `s/,/\n/g' \textbar{} awk `\{print NR ``\t" \$1\}'
 
 \begin{verbatim}
-    head -1 owid-covid-data.csv
+head -1 owid-covid-data.csv
 \end{verbatim}
 
 Hint: If you prefer to have them each on their own line you can use sed to replace the commas with hard returns. Make sure to use the global ``g'' at the end so that every comma is replaced and not just the first one on each line.
 
 \begin{verbatim}
-    head -1 owid-covid-data.csv | sed 's/,/\n/g'
+head -1 owid-covid-data.csv | sed 's/,/\n/g'
 \end{verbatim}
 
 Hint: awk will also print out the row number for you (which corresponds to the column number for that variable in the original file). The NR variable is a special awk variable that will print the row.
 
 \begin{verbatim}
-    head -1 owid-covid-data.csv | sed 's/,/\n/g' |awk '{print NR "\t" $1}'
+head -1 owid-covid-data.csv | sed 's/,/\n/g' |awk '{print NR "\t" $1}'
 \end{verbatim}
+
+\hypertarget{country-files}{%
+\section{Country files}\label{country-files}}
+
+Make one file each for Denmark, Norway, and Sweden that we'll use in future chapters. We'll get the following columns:
+location (column 3)
+date (column 4)
+total\_cases (column 5)
+total\_deaths (column 8)
+total\_cases\_per\_million (column 11)
+total\_deaths\_per\_million (column 14)
+icu\_patients (column 18)
+icu\_patients\_per\_million (column 19)
+people\_fully\_vaccinated (column 37)
+people\_fully\_vaccinated\_per\_hundred (column 43)
+
+An example is below.
+
+\begin{verbatim}
+grep "Norway" /home/data/nise/owid-covid-data.csv | cut -d, -f 3,4,5,8,11,14,18,19,37,43 > Norwaydata.csv
+\end{verbatim}
+
+Make a similar file for each of your three countries.
+
+\hypertarget{jeopardy-1}{%
+\section{Jeopardy}\label{jeopardy-1}}
+
+\url{https://jeopardylabs.com/play/linux-practicum}
 
 \hypertarget{ncbi-sars-cov-2-genome-sequences}{%
 \chapter{NCBI SARS-CoV-2 Genome Sequences}\label{ncbi-sars-cov-2-genome-sequences}}
@@ -1752,6 +1889,16 @@ Hint: awk will also print out the row number for you (which corresponds to the c
 \section{Getting Sequences from NCBI}\label{getting-sequences-from-ncbi}}
 
 See pdf.
+
+Change the name of the sequence file with Denmark, Norway, and Sweden to DNS.sequences.fasta
+
+Click for Answer
+
+mv sequences.fasta DNS.sequences.fasta
+
+\hfill\break
+
+Change the name of your three countries file to something that identifies the countries.
 
 \hypertarget{exploring-sequence-files}{%
 \section{Exploring Sequence Files}\label{exploring-sequence-files}}
@@ -1817,14 +1964,14 @@ Hint: Use "^$" in grep to find lines that have nothing between the start "^" and
   What is the first and last date in your sequence file?
 \end{enumerate}
 
-Hint: There are lots of different ways to do this, some of which involve more scrolling than others. Here is one strategy that just gets the earliest and latest dates. Do each step and check it then pipe it into the next step.
+Hint: There are lots of different ways to do this, some of which involve more scrolling than others. Here is one strategy that just gets the earliest dates. Do each step and check it then pipe it into the next step. Repeat and get the latest date.
 
 \begin{verbatim}
-  1) Get the header lines
-  2) Grab the collection data column (#3)
-  3) Remove blanks
-  4) Sort numerically: sort -n
-  5) grab the first and last lines--you need the parentheses: (head -1; tail -1)
+  a) Get the header lines
+  b) Grab the collection data column (#3)
+  c) Remove blanks
+  d) Sort numerically: sort -n
+  e) grab the last line
 \end{verbatim}
 
 \begin{enumerate}
@@ -1834,8 +1981,6 @@ Hint: There are lots of different ways to do this, some of which involve more sc
 \item
   Find the first and last collection date in your sequence file for each country. Try to use a for loop. Since we haven't used these much I'll put an answer here for you.
 \end{enumerate}
-
-Note: for some reason, the (head -1; tail -1) trick doesn't seem to work inside a for loop. So, do the earliest date first. Then use the up arrow to get the command back and alter it for the latest date.
 
 Click for Answer
 
@@ -1851,6 +1996,8 @@ Click for Answer
 Click for All Answers
 
 Note that there are often several ways to do things in linux and not all methods are shown.
+
+Since the number of sequences in NCBI changes, the numbers given below might have changed.
 
 \begin{verbatim}
 1. grep '>' sequences.fasta
@@ -1918,6 +2065,8 @@ Run through these exercises again with your 3 countries and record the answers i
 
 We'll plot some of the information about our sequences using R on the command line and the ggplot2 library. Get into a screen if you aren't already in one (screen -dr will reconnect you to a previous screen). Navigate to your NCBIdata directory.
 
+Note that your plots might be slightly different than those shown below because more sequences may have been added to the database.
+
 \hypertarget{r}{%
 \section{R}\label{r}}
 
@@ -1946,8 +2095,6 @@ ggplot2 documentation
 
 \url{https://cran.r-project.org/web/packages/ggplot2/ggplot2.pdf}
 
-\hfill\break
-
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \setcounter{enumi}{10}
@@ -1960,18 +2107,7 @@ ggplot2 documentation
 1) Grab the sequence headers
 2) Remove the greater than sign at the beginning of the header line
 3) Replace the pipes with tabs (Hint: In sed use \t to represent a tab)
-4) Make the date numeric by replacing the dashes. The sed command below will allow you to replace dashes only in the date.
-
-If you are interested in understanding the sed command: It looks for one or more (+) numbers ([0-9]) then a dash, more numbers, a dash and more numbers. The parentheses capture the sets of numbers so that it can return them as \1 for the first set, \2 for the second set, and \3 for the third set.
-
-sed -E 's/([0-9]+)-([0-9]+)-([0-9]+)/\1\2\3/'
-5) Put it into a file called Denmark_Norway_Sweden_seq_info.txt
-\end{verbatim}
-
-The R environment on logrus needs to be activated (note that on some systems it is installed differently and you don't need to activate).
-
-\begin{verbatim}
-conda activate visualization
+4) Put it into a file called Denmark_Norway_Sweden_seq_info.txt
 \end{verbatim}
 
 Open up R.
@@ -2019,7 +2155,7 @@ Read in our data file and put it into a variable. We'll name our variable dns fo
 dns = read.table("Denmark_Norway_Sweden_seq_info.txt", header=FALSE, sep="\t")
 \end{verbatim}
 
-Let's take a look at the variable with our data The head command in R has 6 rows by default and it wraps lines as a group if they are too long for the screen.
+Let's take a look at the variable with our data. The head command in R has 6 rows by default and it wraps lines as a group if they are too long for the screen.
 
 \begin{verbatim}
 head(dns)
@@ -2075,10 +2211,10 @@ Then check it with the head command.
 
 \hfill\break
 
-The Collection Date wasn't recognized as numeric so let's fix that. The \$ after the dns refers to a column. We will just overwrite it in the same column.
+The Collection Date wasn't recognized as a date so let's fix that. The \$ after the dns refers to a column. We will just overwrite it in the same column.
 
 \begin{verbatim}
-dns$"Collection_Date" = as.numeric(dns$"Collection_Date")
+dns$Collection_Date = as.Date(myTable$Collection_Date, format="%Y-%m-%d")
 \end{verbatim}
 
 Time to plot!
@@ -2154,7 +2290,7 @@ Note: we'll be getting sequences from another source as well so don't worry if t
 Click for All Answers
 
 \begin{verbatim}
-11. grep '>' sequences.fasta | sed 's/>//'|sed 's/|/\t/g'|sed -E 's/([0-9]+)-([0-9]+)-([0-9]+)/\1\2\3/' > Denmark_Norway_Sweden_seq_info.txt
+11. grep '>' sequences.fasta | sed 's/>//'|sed 's/|/\t/g' > Denmark_Norway_Sweden_seq_info.txt
 
 12. header = FALSE and sep = ""
 
@@ -2179,6 +2315,211 @@ ggplot(dns, aes(x=Collection_Date,y=Pangolin_Variant,color=Country)) + geom_poin
 dev.off()
 \end{verbatim}
 
+\hypertarget{our-world-in-data-plots}{%
+\chapter{Our World in Data (plots)}\label{our-world-in-data-plots}}
+
+Now let's use the data from ``Our World in Data'' that you created yesterday. We'll start with the Norway file.
+
+Move into the parse directory.
+
+Click for Answer
+
+\begin{verbatim}
+cd ~/parse
+\end{verbatim}
+
+~
+
+Open up R.
+
+Click for Answer
+
+\begin{verbatim}
+R
+\end{verbatim}
+
+~
+
+Load ggplot2.
+
+\begin{verbatim}
+library ggplot2
+\end{verbatim}
+
+Read in ``Norwaydata.csv'', which you made in the last chapter. It has no header and it is comma separated.
+
+Click for Answer
+
+\begin{verbatim}
+nor=read.table("Norwaydata.csv", header=FALSE, sep=",")
+\end{verbatim}
+
+~
+
+Add column names: Location, Date, Total\_Cases, Total\_Deaths, Total\_Cases\_Per\_Million, Total\_Deaths\_Per\_Million,
+ICU\_Patients, ICU\_Patients\_Per\_Million, Fully\_Vaccinated, Fully\_Vaccinated\_Per\_Hundred
+
+Click for Answer
+
+\begin{verbatim}
+colnames(nor) = c("Location", "Date", "Total_Cases", "Total_Deaths",
+"Total_Cases_Per_Million", "Total_Deaths_Per_Million",
+"ICU_Patients", "ICU_Patients_Per_Million",
+"Fully_Vaccinated", "Fully_Vaccinated_Per_Hundred")
+\end{verbatim}
+
+~
+
+Fix the date field
+
+Click for Answer
+
+\begin{verbatim}
+nor$Date=as.Date(nor$Date, format="%Y-%m-%d")
+\end{verbatim}
+
+\hypertarget{bar-chart}{%
+\section{Bar chart}\label{bar-chart}}
+
+Plot a bar chart of Date x Total\_Cases. The ``geom\_col'' layer will make a bar chart.
+
+We'll use the width parameter to make the width 100\% (no space between bars).
+
+\begin{verbatim}
+png("datexcases.png")
+
+ggplot(nor, aes(x=Date, y=Total_Cases)) + geom_col(width=1)
+
+dev.off()
+\end{verbatim}
+
+\includegraphics[width=0.5\textwidth,height=\textheight]{./Figures/datexcases.png}
+
+Let's add a title.
+
+\begin{verbatim}
+png("datexcases_title.png")
+
+ggplot(nor, aes(x=Date, y=Total_Cases)) +
+  geom_col(width=1) +
+  ggtitle("Norway COVID-19 Cases")
+
+dev.off()
+\end{verbatim}
+
+\includegraphics[width=0.5\textwidth,height=\textheight]{./Figures/datexcases_title.png}
+
+\hypertarget{line-chart}{%
+\section{Line chart}\label{line-chart}}
+
+Now let's make a line chart of total deaths.
+
+\begin{verbatim}
+png("datexdeaths.png")
+
+ggplot(nor, aes(x=Date, y=Total_Deaths)) +
+  geom_line() +
+  ggtitle("Norway COVID-19 Deaths")
+
+dev.off()
+\end{verbatim}
+
+\includegraphics[width=0.5\textwidth,height=\textheight]{./Figures/datexdeaths.png}
+
+Let's put them both on the same chart. We'll make the bar chart (cases) gray and the line (deaths) blue so it shows up better.
+
+\begin{verbatim}
+png("datexcases_deaths.png")
+
+ggplot(nor, aes(x=Date, y=Total_Cases)) +
+geom_col(width=1,color="darkgray") +
+geom_line(aes(y=Total_Deaths),color="blue") +
+scale_y_continuous(
+# Features of the first axis
+name = "Total Cases",
+# Add a second axis and specify its features
+sec.axis = sec_axis(trans=~., name="Total Deaths")
+)
+
+dev.off()
+\end{verbatim}
+
+\includegraphics[width=0.5\textwidth,height=\textheight]{./Figures/datexcases_deaths.png}
+
+The number of deaths is really low compared to the number of cases (thankfully!) so the blue line is right at the bottom. Let's adjust the axis (multiple by 100).
+
+We'll also give it a white background by changing to the black and white theme, color the right axis label blue, and add a title.
+
+\begin{verbatim}
+png("datexcases_deaths_adjust.png")
+
+ggplot(nor, aes(x=Date, y=Total_Cases)) +
+geom_col(width=1,color="darkgray") +
+geom_line(aes(y=Total_Deaths*100),color="blue") +
+scale_y_continuous(
+# Features of the first axis
+name = "Total Cases",
+# Add a second axis and specify its features
+sec.axis = sec_axis(trans=~./100, name="Total Deaths")
+) +
+theme_bw() +
+ggtitle("Norway COVID-19 Cases and Deaths") +
+theme(axis.title.y.right = element_text(color = "blue"))
+
+dev.off()
+\end{verbatim}
+
+\includegraphics[width=0.5\textwidth,height=\textheight]{./Figures/datexcases_deaths_adjust.png}
+
+Try some on your own using some of the other variables, scales, and/or plot types.
+
+BONUS: Interactive plots
+
+Turning ggplot2 plots into interactive html plots is straightforward with the plotly library. Let's do the last one we did.
+
+You should still be in R.
+
+Make sure the following libraries are loaded.
+
+\begin{verbatim}
+library(ggplot2)
+library(plotly)
+library(htmlwidgets)
+\end{verbatim}
+
+Put the plot into a variable. We'll call it myplot.
+
+\begin{verbatim}
+myplot = ggplot(nor, aes(x=Date, y=Total_Cases)) +
+geom_col(width=1,color="darkgray") +
+geom_line(aes(y=Total_Deaths*100),color="blue") +
+scale_y_continuous(
+# Features of the first axis
+name = "Total Cases",
+# Add a second axis and specify its features
+sec.axis = sec_axis(transform=~./100, name="Total Deaths")
+) +
+theme_bw() +
+ggtitle("Norway COVID-19 Cases and Deaths") +
+theme(axis.title.y.right = element_text(color = "blue"))
+\end{verbatim}
+
+Make an interactive version of myplot.
+
+\begin{verbatim}
+myplotint = ggplotly(myplot)
+\end{verbatim}
+
+Save it as an HTML file with an accompanying library folder (``lib'')
+
+\begin{verbatim}
+saveWidget(myplotint, "datexcases_deaths_adjust.html", selfcontained = F, libdir = "lib")
+\end{verbatim}
+
+Use scp to copy both the html file and the library file to your computer (use -r for recursive to get the lib folder plus everything in it). The lib folder has to be in the same folder as the html file.
+
+Open up the html file.
+
 \hypertarget{gisaid-sars-cov-2-genome-sequences}{%
 \chapter{GISAID SARS-CoV-2 Genome Sequences}\label{gisaid-sars-cov-2-genome-sequences}}
 
@@ -2191,7 +2532,7 @@ dev.off()
 \caption{GISAID}
 \end{figure}
 
-If you haven't already, please sign up for a GISAID account. The account is required to access sequences, though first we will explore one of their web tools in detail.
+If you haven't already, please sign up for a GISAID account. The account is required to access sequences, though first we will explore one of their web tools in detail. Note that the numbers shown here are from 2023 and may have increased.
 
 \hypertarget{phylodynamics}{%
 \section{Phylodynamics}\label{phylodynamics}}
@@ -2230,16 +2571,31 @@ We can look at a tree (scroll down) of the different named variants either by ti
 \caption{Time}
 \end{figure}
 
+\hfill\break
+
 \begin{figure}
 \centering
 \includegraphics[width=0.7\textwidth,height=\textheight]{./Figures/DenmarkRectangularDivergence.png}
 \caption{Divergence}
 \end{figure}
 
-What insights can you draw from each of the Denmark graphs?
+\hfill\break
+What insights can you draw from each of the Denmark graphs and by comparing them together?
 
-What insights can you gain from comparing the two graphs?
+Click for Possible Answer
 
+\begin{verbatim}
+  
+  You can see a clear progresion from alpha to delta to omicron in the time graph.
+
+  Omicron continues to change over time.
+  
+  There is some level of overlap between the strains in terms of their divergence from the original strain. There is not as clean of a difference between the strains in the divergence graph as there is in the time graph.
+  
+  Omicron is diverse in both graphs. In the divergence graph it looks like there are three different subvariants for omicron each with a jump in its divergence level.
+\end{verbatim}
+
+\hfill\break
 What insights can you add from your country's or countries' graphs?
 
 \hfill\break
@@ -2250,15 +2606,13 @@ Now change the tree to linear instead of rectangular and color code by variant. 
 
 What can you tell about the difference in divergence rates of omicron vs the other variants from the Denmark graph?
 
-Do your country's/countries' graphs tell the same story?
-
 Click for Possible Answer
 
 \begin{verbatim}
   Omicron seems to diverge more rapidly as it is mainly above the average line while the other variants are mostly below it.
 \end{verbatim}
 
-\hfill\break
+Do your country's/countries' graphs tell the same story?
 
 Now, explore other parameters with your country/countries.
 
@@ -2297,7 +2651,7 @@ Check the complete box to limit your search to complete genomes. Type your count
 
 \includegraphics[width=0.7\textwidth,height=\textheight]{./Figures/DenmarkSearch.png}
 
-How many did complete genome sequences did you find (see bottom left)?
+How many complete genome sequences did you find (see bottom left)?
 
 Repeat for your 3 countries. Make sure you record this in your slides, including the date. This is a huge increase for Denmark from 14 in NCBI to 635,933 in GISAID!
 
@@ -2311,7 +2665,7 @@ GISAID limits us to downloading sequences 10,000 at a time. Let's zoom in on a s
 
 In the same search, in the ``Variant'' field, choose XBB.1.16. This is the Arcturus subvariant.
 
-\includegraphics[width=0.7\textwidth,height=\textheight]{./Figures/gisaidSearch.png}
+\includegraphics[width=0.7\textwidth,height=\textheight]{./Figures/gisaidSearch.png}\\
 I got 46 for Denmark. Before we download these, we need to generate an EPI\_SET. GISAID requires you to cite all the people who contributed to any of the sequences that you are using in an analysis. So, any oral or poster presentation, or any manscript needs to acknowledge everyone who contributed genome sequences. This used to be a huge pain to gather all the information into a gigantic list. Now, they have made it easy EPI\_SETs, which gather the info for you and publish it to a DOI (a permanent Digital Object Identifier) that you can put on your publication to fulfill the acknowledgement requirements.
 
 Select all sequences by clicking the checkbox near ``Virus Name''. Then, simply click on the ``EPI\_SET'' button on the bottom right. Then click ``Generate''.
@@ -2336,7 +2690,7 @@ Now click on ``Download'' to download the sequences.
 
 Change the name of the file to something that identifies the country the sequences came from and the fact that we limitted it to the Arcturus subvariant.
 
-Repeat for your other 2 countries.
+Repeat for your other countries.
 
 \hypertarget{upload-sequences}{%
 \section{Upload sequences}\label{upload-sequences}}
@@ -2367,8 +2721,8 @@ Click for Answers
 \begin{verbatim}
   Adjust the commands below to reflect the filenames for your 3 countries and replace "jm" with your username.
   
-1. scp -P 44111 *arcturus*fasta "jm@gateway.training.ncgr.org:/home/jm/"
-2. ssh -p 44111 jm@gateway.training.ncgr.org
+1. scp -P 2406 *arcturus*fasta "jm@inbre.ncgr.org:/home/jm/"
+2. ssh -p 2406 jm@inbre.ncgr.org
 3. screen -S gisaid_genomes
 4. mkdir ~/gisaid_genomes
 5. mv *arcturus*fasta gisaid_genomes
@@ -2411,14 +2765,14 @@ We are going to line up some SARS-CoV-2 genomes so that their corresponding nucl
 Do the following:
 On the server, create a directory called sars-variants in your home directory.
 Navigate into that directory
-Soft link to the file /home/jm/sarsdata/sars-cov-2-variants.fasta
+Soft link to the file /home/data/nise/sars-cov-2-variants.fasta
 
 Click for Answers
 
 \begin{verbatim}
   mkdir ~/sars-variants
   cd ~/sars-variants
-  ln -s /home/jm/sarsdata/sars-cov-2-variants.fasta .
+  ln -s /home/data/nise/sars-cov-2-variants.fasta .
 \end{verbatim}
 
 \hfill\break
@@ -2453,7 +2807,7 @@ Close all the windows except the blank window at the back.
 Go to main menu at the very top. Choose File \textgreater{} Input Alignment \textgreater{} From File -
 Then choose the sars-cov-2-variants.fasta file.
 
-\includegraphics[width=0.7\textwidth,height=\textheight]{./Figures/open.png}
+\includegraphics[width=0.7\textwidth,height=\textheight]{./Figures/open.png}\\
 It is expecting an aligned fasta file and we are opening up a fasta file that hasn't been aligned yet. Let's take a look at it in its unaligned form, first.
 
 Color the sequences by nucleotide by choosing:
@@ -2501,7 +2855,7 @@ Expand it by hovering over the bottom right-hand corner until the cursor changes
 
 \includegraphics[width=0.7\textwidth,height=\textheight]{./Figures/overview_window.png}
 
-This has all four genome one on top of each other across the whole genome sequence (\textasciitilde30kb).
+This has all four genomes one on top of each other across the whole genome sequence (\textasciitilde30kb).
 
 If you click on the overview, it will take you to the corresponding position in the alignment window. Try to find a few regions on the overview that don't look the same in all four variant genomes. Click on them and see what they look like in the alignment window.
 
@@ -2600,24 +2954,27 @@ Go into your \textasciitilde/sars-variants directory
 Activate the environment.
 
 \begin{verbatim}
-conda activate mafft_msa
+conda activate msa-tree
 \end{verbatim}
 
 mafft sars-cov-2-variants.fasta \textgreater{} mafft.sars-cov-2-variants.fasta
 
 Take a look at the file and make sure it looks as expected.
 
-You can also do alignments of protein sequences. Working on the protein level shows you missense and nonsense mutations, which are the main drives of phenotypic change. Any silent mutations (mutations that don't change the amino acid sequence) are missed. While silent mutations only affect phenotype very rarely, they are useful to see how closely related organisms are evolving and, in the case of pathogens, how they are can inform modes of transmission. So, working on the protein vs the DNA level each have their advantages.
+\hypertarget{spike-protein}{%
+\section{Spike protein}\label{spike-protein}}
+
+You can also do alignments of protein sequences. Working on the protein level shows you missense and nonsense mutations, which are the main drives of phenotypic change. Any silent mutations (mutations that don't change the amino acid sequence) are missed. While silent mutations only affect phenotype very rarely, they are useful to see how closely related organisms are evolving and, in the case of pathogens, they can inform modes of transmission. So, working on the protein vs the DNA level each have their advantages.
 
 GISAID pulls out the spike protein sequences from all of the genomes. So we don't all download our own copy of the spike proteins and use up space, I've downloaded a copy (updated 7/2/2023).
 
-Create a soft link to /home/jm/sarsdata/spikeprot0702.fasta.gz
+Create a soft link to /home/data/nise/spikeprot230702.fasta.gz
 We can continue to work in the sars-variants directory.
 
 Click for Answer
 
 \begin{verbatim}
-  ln -s /home/jm/sarsdata/spikeprot0702.fasta.gz .
+  ln -s /home/data/nise/spikeprot230702.fasta.gz .
 \end{verbatim}
 
 \hfill\break
@@ -2627,7 +2984,7 @@ How many sequences are there?
 Click for Answer
 
 \begin{verbatim}
-  zgrep -c '>' spikeprot0702.fasta.gz
+  zgrep -c '>' spikeprot230702.fasta.gz
 \end{verbatim}
 
 \hfill\break
@@ -2637,7 +2994,7 @@ Check out the headers to see their format
 Click for Answer
 
 \begin{verbatim}
-  zgrep '>' spikeprot0702.fasta.gz | head
+  zgrep '>' spikeprot230702.fasta.gz | head
 \end{verbatim}
 
 \hfill\break
@@ -2653,12 +3010,34 @@ Then gzip the file to compress it and save space.
 Click for Answer
 
 \begin{verbatim}
-  zgrep -A 1 -E "Denmark|Norway|Sweden" spikeprot0702.fasta.gz | grep -v '\-\-' > dns.spikeprot0702.fasta
-  gzip dns.spikeprot0702.fasta
+  zgrep -A 1 -E "Denmark|Norway|Sweden" spikeprot230702.fasta.gz | grep -v '\-\-' > dns.spikeprot230702.fasta
+  gzip dns.spikeprot230702.fasta
   
   OR
   
-    zgrep -A 1 -E "Denmark|Norway|Sweden" spikeprot0702.fasta.gz | grep -v '\-\-' |gzip > dns.spikeprot0702.fasta.gz
+    zgrep -A 1 -E "Denmark|Norway|Sweden" spikeprot230702.fasta.gz | grep -v '\-\-' |gzip > dns.spikeprot230702.fasta.gz
+\end{verbatim}
+
+\hfill\break
+
+We need to add in Wuhan-Hu-1 as our outgroup. We'll use an early isolate from the US that matched the Wuhan-Hu-1 that is present in the spike sequence file. Get isolate EPI\_ISL\_759860's header and sequence from spikeprot230702.fasta.gz and put it into a file called wuhanhu1.fasta.
+
+Note: There are several accessions that start with EPI\_ISL\_759860 but we want \textbf{EPI\_ISL\_759860} not \textbf{EPI\_ISL\_759860}7, for instance, so search for `EPI\_ISL\_759860\textbar{}'
+
+Click for Possible Answers
+
+\begin{verbatim}
+zgrep -A1 'EPI_ISL_759860|' spikeprot230702.fasta.gz > wuhanhu1.fasta
+\end{verbatim}
+
+\hfill\break
+
+Now combine the dns.spikeprot230702.fasta (Denmark, Norway, Sweden spike sequences) and the wuhanhu1.fasta file you just made using the ``cat'' command. Put it in a file called dnsw.spikeprot230702.fasta
+
+Click for Possible Answers
+
+\begin{verbatim}
+  cat wuhanhu1.fasta dns.spikeprot230702.fasta > dnsw.spikeprot230702.fasta
 \end{verbatim}
 
 \hfill\break
@@ -2668,12 +3047,32 @@ Let's make an EPI\_SET for acknowledgement. See if you can grab all the EPI ids 
 Click for Answer
 
 \begin{verbatim}
-  zgrep '>' spikeprot0702.fasta.gz | cut -f 4 -d '|' > dns.epi.txt
+  zgrep '>' dnsw.spikeprot230702.fasta | cut -f 4 -d '|' > dnsw.epi.txt
   
   Go to GISAID to get your EPI_SET as described above.
 \end{verbatim}
 
 \hfill\break
+
+The Wuhan-Hu-1 header is really long and has a lot of special characters. Since we will be feeding that in on the command line as the outgroup, let's make it shorter.
+
+Find the Wuhan-Hu-1 header.
+
+Click for Possible Answers
+
+\begin{verbatim}
+  grep '>' Wuhan dnsw.spikeprot230702.fasta
+\end{verbatim}
+
+\hfill\break
+
+Let's replace it so it just says Wuhan-Hu-1. Here is one way to do it.
+
+NOTE: -i.bak tells sed to edit the file in place and make a backup of the original file, adding the .bak suffix.
+
+\begin{verbatim}
+sed -i.bak -e 's/^>.*\(Wuhan-Hu-1\).*/>\1/' dnsw.spikeprot230702.fasta
+\end{verbatim}
 
 Make a multiple sequence alignment. MAFFT should be able to automatically detect that it is a protein sequence.
 
@@ -2682,7 +3081,7 @@ Since this is is bigger dataset, let's parallelize it using the --threads parame
 Click for Answer
 
 \begin{verbatim}
-  mafft --thread 10 dns.spikeprot0702.fasta  > mafft.dns.spikeprot0702.fasta
+  mafft --thread 10 dnsw.spikeprot230702.fasta  > mafft.dnsw.spikeprot230702.fasta
 \end{verbatim}
 
 \hfill\break
@@ -2714,7 +3113,7 @@ Download it and look at it in Jalview.
 
 A new omicron subvariant arose from a recombination of two subvariants: BJ.1 (BA.2.10.1.1 in the 21L omicron lineage and BM.1.1.1 (BA.2.75.3.1.1.1) in the 22D omicron lineage (\url{https://covariants.org/variants/22F.Omicron}). It likely arose in mid-2022 from a crossover event within a person whose cells were simultaneously infected by BJ.1 and BM.1.1.1. The new variant was named XBB (the ``X'' stands for the crossover event that occured between the two ``B'' subvariants; hence, XBB).
 
-Create a soft-link to /home/jm/sarsdata/recombinant.fa which has the two progenitor sequences and the XBB sequence. Or, rather, since the XBB spike protein sequence was hard to find, I grabbed the XBB.1 sequence. Note that the XBB.1 sequence has a G252V (G changed to V at position 252) mutation that XBB doesn't have.
+Create a soft-link to /home/data/nise/recombinant.fa which has the two progenitor sequences and the XBB sequence. Or, rather, since the XBB spike protein sequence was hard to find, I grabbed the XBB.1 sequence. Note that the XBB.1 sequence has a G252V (G changed to V at position 252) mutation that XBB doesn't have.
 
 Create and view a multiple sequence alignments (MSA) using MAFFT and Jalview and see if you can narrow down where the crossover occured. You can do the MSA either on the command line or in Jalview.
 
@@ -2742,7 +3141,7 @@ RBD = Receptor binding domain of the Spike protein, which binds the ACE2 or othe
 
 Now let's make a phylogenetic tree. We'll start with a web-based tool that can create phylogenetic trees.
 
-Download mafft.sars-cov-2-variants.fasta file that you already made. It has the genome sequence of the four different SARS-Cov-2 variants in it. If it isn't completed yet, you can download mine at /home/jm/sars-variants/mafft.sars-cov-2-variants.fasta
+Download mafft.sars-cov-2-variants.fasta file that you already made. It has the genome sequence of the four different SARS-Cov-2 variants in it.
 
 Go to \url{https://www.ebi.ac.uk/Tools/phylogeny/simple_phylogeny/}
 
@@ -2752,7 +3151,11 @@ Upload the file and then click ``Submit''.
 
 The tree should pop up. The cladogram just shows the groupings. If you choose real, it will change the branch lengths to the actual branch lengths.
 
+Click for Answer
+
 \includegraphics[width=0.7\textwidth,height=\textheight]{./Figures/real.png}
+
+\hfill\break
 
 What do you notice about the tree?
 
@@ -2766,14 +3169,14 @@ Alpha and Omicron are the most closely related, at least according to this tree.
 
 \hfill\break
 
-The mafft.dns.spikeprot0702.fasta file is too large for this website so we need to learn how to do this on the command line. But we'll start off with the 4 variant sequences first.
+The mafft.dnsw.spikeprot230702.fasta file is too large for this website so we need to learn how to do this on the command line. But we'll start off with the 4 variant sequences first.
 
 Log into logrus and get into a screen. Navigate to your sars-variants folder. Do an ls to see what files are there.
 
 Activate the environment. We'll use RAxML-ng to build the tree using the MAFFT files we already created. We'll use Wuhan-Hu-1 as the outgroup.
 
 \begin{verbatim}
-conda activate raxml-ng
+conda activate msa-tree
 \end{verbatim}
 
 Create the tree.
@@ -2792,97 +3195,16 @@ Which is the most distant?
 
 Click for Answers
 
+((Delta\_AY.4\_UK:0.001021,(Omicron\_B.1.1.529\_USA:0.000703,Alpha\_B.1.1.7\_UK:0.000784):0.000100):0.000021,Wuhan-Hu-1\_China:0.000021)
+
 The Omicron and Alpha are most closely related.
 
 The Wuhan-Hu-1 is the most distantly related.
 
-((Delta\_AY.4\_UK:0.001021,(Omicron\_B.1.1.529\_USA:0.000703,Alpha\_B.1.1.7\_UK:0.000784):0.000100):0.000021,Wuhan-Hu-1\_China:0.000021)
-
-\hypertarget{spike-protein}{%
-\section{Spike Protein}\label{spike-protein}}
-
-The mafft.dns.spikeprot0702.fasta file has spike protein sequences for Denmark, Norway, and Sweden that are already aligned.
-
-First, we need to add in Wuhan-Hu-1 as our outgroup. We'll use an early isolate from the US that matched the Wuhan-Hu-1 that is present in the spike sequence file. Get isolate EPI\_ISL\_759860's header and sequence from spikeprot0702.fasta.gz and put it into a file called wuhanhu1.fasta.
-
-Note: There are several accessions that start with EPI\_ISL\_759860 but we want \textbf{EPI\_ISL\_759860} not \textbf{EPI\_ISL\_759860}7, for instance, so search for `EPI\_ISL\_759860\textbar{}'
-
-Click for Possible Answers
-
-\begin{verbatim}
-zgrep -A1 'EPI_ISL_759860|' spikeprot0702.fasta.gz > wuhanhu1.fasta
-\end{verbatim}
-
-\hfill\break
-
-Now combine the dns.spikeprot0702.fasta (Denmark, Norway, Sweden spike sequences) and the wuhanhu1.fasta file you just made using the ``cat'' command. Put it in a file called dnsw.spikeprot0702.fasta
-
-Click for Possible Answers
-
-\begin{verbatim}
-  cat wuhanhu1.fasta dns.spikeprot0702.fasta > dnsw.spikeprot0702.fasta
-\end{verbatim}
-
-\hfill\break
-
-The Wuhan-Hu-1 header is really long and has a lot of special characters. Since we will be feeding that in on the command line, let's make it shorter.
-
-Find the Wuhan-Hu-1 header.
-
-Click for Possible Answers
-
-\begin{verbatim}
-  grep '>' Wuhan dnsw.spikeprot0702.fasta
-\end{verbatim}
-
-\hfill\break
-
-Let's replace it so it just says Wuhan-Hu-1. Here is one way to do it.
-
-NOTE: -i.bak tells sed to edit the file in place and make a backup of the original file, ading the .bak suffix.
-
-\begin{verbatim}
-sed -i.bak -e 's/^>.*\(Wuhan-Hu-1\).*/>\1/' dnsw.spikeprot0702.fasta
-\end{verbatim}
-
-Run a mulitple sequence alignment on the dnsw.spikeprot0702.fasta. This will take a will so if you need to, link to my file at /home/jm/sars-variants/mafft.dnsw.spikeprot0702.fasta (but make sure you name your file something different!). Use 8 threads.
-
-NOTE: The number of threads is
-
-\begin{verbatim}
---thread
-\end{verbatim}
-
-in MAFFT and
-
-\begin{verbatim}
---threads
-\end{verbatim}
-
-in raxml-ng.
-
-Click for Answer
-
-\begin{verbatim}
-mafft --thread 100 dnsw.spikeprot0702.fasta > mafft.dnsw.spikeprot0702.fasta
-\end{verbatim}
-
-\hfill\break
-
-Now, create the tree. Use 8 threads.
-
-Click for Answer
-
-\begin{verbatim}
-raxml-ng  --threads 8 --force model_lh_impr --outgroup Wuhan-Hu-1 --all --msa mafft.dnsw.spikeprot0702.fasta --model GTR+G --tree pars{10} --bs-trees 100
-\end{verbatim}
-
-\hfill\break
-
-Now, create a tree for your 3 countries from the MSA you made earlier.
-
 \hypertarget{visualizing-the-tree}{%
 \section{Visualizing the tree}\label{visualizing-the-tree}}
+
+We'll start with the small tree that we worked with online.
 
 Make sure you are in the sars-variants directory.
 
@@ -2894,15 +3216,12 @@ cd ~/sars-variants
 
 \hfill\break
 
-Activate the tree environment.
+Activate the tree environment if you haven't already.
 
 Click for Answer
 
 \begin{verbatim}
-conda activate tree
-
-If it doesn't recognize the environment, try:
-conda activate /home/condasw/miniconda3/envs/tree
+conda activate msa-tree
 \end{verbatim}
 
 \hfill\break
@@ -2933,7 +3252,7 @@ Create a PDF to put the tree in.
 pdf("basic.tree.pdf")
 \end{verbatim}
 
-Now make the tree and release the PNG.
+Now make the tree and release the PDf.
 
 \begin{verbatim}
 ggtree(tr)
@@ -2945,7 +3264,11 @@ Use another terminal to download your PDF and look at it.
 
 HINT: We'll be making several PDFs. I find it easier to set up my scp command to download all the PDFs (*pdf) in the sars-variants directory so I don't have to rewrite my command. They are small so redownloading previous PDFs isn't problematic.
 
+Click for Answer
+
 \includegraphics[width=0.7\textwidth,height=\textheight]{./Figures/basic.tree.png}
+
+\hfill\break
 
 Not much to look at and we definitely need some tip labels and a scale. So let's make some customizations.
 
@@ -2971,7 +3294,11 @@ mytree
 dev.off()
 \end{verbatim}
 
+Click for Answer
+
 \includegraphics[width=0.5\textwidth,height=\textheight]{./Figures/labeled.tree.png}
+
+\hfill\break
 
 NOTE: The scale/branch lengths are a nucleotide distance. In other words, 1e-04 means one nucleotide change in every 10,000 nucleotides.
 
@@ -2987,7 +3314,7 @@ pdf("scaled.tree.pdf")
 
 \hfill\break
 
-Create the tree then close the PNG. We can start with the mytree variable that we made above. We'll add on a layer from ggplot2 called xlim, giving it a range from 0 to 0.002. We'll also add a title layer.
+Create the tree then close the PDF. We can start with the mytree variable that we made above. We'll add on a layer from ggplot2 called xlim, giving it a range from 0 to 0.002. We'll also add a title layer.
 
 \begin{verbatim}
 mytree2 = mytree + ggplot2::xlim(0, 0.002) + ggtitle("SARS-CoV-2 Variants")
@@ -2997,7 +3324,11 @@ mytree2
 dev.off()
 \end{verbatim}
 
+Click for Answer
+
 \includegraphics[width=0.5\textwidth,height=\textheight]{./Figures/scaled.tree.png}
+
+\hfill\break
 
 That's better. Notice that the farthest tips still end around 0.001.
 
@@ -3008,7 +3339,7 @@ Open up a PDF called ``tip.tree.pdf''.
 Click for Answer
 
 \begin{verbatim}
-png("tip.tree.png")
+pdf("tip.tree.pdf")
 \end{verbatim}
 
 \hfill\break
@@ -3023,7 +3354,11 @@ mytree3
 dev.off()
 \end{verbatim}
 
+Click for Answer
+
 \includegraphics[width=0.35\textwidth,height=\textheight]{./Figures/tip.tree.png}
+
+\hfill\break
 
 If you wanted to also color the tip label text blue, how do you think you would you do it?
 
@@ -3102,7 +3437,11 @@ mytree4
 dev.off()
 \end{verbatim}
 
+Click for Answer
+
 \includegraphics[width=0.35\textwidth,height=\textheight]{./Figures/country.tree.png}
+
+\hfill\break
 
 We can also add in the multiple sequence alignment next to the tree. Read in the mafft multiple sequence alignment file.
 
@@ -3120,7 +3459,11 @@ msaplot(mytree4, fasta=msafa, width=2)
 dev.off()
 \end{verbatim}
 
+Click for Answer
+
 \includegraphics[width=0.35\textwidth,height=\textheight]{./Figures/msa.tree.png}
+
+\hfill\break
 
 OK, cool! We have just squeezed the nearly 30,000 nucleotide genome onto the plot. Obviously, there are a few problems. We have overwritten our labels and the sequence in the MSA is so squeezed that it is hard to see it in general or to pick out any differences. We now have a second legend that tells the colors of the nucleotides and neither legend is in a good place.
 
@@ -3144,7 +3487,11 @@ msaplot(mytree5, fasta=msafa, width=15, offset=0.0008)
 dev.off()
 \end{verbatim}
 
+Click for Answer
+
 \includegraphics[width=1\textwidth,height=\textheight]{./Figures/msa.big.tree.png}
+
+\hfill\break
 
 Looks great! Might need to zoom in too look at it more closely.
 
@@ -3160,9 +3507,13 @@ msaplot(mytree5, fasta=msafa, width=15, offset=0.0008, window=c(21563,25384))
 dev.off()
 \end{verbatim}
 
+Click for Answer
+
 \includegraphics[width=1\textwidth,height=\textheight]{./Figures/msa.spike.msa.tree.png}
 
-As we have already learned there are no insertions in these variants relative to Wuhan (thought there are in other variants). If there were, the coordinates in the MSA for spike would shift slightly. Let's double-check that there is a start codon at the beginning and a stop codon at the end. Zoom in to see the first and last 3 nucleotides. The link below takes you to a codon wheel so you can see what the codons you find code for.
+\hfill\break
+
+As we have already learned there are no insertions in these variants relative to Wuhan (though there are in other variants). If there were, the coordinates in the MSA for spike would shift slightly. Let's double-check that there is a start codon at the beginning and a stop codon at the end. Zoom in to see the first and last 3 nucleotides. The link below takes you to a codon wheel so you can see what the codons you find code for.
 
 \url{https://www.sigmaaldrich.com/US/en/technical-documents/technical-article/genomics/sequencing/amino-acid-codon-wheel}
 
@@ -3188,17 +3539,20 @@ Omicron   2
 
 \hfill\break
 
-Let's make a tree for the Denmark, Norway, Sweden Arcturus sequences color coded by country. We'll rely on the color for country and not worry about the tip labels. We'll just focus on the tree and not worry about the MSA. Try it yourself before looking at the answer.
+\hypertarget{arcturus-genome-sequences}{%
+\section{Arcturus Genome Sequences}\label{arcturus-genome-sequences}}
 
-If you don't have a tree made, link to mine (/home/jm/gisaid\_genomes/mafft.dns.arcturus.fasta).
+Let's make a tree for the Denmark, Norway, Sweden Arcturus sequences color coded by country. We'll rely on the color for country and not worry about the tip labels. Try it yourself before looking at the answer.
 
-These are the steps you'll need to take:
+Use your MSA file from the previous chapter: mafft.dns.arcturus.fasta
+
+These are the steps you'll need to take, starting in linux:
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Switch to the gisaid\_genome directory in R.
+  Switch to the gisaid\_genome directory.
 \item
   Create a file that links each sequence to the country it came from in linux.
 \end{enumerate}
@@ -3220,7 +3574,7 @@ rm temp*
 \setcounter{enumi}{2}
 \tightlist
 \item
-  Create a tree in linux.
+  Create a tree.
 \end{enumerate}
 
 The rest of the steps are in R.
@@ -3239,7 +3593,7 @@ The rest of the steps are in R.
 Click for Answers
 
 \begin{verbatim}
-1. setwd("/home/jm/gisaid_genomes/")
+1. cd ~/gisaid_genomes/
 
 2. grep '>' mafft.dns.arcturus.fasta | sed 's/>//' > temp1.txt
 cut -f 2 -d '/' temp1.txt > temp2.txt
@@ -3247,6 +3601,8 @@ paste temp1.txt temp2.txt > dns.arc.country.txt
 rm temp*
 
 3. raxml-ng --force model_lh_impr --all --msa mafft.dns.arcturus.fasta --model GTR+G --tree pars{10} --bs-trees 100
+
+Open up R.
 
 4. dnscountrydf = read.table("dns.arc.country.txt", header=FALSE)
 
@@ -3265,7 +3621,11 @@ dev.off()
 
 \hfill\break
 
+Click for Answer
+
 \includegraphics[width=0.5\textwidth,height=\textheight]{./Figures/dns.arc.png}
+
+\hfill\break
 
 Now try to create a phylogenetic tree with your arcturus 3 country data. Think about these questions before we share the plots with each other.
 
@@ -3276,6 +3636,92 @@ Does it look like the sequences are evolving separately within each country?
 Are any clades specific to one country or absent from one country?
 
 Keep in mind that it is hard to compare numbers directly across countries because each country sequenced a different number/percentage of cases. But do you see any interesting patterns such as a high percentage of a country's sequences being in the beginning or later in the pandemic, and do these patterns match what you know about the course of the pandemic in these countries?
+
+\hypertarget{spike-protein-1}{%
+\section{Spike Protein}\label{spike-protein-1}}
+
+The mafft.dnsw.spikeprot230702.fasta file from the previous chapter has spike protein sequences for Denmark, Norway, Sweden and one Wuhan sequence that you already aligned.
+
+Let's create the tree using raxml-ng. Use 8 threads.
+
+NOTE: The number of threads is
+
+\begin{verbatim}
+--thread
+\end{verbatim}
+
+in MAFFT and
+
+\begin{verbatim}
+--threads
+\end{verbatim}
+
+in raxml-ng.
+
+Click for Answer
+
+\begin{verbatim}
+raxml-ng  --threads 8 --force model_lh_impr --outgroup Wuhan-Hu-1 --all --msa mafft.dnsw.spikeprot230702.fasta --model GTR+G --tree pars{10} --bs-trees 100
+\end{verbatim}
+
+\hfill\break
+
+Now, create a tree for your 3 countries from the MSA you made earlier.
+
+Visualize the trees in R.
+
+BONUS: If you want to randomly subset your sequences to get fewer sequences you can use the linux command ``shuf'' and the Seqtk toolkit as follows.
+
+Get a list of geneIDs from your fasta file. If there is a space in the header, only get up to the space. Remove the `\textgreater{}'.
+
+\begin{verbatim}
+grep '>' mysequences.fasta | cut -f 1 -d ' ' | sed 's/>//g' > seqIDs.txt
+\end{verbatim}
+
+Get a random subset of the IDs; the example below gets 100 sequences
+
+\begin{verbatim}
+shuf -n 100 seqIDs.txt > subset_seqIDs.txt
+\end{verbatim}
+
+Get the fasta for your subset
+
+\begin{verbatim}
+seqtk subseq genes.fasta  subset_seqIDs.txt   > subset_sequences.fasta
+\end{verbatim}
+
+\hypertarget{spike-protein-2}{%
+\section{Spike Protein}\label{spike-protein-2}}
+
+The mafft.dnsw.spikeprot230702.fasta file from the previous chapter has spike protein sequences for Denmark, Norway, Sweden and one Wuhan sequence that you already aligned.
+
+Create a tree using raxml-ng. Use 8 threads.
+
+NOTE: The number of threads is
+
+\begin{verbatim}
+--thread
+\end{verbatim}
+
+in MAFFT and
+
+\begin{verbatim}
+--threads
+\end{verbatim}
+
+in raxml-ng.
+
+Click for Answer
+
+\begin{verbatim}
+raxml-ng  --threads 8 --force model_lh_impr --outgroup Wuhan-Hu-1 --all --msa mafft.dnsw.spikeprot230702.fasta --model GTR+G --tree pars{10} --bs-trees 100
+\end{verbatim}
+
+\hfill\break
+
+Now, create a tree for your 3 countries from the MSA you made earlier.
+
+Visualize the trees in R.
 
 \hypertarget{dotplots}{%
 \chapter{Dotplots}\label{dotplots}}
@@ -3289,7 +3735,7 @@ We'll start with SARS-CoV-2.
 
 Make a directory called ``dotplots'' and navigate into it.
 
-Soft-link to the data (/home/jm/sarsdata/dotplotgenomes/*.fa).
+Soft-link to the data (/home/data/nise/dotplotgenomes/*.fa).
 
 Activate the mm2 environment. This will allow us to run minimap2, an aligner (like BLAST) that will very quickly give us approximate genome-wide alignments.
 
@@ -3300,7 +3746,7 @@ mkdir ~/dotplots
 
 cd dotplots
 
-ln -s /home/jm/sarsdata/dotplotgenomes/*.fa .
+ln -s /home/data/nise/dotplotgenomes/*.fa .
 
 conda activate mm2
 \end{verbatim}
@@ -3487,7 +3933,7 @@ This is much more rearranged than the SARS plots. See if you can see any pattern
 
 Scientists recently obtained and sequence DNA from 3 individuals who died about 4,000 years ago. They do this by drilling into the teeth and obtain a sample of dental plaque. The plaque is known to preserve DNA from pathogens. They started off with 34 individuals (30 from the southern site and 4 from the northern site, both described below) and then focused on pathogens recovered from 3 of them.
 
-They focused on two indiviuals from a mass burial site in Charterhouse Warren, Somerset (southern England). This type of mass burial was unusual in the region and, therefore, might represent an event where a lot of people died, such as an epidemic or a war. Signs of fatal trauma were seen in some individuals buried at the site suggesting that the people in this gravesite were killed in all together. Both were children around ages 10 and 12 (plus or minus 3 years). They used radiocarbon dating of the mandible bone in one individual, dating the grave to \textasciitilde4000 years ago.
+They focused on two indiviuals from a mass burial site in Charterhouse Warren, Somerset (southern England). This type of mass burial was unusual in the region and, therefore, might represent an event where a lot of people died, such as an epidemic or a war. Signs of fatal trauma were seen in some individuals buried at the site suggesting that the people in this gravesite were killed in all together. Both sequences were from children around ages 10 and 12 (plus or minus 3 years). They used radiocarbon dating of the mandible bone in one individual, dating the grave to \textasciitilde4000 years ago.
 
 A third individual was buried under a ring cairn monument in Levens, Cumbria (northern England). This person was buried on their own. This individual has also been dated to \textasciitilde4000 years ago. This individual is a female who is 35-45 years and has pottery shards alongside her as well as planks, which might have been a wooden coffin that she was crouched in.
 
@@ -3495,18 +3941,28 @@ We'll start with data from one of the individuals at the southern site (C10098).
 
 Log onto logrus, enter a screen, create a directory called ancientpathogen in your home directory and navigate into it.
 
+Click for Answer
+
 \begin{verbatim}
 mkdir ~/ancientpathogen
 cd ~/ancientpathogen
 \end{verbatim}
 
-Link to the data. You can find it in /home/jm/nise-data/*q.gz. This is single end Illumina data. What does that mean?
+\hfill\break
+
+Link to the data. You can find it in /home/data/nise/ancientpathogen/*q.gz. This is single end Illumina data. What does that mean?
+
+Click for Answer
 
 \begin{verbatim}
-ln -s /home/jm/nise-data/*q.gz .
+ln -s /home/data/nise/ancientpathogen/*q.gz .
 \end{verbatim}
 
+\hfill\break
+
 Take a look at the filenames. Look at the file with ERR11262426 in the filename. This is a sample called C10098 from southern England. Note what the headers start with. Go back to the linux section if you need a refresher on fastq format.
+
+Click for Answer
 
 \begin{verbatim}
 ls -l
@@ -3514,25 +3970,35 @@ ls -l
 zcat ERR11262426.fastq.gz | head
 \end{verbatim}
 
+\hfill\break
+
 How many reads are there?
 
+Click for Answer
+
 \begin{verbatim}
-zgrep -c "^@ERR" /home/jm/nise-data/ERR11262426.fastq.gz
+zgrep -c "^@ERR" ERR11262426.fastq.gz
 \end{verbatim}
+
+\hfill\break
 
 Let's run FastQC, a tool that runs quality control metrics on fastq files. We can leave the fastq files zipped.
 
-activate the fastQC environment. If conda can't find it, use:
+activate the fastqc-env environment.
 
 \begin{verbatim}
-conda activate /home/condasw/miniconda3/envs/fastQC
+conda activate fastqc-env
 \end{verbatim}
 
 Make a directory called ``fastqc'' in your current directory. This will be our output directory.
 
+Click for Answer
+
 \begin{verbatim}
 mkdir fastqc
 \end{verbatim}
+
+\hfill\break
 
 Now run FastQC.
 
@@ -3542,11 +4008,15 @@ fastqc -o fastqc ERR11262426.fastq.gz
 
 Copy the html and zip files over to your desktop, then unzip the .zip file and open up the html file. Go through it as a group.
 
-Let's look to see if there are any sequences from bacterial species included among the human sequences. I grabbed all of the complete bacterial genomes from Genbank as of July 21, 2023. We'll align our sequences to them using minimap2 (you could also use blast). Soft link to the fasta file with the bacterial genomes in it. It is in /home/jm/microbe/GbBac.fasta
+Let's look to see if there are any sequences from bacterial species included among the human sequences. I grabbed all of the complete bacterial genomes from Genbank as of July 21, 2023. We'll align our sequences to them using minimap2 (you could also use blast). Soft link to the fasta file with the bacterial genomes in it. It is in /home/data/nise/GbBac.fasta
+
+Click for Answer
 
 \begin{verbatim}
-ln -s /home/jm/microbe/GbBac.fasta .
+ln -s /home/data/nise/GbBac.fasta .
 \end{verbatim}
+
+\hfill\break
 
 Create a database of that file (note that minimap2 can create a database on the fly but it is faster to do it beforehand, especially if you will use it for more than one alignment). We will name the reference database bacteria.mmi. We'll use the short read preset (-x sr) since our fastq reads are short illumina reads.
 
@@ -3556,9 +4026,13 @@ minimap2 -x sr -d bacteria.mmi GbBac.fasta
 
 We don't need to align all of the reads to the bacterial genomes, just a subset to get a sense for which bacterial reads are present. See if you can figure out how to get the first 1000 sequence reads from our fastq file.
 
+Click for Answer
+
 \begin{verbatim}
-zcat /home/jm/nise-data/ERR11262438.fastq.gz |head -4000 > ERR11262438.1000.fastq
+zcat ERR11262438.fastq.gz |head -4000 > ERR11262438.1000.fastq
 \end{verbatim}
+
+\hfill\break
 
 Run the alignment.
 
@@ -3570,46 +4044,116 @@ We can quickly figure out what the pathogen is by seeing which species was hit m
 
 Hint: You can get the genus and species using the cut command and grabbing the 2nd and 3rd columns separated by underscores. Then you will want to count the instances of each genus\_species then sort by the count (column 1).
 
+Click for Answer
+
 \begin{verbatim}
 cut -f 2-3 -d '_' ERR112624261000xbacteria.paf | sort |uniq -c | sort -n
 \end{verbatim}
 
+\hfill\break
+
 What pathogen likely killed this person and what disease does it cause?
+
+Click for Answer
 
 \begin{verbatim}
 Yersinia pestis, which causes the plague.
 \end{verbatim}
+
+\hfill\break
 
 Now see if you can do the same analysis for sample ERR11262438. This is sample C10928, the one from Northern England.
 
 What pathogen likely killed this person and what disease does it cause?
 
+Click for Answer
+
 \begin{verbatim}
 Yersinia pestis, which causes the plague.
 \end{verbatim}
 
-Citation
+\hfill\break
+
+Citation (There is a spoiler here so don't open it until you have done the exercise.)
+
+Click for Answer
 
 \begin{verbatim}
 Swali, P., Schulting, R., Gilardet, A. et al. Yersinia pestis genomes reveal plague in Britain 4000 years ago. Nat Commun 14, 2930 (2023). https://doi.org/10.1038/s41467-023-38393-w
 \end{verbatim}
 
+\hypertarget{wrap-up}{%
+\chapter{Wrap Up}\label{wrap-up}}
+
 \hypertarget{acknowledgements}{%
-\chapter{Acknowledgements}\label{acknowledgements}}
+\section{Acknowledgements}\label{acknowledgements}}
 
-This publication was supported by an Institutional Development Award (IDeA) from the National Institute of General Medical Sciences of the National Institutes of Health under grant number P20GM103451. Additional support came from National Science Foundation Award numbers 1759522 (Collaborative Research: Innovation: Pioneering New Approaches to Explore Pangenomic Space at Scale) and 2105391 (CRII: III: Toward the Compression of Pangenomic DNA Sequence Data Using Context-Free Grammars).
+Pandemic bioinformatic content was developed by Joann Mudge. Special thanks to Adam Gomez and participants for valuable feedback.
 
-\includegraphics[width=0.5\textwidth,height=\textheight]{./Figures/INBRE_Logo_Grad_transparent-2019.png}
+Linux content was developed by Adam Gomez, Ethan Price, Evan Lavelle, Kathy Myers, and Forrest Black with additional pandemic-specific content by Joann Mudge.
+
+This publication was supported by an Institutional Development Award (\textbf{IDeA}) from the National Institute of General Medical Sciences of the \textbf{National Institutes of Health} under grant number \textbf{P20GM103451}.
+
+\includegraphics[width=0.4\textwidth,height=\textheight]{./Figures/INBRE_Logo_Grad_transparent-2019.png}
 
 \includegraphics[width=0.5\textwidth,height=\textheight]{./Figures/ncgr.png}
 
-\hypertarget{license-and-copyright-1}{%
-\chapter{License and Copyright}\label{license-and-copyright-1}}
+\hypertarget{survey}{%
+\section{Survey}\label{survey}}
 
-Creative Commons Attribution-NonCommercial-NoDerivatives 4.0
-\url{https://creativecommons.org/licenses/by-nc-nd/4.0/}
+\href{https://docs.google.com/forms/d/e/1FAIpQLSdrIJ03P_Zln5Z-GLfLCutasdktYFa_I9d1rglNBrC_oW7eMw/viewform?usp=sf_link}{Pre-survey (anonymous)}
 
-© 2023 National Center for Genome Resources
+\href{https://docs.google.com/forms/d/e/1FAIpQLSdTH8MVceEHCJdQf_8LdKKpILgL7Fi-7k3IGSzME93kq6YkfQ/viewform?usp=sf_link}{Post-survey (anonymous)}
+
+\href{https://docs.google.com/forms/d/e/1FAIpQLSfGZwX2BL_ZyGgmvh4v41Q_886y-OiTESTbpvzoyR0J3BxC5Q/viewform?usp=sf_link}{Server/Certificate survey (super quick)}
+
+\hypertarget{questions}{%
+\section{Questions}\label{questions}}
+
+If you have \textbf{bioinformatics or technical questions}, please email \href{mailto:inbre@ncgr.org}{\nolinkurl{inbre@ncgr.org}}, which will send emails to everyone on the inbre team.
+
+If you have questions on \textbf{passwords/password resets, payments, receipts, etc,} please email Ethan Price at \href{mailto:eprice@ncgr.org}{\nolinkurl{eprice@ncgr.org}} and cc \href{mailto:inbre@ncgr.org}{\nolinkurl{inbre@ncgr.org}}.
+
+Occasionally, we change servers or change how to log in so if you are having issues, please contact us.
+
+\hypertarget{server-access-and-acknowledgements}{%
+\section{Server access and acknowledgements}\label{server-access-and-acknowledgements}}
+
+For those of you who requested continued access to our server, we will extend your account for 1 year. If you need it longer, please email us and we'll be happy to work with you. We ask that you don't run really large jobs while we are running workshops to avoid slowing things down. So, if you have a really large job to run, please check in with us so we can let you know when workshops will be happening.
+
+Please note, if you use our servers to do analysis that you publish, you need to acknowledge the National Center for Genome Resources (NCGR) and the INBRE grant in your acknowledgements. Instructions for the latter can be found here: \url{https://nminbre.nmsu.edu/cite-us/cite-us.html}.
+
+This is really important for our annual reports so thank you in advance!
+
+Additionally, in order to share your publications in our annual reporting, and to comply with NIH guidelines for open access, please include a PMCID with your publication. Instructions: \href{https://publicaccess.nih.gov/include-pmcid-citations.htm}{Include PMCID in Citations}.
+
+Additional details from \url{https://nminbre.nmsu.edu/cite-us/cite-us.html}:
+
+{If you received funding from NM-INBRE that contributed to your research or career development, you must cite NM-INBRE support on all publications, presentations, press releases, requests, requests for proposals, bid invitations, or any other documents or applications related to your funded research. Also, please be sure to cite NM-INBRE if your work benefited from the use of NM-INBRE equipment or an NM-INBRE sponsored student worked in your lab.}
+
+{\textbf{NIH requires the following format for citing INBRE support, to be used for presentations, publications, and other acknowledgements:}}
+
+{\emph{Research reported in this publication was supported by an Institutional Development Award (IDeA) from the National Institute of General Medical Sciences of the National Institutes of Health under grant number P20GM103451.}}
+
+{Where appropriate, also add:}
+
+{Its contents are solely the responsibility of the authors and do not necessarily represent the official views of NIH.}
+
+\hypertarget{bookdown-document}{%
+\section{Bookdown document}\label{bookdown-document}}
+
+You can share these with other individuals in your lab or fellow students/colleagues but please let us know who is using it so we can account for them on our annual reports (thank you!) (you can email Ethan: eprice@ncgr.org and cc inbre@ncgr.org).
+
+Please let us know who is using this document so we can account for them on our annual reports (thank you!) (you can email Ethan: eprice@ncgr.org and cc inbre@ncgr.org).
+
+This document is available at \url{https://inbre.ncgr.org/nise-bioinformatics}
+
+\hypertarget{zoom-recordings}{%
+\section{Zoom recordings}\label{zoom-recordings}}
+
+We will only record if someone has to miss a session. Please do not share the zoom recordings as we don't have permissions from everyone who participated. Feel free to use them for your own use. Links to zoom recordings can be found on the Discord channel.
+
+The zoom recordings will be available for at least 3 months. Please plan to download it if you need it for a longer period of time.
 
   \bibliography{book.bib,packages.bib}
 
