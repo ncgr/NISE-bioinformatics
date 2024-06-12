@@ -6,6 +6,53 @@
 
 See pdf.
 
+![](./Figures/ncbi1.png){width=100%}
+
+Navigate to the NCBI Virus, SARS-CoV-2 Data Hub at the link below:
+
+https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&VirusLineage_ss=taxid:2697049
+
+You know you're in the correct place if it looks like the screenshot below. Note that we can look at nucleotide sequences and protein sequences, so always be sure you're collecting the correct data sets:
+
+
+![](./Figures/ncbi2.png){width=100%}
+
+Now refine your search results to include the following:
+
+![](./Figures/ncbi3.png){width=100%}
+
+When we download data, we want to be sure that we all have the exact same information. If we don't select the same columns to include in our downloads, we will run into trouble later when running code and comparing results. Add the colums as you see below:
+
+![](./Figures/ncbi4.png){width=100%}
+
+Click here to select all of the samples listed based on your refined search.
+
+![](./Figures/ncbi5.png){width=100%}
+
+We can generate pylogenetic trees and multiple sequence alignments directly from this webpage. We can also use a number of bioinformatic tools to generate sequence alignments and phylogenies. 
+
+![](./Figures/ncbi6.png){width=100%}
+
+
+![](./Figures/ncbi7.png){width=100%}
+
+![](./Figures/ncbi8.png){width=100%}
+
+To visualize your data geographically and over time, click on "Visual Filters for GenBank Sequences" as shown below
+
+![](./Figures/ncbi9.png){width=100%}
+
+We can also look at the frequencies of the viral lineages
+
+![](./Figures/ncbi10.png){width=100%}
+
+
+![](./Figures/ncbi11.png){width=100%}
+
+https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&VirusLineage_ss=taxid:2697049
+
+
+
 Change the name of the sequence file with Denmark, Norway, and Sweden to DNS.sequences.fasta
 
 <details>
