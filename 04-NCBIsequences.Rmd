@@ -4,7 +4,7 @@
 
 ## Getting Sequences from NCBI
 
-See pdf.
+
 
 ![](./Figures/ncbi1.png){width=100%}
 
