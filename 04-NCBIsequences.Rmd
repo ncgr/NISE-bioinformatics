@@ -49,6 +49,9 @@ We can also look at the frequencies of the viral lineages
 
 ![](./Figures/ncbi11.png){width=100%}
 
+
+![](./Figures/ncbi12.png){width=100%}
+
 https://www.ncbi.nlm.nih.gov/labs/virus/vssi/#/virus?SeqType_s=Nucleotide&VirusLineage_ss=taxid:2697049
 
 
