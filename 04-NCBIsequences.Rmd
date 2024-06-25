@@ -449,8 +449,6 @@ unique(dns$Pangolin_Variant)
 unique(dns_sub$Pangolin_Variant)
 ```
 
-```
-
 ### Plot Collection Date x Variants
 
 16. Now try to plot the collection date (x axis) by the variants (y axis), coloring by the country.
