@@ -379,7 +379,7 @@ You should be returned to your prompt: [username@logrus linuxc]$
 #### Syntax: ln -s FileYouWantToLink/PointTo NameYouWantToGiveIt{-}
 
 ```
-ln -s /home/eprice/covid.fasta covid.fasta
+ln -s /home/agomez/covid.fasta covid.fasta
 
 ls -l
 ```
@@ -477,7 +477,7 @@ cat covid.fasta | tail
 Fastq files contain sequence reads and associated **meta data**.
 
 ```
-ln -s /home/fds/unix_basics/SP1.fq SP1.fq
+ln -s /home/agomez/SP1.fq SP1.fq
 
 ls -ltr
 ```
@@ -679,7 +679,9 @@ Powerful Z commands (zcat)
 Let’s copy another file:
 
 ```
-cp /home/fds/unix_basics/table1.txt.gz /home/<user>/linuxczcat table1.txt.gz
+cp /home/agomez/table1.txt.gz /home/<user>/linuxc
+
+zcat table1.txt.gz
 ```
 
 ```
