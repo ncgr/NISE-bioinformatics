@@ -250,7 +250,7 @@ head(dns)
 When you look at the dns variable, it shows column and row names. Since we didn't have a header line in our tab-delimitted file, it just defaults to V1, V2 (V stands for vector). Since we didn't have row names, it defaults to numbers. Let's fix the column names. The "c" concatenates a list of things together to be fed in as a group.
 
 ```
-colnames(dns) = c("Accession", "Genbank_Title", "Collection_Date", "Country", "GEO_Location", "Length", "Pangolin_Variant", "SRA_Accession", "Sequence_Type")
+colnames(dns) = c("Accession", "Genbank_Title", "Collection_Date", "Country", "GEO_Location", "Length", "Pangolin_Variant", "SRA_Accession", "Sequence_Type", "Genbank")
 ```
 
 Then check it with the head command.
@@ -344,6 +344,60 @@ dev.off()
 
 ![](./Figures/lengthxvariants.color.png){width=50%}
 
+### BONUS
+
+If you have too many variants on the y axis and your labels are overlapping, there are several things that you can do. Here are a few.
+
+1. Increase the height of the plot
+
+```
+png("lengthxvariants.color.png", height = 5000)
+
+```
+
+2. Make the font size smaller (but this will make it harder to read on your poster). There are lots of ways to do this but one way is to add a layer that changes the font size to the end of your plot code.
+
+```
++
+  theme(
+    axis.title.y = element_text(size = 8)
+  )
+```
+
+3. Randomly subsample the rows in your data frame, then plot the subsample. Here we are grabbing 100 rows but you could grab more or less.
+
+```
+dns2=dns[sample(nrow(dns),100),]
+```
+
+or
+
+```
+library(dplyr)
+dns2 = dns %>% slice_sample(n = 100)
+```
+
+4. Subsample only the variants that occur the most for plotting. Here we will plot variants that occur at least 5 times in the data frame. Some of you will need to go much higher than that.
+
+```
+library(dplyr)
+
+# Count the number of each variant
+dns_count=as.data.frame(dns %>% group_by(Pangolin_Variant) %>%tally() )
+
+# Get the Pangolin variants that occur at least 5 times
+dns_count_5 = subset(dns_count, n>=5, select=Pangolin_Variant)
+
+# Filter the original data frame so it contains only those lines that have pangolin variants that occur at least 5 times.
+dns_sub=dns %>% filter(Pangolin_Variant %in% dns_count_5$Pangolin_Variant)
+```
+
+You can compare how many variants there are in the original and the subsetted data frames like this.
+
+```
+unique(dns$Pangolin_Variant)
+unique(dns_sub$Pangolin_Variant)
+```
 
 ### Plot Collection Date x Variants
 
