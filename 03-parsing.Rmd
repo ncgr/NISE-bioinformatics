@@ -158,7 +158,7 @@ sed 's/-//g' usbeds.csv | awk '$2>=20200301&&$2<=20200930{print}'
 <details>
   <summary>Click for Answer</summary>
 ```
-sed 's/-//g' usbeds.csv | sed 's/-//g' |awk -F, '$2>=20200301&&$2<=20200930{SUM+=$3;CNT+=1}END{print SUM/CNT}'
+sed 's/-//g' usbeds.csv |awk -F, '$2>=20200301&&$2<=20200930{SUM+=$3;CNT+=1}END{print SUM/CNT}'
 ```
 </details>
 \
