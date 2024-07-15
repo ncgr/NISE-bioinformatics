@@ -75,12 +75,12 @@ How is SAM different than PAF? This document also has information on the CIGAR s
 
 OK. Now let's plot it.
 
-Go to another window in your screen and activate the visualization environment.
+Go to another window in your screen for the visualization. If you aren't in the dotplot directory, change to that directory.
 
 ```
 ctrl-a+c to create a new screen or ctrl-a+space to navigate to the next screen
 
-conda activate visualization
+cd ~/dotplots
 ```
 
 We'll use dotplotly which uses R and the ggplot2 and plotly libraries to make both static and interactive dotplots.
