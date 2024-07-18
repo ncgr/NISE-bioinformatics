@@ -1,6 +1,6 @@
 # Wastewater
 
-<<!-- Look for some different data that behaves better next year. -->
+<!-- Look for some different data that behaves better next year. -->
 
 We are going to work with some wastewater samples. These samples, like most wastewater samples that are taken to look for SARS-CoV-2, were amplified with primers specific to SARS-CoV-2. They used RT-PCR (Reverse Transcription Polymerase Chain Reaction) to make DNA copies of the RNA nucleotides that are between the forward and reverse primer in each primer set. To copy from RNA to DNA you need to use the Reverse Transcriptase enzyme. For these samples, they used the Arctic v5.3.2 primers, which provide several primer sets that, together, cover the SARS-CoV-2 genomes and will work on any of the variants. You still get some host (human) DNA coming through from the sample but the samples we are working with already have the human DNA removed and have already had primers and low quality sequence trimmed. There were some reads that were removed all together so I re-sync the read1 and read2 files so they match up again using bbmap.
 
@@ -78,13 +78,9 @@ dev.off()
 
 Pull it onto your computer and see what it looks like. Adjust if necessary.
 
-<details>
-  <summary>Click for Answer</summary>
-```
+
 ![](./Figures/denmark_ww.png){width=85%}
-```
-</details>
-\
+
 
 Now let's plot the places where the wastewater was collection. Read in the file.
 
