@@ -82,7 +82,7 @@ Pull it onto your computer and see what it looks like. Adjust if necessary.
 ![](./Figures/denmark_ww.png){width=85%}
 
 
-Now let's plot the places where the wastewater was collection. Read in the file.
+Now let's plot the places where the wastewater was collected. Read in the file.
 
 ```
 ww = read.table("Aug_wastewater.txt", header=TRUE)
