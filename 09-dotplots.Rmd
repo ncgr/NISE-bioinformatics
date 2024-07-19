@@ -1,6 +1,6 @@
 <!-- No alignments between SARS-CoV-2 and MERS-CoV at asm20. -->
-<!-- Get an explanation of what various SVs look like in dotplots. -->
-<!-- Move data from sarsdata to nise-data. -->
+<!-- Get an explanation of what various SVs look like in dotplots. Adam might have a video. -->
+<!-- Fix the colors on the dotplots. -->
 
 # Dotplots
 
@@ -99,12 +99,12 @@ We need to change the -q parameter from the default. Why?
 Run dotplotly.
 
 ```
-/home/jm/sw/dotPlotly-master/pafCoordsDotPlotly.R -i SARS-CoV-2xSARS-CoV.paf -o SARS-CoV-2xSARS-CoV -m 1000 -q 2000 -l -p 12
+/home/jm/sw/pafCoordsDotPlotly.R -i SARS-CoV-2xSARS-CoV.paf -o SARS-CoV-2xSARS-CoV -m 1000 -q 2000 -l -p 12
 ```
 
 Ignore the "Error in htmlwidgets::saveWidget". We don't have that library installed so our html isn't all in one document but requires us to copy over the folder. Copy over the png, html and the folder to your desktop computer using scp. When you copy over the folder, you need to use the -r (recursive) parameter.
 
-![](./Figures/SARS-CoV-2xSARS-CoV.png){width=70%}
+![](./Figures/SARS-CoV-2xSARS-CoV.png){width=80%}
 
 Open the PNG file. The single diagonal line means that they line up across there genomes (expect a bit at the beginning in the bottom left). At a high level structural view, SARs-CoV (the original SARS) and SARs-CoV-2 are very similar.
 
@@ -114,7 +114,7 @@ Now run it on the PAF file with the CIGAR string and see if you get anything dif
 
 <details>
 ```
-/home/jm/sw/dotPlotly-master/pafCoordsDotPlotly.R -i SARS-CoV-2xSARS-CoV.cigar.paf -o SARS-CoV-2xSARS-CoV.cigar -m 1000 -q 2000 -l -p 12
+/home/jm/sw/pafCoordsDotPlotly.R -i SARS-CoV-2xSARS-CoV.cigar.paf -o SARS-CoV-2xSARS-CoV.cigar -m 1000 -q 2000 -l -p 12
 ```
 </details>
 \
@@ -147,14 +147,14 @@ Rerun the dotplot to keep that alignment.
 
 <details>
 ```
-/home/jm/sw/dotPlotly-master/pafCoordsDotPlotly.R -i SARS-CoV-2xSARS-CoV.cigar.paf -o SARS-CoV-2xSARS-CoV.cigar -m 800 -q 2000 -l -p 12
+/home/jm/sw/pafCoordsDotPlotly.R -i SARS-CoV-2xSARS-CoV.cigar.paf -o SARS-CoV-2xSARS-CoV.cigar -m 800 -q 2000 -l -p 12
 ```
 </details>
 \
 
 Download your files and take a look at the plot.
 
-![](./Figures/SARS-CoV-2xSARS-CoV.cigar.png){width=45%}
+![](./Figures/SARS-CoV-2xSARS-CoV.cigar.png){width=80%}
 
 That is probably a more realistic representation of the relationship between the SARS-CoV-2 and SARS-CoV genomes.
 
@@ -198,7 +198,7 @@ minimap2 -c -x asm20 -o YexYp.cigar.paf Ypestis.fa Yenterocolitica.fa
 Run dotplotly with a minimum alignment length of 1000
 
 ```
-/home/jm/sw/dotPlotly-master/pafCoordsDotPlotly.R -i YexYp.cigar.paf -o YexYp -m 1000 -q 2000 -l -p 12
+/home/jm/sw/pafCoordsDotPlotly.R -i YexYp.cigar.paf -o YexYp -m 1000 -q 2000 -l -p 12
 ```
 
 How many alignments did it filter out?
@@ -212,5 +212,5 @@ Go ahead and download it and take a look.
 
 This is much more rearranged than the SARS plots. See if you can see any patterns. Do the 2 genomes share any sequence in common? What about the ordering? Is anything inverted between the two genomes? Is anything duplicated? What can you tell about the plasmids?
 
-![](./Figures/YexYp.png){width=45%}
+![](./Figures/YexYp.png){width=80%}
 
