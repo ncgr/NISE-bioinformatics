@@ -12,7 +12,7 @@ Within your home directory, make a directory called "wastewater" and go into it.
 
 <details>
   <summary>Click for Answer</summary>
-```
+```{R, eval=FALSE}
 mkdir ~/wastewater
 cd ~/wastewater
 ```
@@ -24,7 +24,7 @@ Link to the metadata file at: /home/data/nise/wastewater/wastewater.txt
 
 <details>
   <summary>Click for Answer</summary>
-```
+```{R, eval=FALSE}
 ln -s /home/data/nise/wastewater/wastewater.txt .
 ```
 </details>
@@ -34,7 +34,7 @@ We'll used the first date (8/8/23). Create a file named Aug_wastewater.txt that 
 
 <details>
   <summary>Click for Answer</summary>
-```
+```{R, eval=FALSE}
 grep '8/8/23' wastewater.txt > Aug_wastewater.txt
 ```
 </details>
@@ -61,7 +61,7 @@ map("world", "Denmark", plot=FALSE)$range
 It gives you the two longitude coordinates that contain the country and then the two latitude coordinates that contain the country.
 
 Your output should look like this:
-```
+```{R, eval=FALSE}
 [1]  8.121484 15.137110 54.628857 57.736916
 ```
 
@@ -90,19 +90,19 @@ Pull it onto your computer and see what it looks like. Adjust if necessary.
 
 Now let's plot the places where the wastewater was collected. Read in the file.
 
-```
+```{R, eval=FALSE}
 ww = read.table("Aug_wastewater.txt", header=FALSE)
 ```
 
 Add some columns.
 
-```
+```{R, eval=FALSE}
 colnames(ww) = c("Sample","Date","Latitude","Longitude")
 ```
 
 Plot the points based on their latitude and longitude by adding a layer to the map plot we already made.
 
-```
+```{R, eval=FALSE}
 p + geom_point(data=ww,aes(x=Longitude,y=Latitude))
 ```
 
@@ -110,7 +110,7 @@ p + geom_point(data=ww,aes(x=Longitude,y=Latitude))
 
 First, we'll align reads to the Wuhan-Hu1 reference genome, a genome sequence from very early in the pandemic. Since we are working with several samples let's use some subdirectories to keep things organized. First, a fastq directory. We'll make it, go into it, link to the fastq files, then come back up to the wastewater directory. These are Illumina paired end reads (DNA is broken up into short sequences and then you sequence in from either end to get to read pairs that are near each other in the genome).
 
-```
+```{R, eval=FALSE}
 mkdir fastq
 cd fastq
 ln -s /home/data/nise/wastewater/*fastq .
@@ -119,25 +119,25 @@ cd ..
 
 Now make an alignments directory.
 
-```
+```{R, eval=FALSE}
 mkdir alignments
 ```
 
 Activate the minimap2 environment.
 
-```
+```{R, eval=FALSE}
 conda activate mm2
 ```
 
 Link to the Wuhan-Hu1 SARS-CoV-2 reference genome.
 
-```
+```{R, eval=FALSE}
 ln -s /home/data/nise/wuhanhu1_genome.fasta .
 ```
 
 Align our samples to the reference genome using the short read preset. First, let's make an index for the reference genome.
 
-```
+```{R, eval=FALSE}
 minimap2 -x sr -d wuhanhu1_genome.mmi wuhanhu1_genome.fasta
 ```
 
@@ -145,7 +145,7 @@ Let's loop through each fastq, aligning it to the reference, converting the sam 
 
 Note: We could do a single for loop for all of the work we are doing that spans multiple files but we will break things out so we can explain steps as we go and check them.
 
-```
+```{R, eval=FALSE}
 for i in fastq/*_1.fastq; do
   bn=`basename $i _1.fastq`
   minimap2 -ax sr -o alignments/${bn}.sam wuhanhu1_genome.mmi fastq/${bn}_1.fastq fastq/${bn}_2.fastq
@@ -158,7 +158,7 @@ Note: many of these reads won't align because they are too short or they don't m
 
 Let's switch to the iVar environment.
 
-```
+```{R, eval=FALSE}
 conda deactivate
 conda activate ivar
 ```
@@ -173,7 +173,7 @@ We'll use iVar's trim function to soft clip the alignments to remove any remaini
 -p = output prefix
 -b = file with primer sequences
 
-```
+```{R, eval=FALSE}
 for i in fastq/*_1.fastq; do
   bn=`basename $i _1.fastq`
   ivar trim -i alignments/${bn}.sort.bam -b /home/data/nise/SARs-CoV-2_v5.3.2_400.primer.bed \
@@ -187,7 +187,7 @@ Let's figure out how many reads and read pairs are mapped.
 
 Note: "reads mapped and paired" means that each read in a pair aligned close to each other in the reference genome and in the expected orientation relative to one another. Technically, all the reads are part of a read pair.
 
-```
+```{R, eval=FALSE}
 for i in alignments/ivar.*.sort.bam; do
   echo $i
   samtools stats $i|grep "reads mapped"
@@ -198,7 +198,7 @@ Note: Some of the samples have zero reads aligned. Remember the caveat noted abo
 
 Let's take a look at the sequencing coverage for one of these samples. Because we are using tiled PCR approach to generate PCR amplicons across the genome, we won't have an even coverage. Let's just do one of the samples with a high number of reads aligned. We'll use "samtools depth". The -a option gets the sequencing depth at all reference positions, even if it is zero.
 
-```
+```{R, eval=FALSE}
 samtools depth -a alignments/ivar.ERR11967209.sort.bam > ERR11967209.depth.txt
 ```
 
@@ -206,7 +206,7 @@ See if you can plot this in ggplot2 using a bar chart. The second column is the 
 
 <details>
   <summary>Click for answer</summary>
-```
+```{R, eval=FALSE}
 # Do this in R
 
 library(ggplot2)
@@ -244,20 +244,20 @@ Now let's use Freyja to figure out what SARS-CoV-2 variants are present and what
 
 Change environments.
 
-```
+```{R, eval=FALSE}
 conda deactivate
 conda activate freyja
 ```
 
 Make some subdirectories within your wastewater directory.
 
-```
+```{R, eval=FALSE}
 mkdir variants_files depth_files demix_files
 ```
 
 Next, we'll identify nucleotide changes (single nucleotide variants or SNVs) and get their frequency.
 
-```
+```{R, eval=FALSE}
 for i in alignments/ivar.*.sort.bam; do
   bn=`basename $i .sort.bam`
   freyja variants $i \
@@ -271,7 +271,7 @@ The depth folder has the same depth files that we ran with samtools depth. Claim
 
 We need to update the lineage barcodes and their metadata (Note: this can change daily). Since you don't have permissions to write in the correct folder, we'll do this for you.
 
-```
+```{R, eval=FALSE}
 # We will run this for you.
 sudo /opt/anaconda3/envs/freyja/bin/freyja update
 ```
@@ -279,7 +279,7 @@ sudo /opt/anaconda3/envs/freyja/bin/freyja update
 
 Next is the demix step which disentangles and identifies the SARS-CoV-2 variants that are in the sample.
 
-```
+```{R, eval=FALSE}
 for i in variants_files/ivar.*.variants.tsv; do
   bn=`basename $i .variants.tsv`
   freyja demix $i \
@@ -293,13 +293,13 @@ Note: the warnings are telling us that they are not very confident in the varian
 
 Let's look at the percent of the genome that was covered for each sample. The higher the percentage of the SARS-CoV-2 genome we saw in the sample, the more confident we can be in the results.
 
-```
+```{R, eval=FALSE}
 grep coverage demix_files/*
 ```
 
 Now, let's merge the output for each sample together.
 
-```
+```{R, eval=FALSE}
 freyja aggregate demix_files/ --output allsamples.demux.tsv
 ```
 
@@ -317,7 +317,7 @@ Now, let's add piecharts of the SARS-CoV-2 variants onto our map. We'll stick wi
 
 Each of the columns in allsamples.demux.tsv has several fields, which makes it tricky to work with. Let's munge the data into a form that we can import into R using the ridiculous one-liner below. You should recognize most of the individual pieces (note that the perl substitutions are very similar to sed but some of the substitutions of special characters won't work in sed). The one-liner will grab the sampleID and summarized columns, gets rid of samples that don't have any reads (and, therefore, no SARS-CoV-2 variant calls), merges the 3 sub-fields that contain info on the SARS-CoV-2 variants, removes special characters, strips extra text from around the sampleID, and removes the header.
 
-```
+```{R, eval=FALSE}
 cut -f 1-2 allsamples.demux.tsv | grep -v "\[\]" | perl -pe 's/, /\t/g' | perl -pe 's/ /_/g' | perl -pe "s/[\(\)\[\]\']//g" | perl -pe 's/ivar.(\S+).variants.tsv/\1/g' | grep -v summarized > allsamples.summary.demux.tsv
 ```
 
@@ -325,20 +325,20 @@ Take a look at the resulting file (allsamples.summary.demux.tsv). It still isn't
 
 Go into R and load the scatterpie library.
 
-```
+```{R, eval=FALSE}
 R
 library(scatterpie)
 ```
 
 Read in the data. h=F is shorthand for header=FALSE. We are going to name the columns up front with the number 1-15. R doesn't allow column names to start with a number so it will add an X in front and we'll end up with columns X1-X15. The reason we have to do this is that each row has a different number of fields and because read.table only looks at the first 5 rows to determine the number of columns, it thinks there should only be 13 columns which messes up the resulting data frame. So, setting up 15 column names up front allows us to force it to have 15 columns. The fill=TRUE adds in NAs to fill in rows that don't have all columns.
 
-```
+```{R, eval=FALSE}
 summarized<-read.table("allsamples.summary.demux.tsv", fill = TRUE, sep = "\t", h=F, col.names=c(1:15))
 ```
 
 This R code munges things into three columns (Sample, Lineage, Abundance). The lineage is the SARS-CoV-2 variant lineage.
 
-```
+```{R, eval=FALSE}
 for(i in 1:((ncol(results)-1)/2)){
   if(i==1){
     summarized.final<-summarized[,1:3]
@@ -353,7 +353,7 @@ colnames(summarized.final) = c("Sample","Lineage","Abundance")
 
 Now get rid of lines that have NA in the Abundance column. These lines also have no SARS-CoV-2 variant in the Lineage column.
 
-```
+```{R, eval=FALSE}
 summarized.final = summarized.final[!is.na(summarized.final$Abundance),]
 ```
 
@@ -361,7 +361,7 @@ Take a look at the summarized.final data frame using the head command.
 
 Now we'll convert our data frame with the Sample, Lineage, and Abundance columns from 3 long column to a shorter, wider format that has one row for every sample, and create one column per SARS-CoV-2 variant that contains the Abundance for that variant and the corresponding sample. Because we are using a function from the tidyr library it will put it into a tibble, which is a version of a data frame that is intended to reveal problems sooner (https://tibble.tidyverse.org/#:~:text=Tibbles%20are%20data.,to%20cleaner%2C%20more%20expressive%20code.). We'll convert it back to a data frame since you are used to using them and so we can easily merge it to another data frame.
 
-```
+```{R, eval=FALSE}
 summ_wide <- summarized.final %>% 
   pivot_wider(names_from=Lineage, values_from=Abundance, values_fill=0)
 
@@ -372,7 +372,7 @@ Take a look at summ_wide using the head command.
 
 Now we'll merge the data frame with the info on the variants to the data frame with the info on the longitude and latitude that we made earlier. Because we took out a few samples that didn't have reads from the summ_wide data frame, we will do a right join to bring in rows from the ww data frame that match a sample in the summ_wide data frame. In other words, it won't bring in data from the ww data from the samples that are no longer in summ_wide.
 
-```
+```{R, eval=FALSE}
 ww_variants = right_join(ww, summ_wide, by="Sample")
 ```
 
@@ -380,7 +380,7 @@ Finally, time to plot! Earlier, we made a map of Denamrk and put it into the p v
 
 In the geom_scatterpie layer, we plot the data in each of our variant columns on their corresponding latitude and longitude. The coord_equal makes sure our piecharts are circles (equal coordinates in the x and y directions). We'll move the coord_fixed layer to the end so that it overwrites much narrower coordinates that the geom_scatterpie layer imposes.
 
-```
+```{R, eval=FALSE}
 pdf("VariantPiecharts.pdf", width=15)
 ggplot() + borders("world", colour="gray80", fill="gray90")  + 
 	geom_scatterpie(data=ww_variants,aes(x=Longitude, y=Latitude),
