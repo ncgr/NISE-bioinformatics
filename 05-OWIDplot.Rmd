@@ -165,9 +165,9 @@ dev.off()
 
 Try some on your own using some of the other variables, scales, and/or plot types.
 
-Note: Some of the variables in OWID are not reported every day for all countries. If something is only reported once a week, for example, and you are trying to create a geom_line, you will see nothing. This is because there is a row for every day and the line will only connect points on adjacent days. If you have that issue, here is an example of you to get around that. Before plotting the fully vaccinated column we remove rows that are NA in that column (but we keep all the rows for Total_Cases.)
+Note: Some of the variables in OWID are not reported every day for all countries. If something is only reported once a week, for example, and you are trying to create a geom_line, you will see nothing. This is because it will only connect adjacent datapoints and since there is a row for every day, the line will only connect adjacent days. Since there isn't any data from adjacent days, it doesn't plot anything. If you have that issue, here is an example of how to get around that. Before plotting the fully vaccinated column we remove rows that are NA in that column (but we keep all the rows for Total_Cases.)
 
-```
+```{R, eval=FALSE}
 ggplot(df, aes(x=Date, y=Total_Cases)) + geom_col(width=100) + geom_line(data=cr[!is.na(cr$Fully_Vaccinated),],aes(x=Date, y=Fully_Vaccinated)) + scale_y_continuous(name = "Total Cases", sec.axis = sec_axis(transform=~., name="Total Vaccinated"))
 ```
 
