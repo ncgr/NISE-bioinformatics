@@ -1,5 +1,6 @@
 <!-- The text quality in a PNG is poor so using PDF. So far I still have pngs as the actual figures. I think that I have to do something different to have bookdown show pdfs. Actually, it just doesn't preview it. It puts it in a frame that you have to scroll through so for now I will just generate pngs on the sides to put in the bookdown doc.-->
 <!-- Sequences <29000 skewed the tree. [This should be >?]-->
+<!-- Might want to put in how to color branches so you can squeeze more sequences in a smaller tree.-->
 
 <!-- Is there a way to bioinformatically pick random genomes or spike proteins for trees? seqtk -->
 
@@ -577,7 +578,18 @@ Now, create a tree for your 3 countries from the MSA you made earlier.
 Visualize the trees in R.
 
 
-BONUS: If you want to randomly subset your sequences to get fewer sequences you can use the linux command "shuf" and the Seqtk toolkit as follows.
+BONUS: 
+
+You might want to randomly subset your sequences to get a more reasonable number of sequences per country for your phylogenetic tree.
+
+This will get 50 random sequences from a sequence file named denmark.fa. Do it for all 3 countries then cat them together. For some of your countries, you might need to keep all the sequences you have if there aren't very many.
+
+```
+/home/jm/sw/seqtk/seqtk sample denmark.fa 50 > 50.denmark.fa
+```
+
+You can also get random sequence as follows using the "shuf" command to get a list of the sequences you want plus the "seqtk subseq" command to get those sequences. The "seqtk subseq" command is also useful for getting specific sequences that you want to pull out of a file or even for getting parts of a specific sequence.
+
 
 Get a list of geneIDs from your fasta file. If there is a space in the header, only get up to the space. Remove the '>'.
 
@@ -594,7 +606,7 @@ shuf -n 100 seqIDs.txt > subset_seqIDs.txt
 Get the fasta for your subset
 
 ```
-seqtk subseq genes.fasta  subset_seqIDs.txt   > subset_sequences.fasta
+/home/jm/sw/seqtk/seqtk subseq genes.fasta  subset_seqIDs.txt   > subset_sequences.fasta
 ```
 
 
