@@ -1,4 +1,4 @@
-<!-- Could add in plotly; already installed as is htmlwidgets -->
+<!-- Teach students how to increase plot text size and dots on trees for 2025 -->
 
 # Our World in Data (plots)
 
